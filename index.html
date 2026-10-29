@@ -1,0 +1,1404 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8"><title>Punto Sano | Preparaciones sin TACC</title><style>
+:root{--ink:#000000;--muted:#000000;--paper:#ffffff;--surface:#ffffff;--line:#ffffff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font:15px/1.5 Arial,Helvetica,sans-serif}
+button,input,select,textarea,a{font:inherit}
+a{color:inherit}
+button{cursor:pointer}
+button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid #ffffff;outline-offset:3px}
+.brand{white-space:nowrap}
+.header-menu a:hover{color:#000000}
+.bag-button{white-space:nowrap}
+.bag-button span{font-weight:700}
+.walking-mate{position:absolute;object-fit:contain}
+.leaf-trail{justify-content:space-between}
+.collection-tile{min-width:0;transition:transform .2s}
+.collection-tile:hover{transform:translateY(-3px)}
+.collection-image{background-repeat:no-repeat}
+.granola-collection{background-image:url('assets/granola-gris-v12-web-s.webp')}
+.mix-collection{background-image:url('assets/mix-gris-v12-s.webp')}
+.coffee-collection{background-image:url('assets/cafe-gris-v12-s.webp')}
+.collection-tile h2{min-width:0}
+.section-kicker{display:block;margin-bottom:7px}
+.product-photo{overflow:hidden}
+.budin-photo:before,.alfajor-photo:before{content:'';position:absolute;inset:0;aspect-ratio:1;background-repeat:no-repeat;background-position:inherit}
+.budin-photo:before{background-image:url('assets/budines-variedades-v2.webp');background-size:400% 400%}
+.alfajor-photo:before{background-image:url('assets/alfajores-variedades-web.webp');background-size:200% 100%}
+.add,.hero-cta,.inner-enter{display:inline-flex;align-items:center;justify-content:center}
+.add:hover,.hero-cta:hover,.inner-enter:hover{background:#ad7233}
+.photo-note{font-size:10px;color:#ffffff;margin:15px 0}
+.category{grid-template-columns:42% 1fr}
+.category-photo,.supp-photo{background:#ffffff center/contain no-repeat}
+.supp-back{margin-top:16px;font-size:12px}
+.coffee-grid{display:grid}
+.coffee-card{grid-template-columns:35% 1fr;overflow:hidden}
+.coffee-photo{background:#ffffff url('assets/cafe-gris-v12-s.webp') center/contain no-repeat}
+.coffee-options h2{grid-column:1/-1;font:500 25px Georgia,serif;margin:0 0 6px}
+.coffee-options label{font-size:11px;margin:0}
+.coffee-options label[for^="coffee-weight"]{grid-column:1;grid-row:2}
+.coffee-options label[for^="coffee-form"]{grid-column:2;grid-row:2}
+.coffee-options select[id^="coffee-weight"]{grid-column:1;grid-row:3}
+.coffee-options select[id^="coffee-form"]{grid-column:2;grid-row:3}
+label{display:block;font-size:12px;color:#000000;margin:12px 0 6px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ffffff;border-radius:5px;background:#ffffff;color:#000000;min-height:41px}
+textarea{resize:vertical}
+.granola-builder{display:grid;grid-template-columns:290px minmax(0,1fr);gap:24px;align-items:start}
+.granola-options{padding:20px;background:#ffffff;border:1px solid var(--line);border-radius:12px}
+.granola-options h2{font:500 23px Georgia,serif;margin:5px 0 10px}
+.granola-options>p{font-size:12px;color:var(--muted);margin-bottom:16px}
+.included-base{background:#ffffff;border-radius:9px;padding:17px;margin-bottom:20px}
+.included-base h2{margin:0 0 9px}
+.included-base p{font-size:12px;line-height:1.55;color:#000000;margin:0}
+.base-price-row{display:flex;justify-content:space-between;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid #c89454;font-size:11px}
+.base-price-row strong{font-size:16px;white-space:nowrap}
+.granola-progress{padding:13px;border:1px solid #ffffff;border-radius:9px;margin:12px 0}
+.granola-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:10px}
+.granola-slots span{font-size:10px;text-align:center;padding:8px 2px;border:1px dashed #ffffff;border-radius:5px}
+.granola-slots .filled{background:#c89454;border-style:solid}
+.granola-ingredient{display:grid;grid-template-columns:1fr 166px;gap:4px 8px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);border-radius:6px}
+.ingredient-selected{background:#ffffff}
+.ingredient-name label{font-size:15px;font-weight:600;line-height:1.3;margin:0}
+.ingredient-name small{display:block;font-size:10px;color:#ffffff;margin-top:4px}
+.ingredient-art{float:left;width:32px;height:32px;margin-right:8px}
+.real-ingredient{display:block;width:100%;height:100%;background:url('assets/ingredientes-individuales-v7-s.webp') no-repeat;background-size:300% 300%;filter:drop-shadow(1px 2px 1px rgba(173,114,51,0.133))}
+.grams-control{display:grid;grid-template-columns:42px 66px 42px;gap:6px;align-items:center}
+.grams-control button{width:42px;height:42px;border-radius:50%;border:1px solid #ffffff;background:#ffffff;font-size:24px;color:#000000}
+.grams-control button:disabled{opacity:.25}
+.grams-value{position:relative}
+.grams-value input{border:0;background:none;text-align:center;padding:9px 17px 9px 0;font-size:19px;font-weight:700;appearance:textfield;pointer-events:none}
+.grams-value span{position:absolute;right:1px;top:12px;font-size:11px;color:#ffffff}
+.ingredient-cost{grid-column:2;text-align:right;font-size:12px;color:#ad7233}
+.granola-total{background:#ffffff;border-radius:9px;padding:16px;margin:18px 0}
+.granola-total>div{display:flex;justify-content:space-between;font-size:17px;gap:10px}
+.granola-total strong{font-size:22px}
+.granola-total p{font-size:11px;margin:6px 0;color:#000000}
+.reviews-heading{display:flex;justify-content:space-between;align-items:center}
+.reviews-heading h2{font:500 29px Georgia,serif}
+.review-list{display:grid}
+.review-stars{color:#ad7233;letter-spacing:2px}
+.review-author{display:flex;justify-content:space-between;font-size:11px;color:#ffffff}
+.review-details{border-top:1px solid var(--line);padding-top:14px}
+.review-details summary,.review-more{padding:9px 13px;border:1px solid #ffffff;border-radius:6px;font-size:12px;background:#ffffff;color:#000000;cursor:pointer}
+.review-more{margin-top:12px}
+.review-form{padding-top:15px}
+.review-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.review-public-note,.note{font-size:11px;color:#ffffff}
+dialog{width:min(560px,calc(100% - 24px));max-height:90dvh}
+dialog::backdrop{background:rgba(0,0,0,0.502)}
+.dialog-header{gap:15px}
+.dialog-header h2{font:500 27px Georgia,serif}
+.close,.copy,.qty button{padding:8px 11px;background:#ffffff;border:1px solid #ffffff;border-radius:5px}
+.item{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid var(--line)}
+.item-name{font-size:13px}
+.item-name small{display:block;color:#ffffff;font-size:11px;margin-top:4px}
+.qty{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.qty button{width:32px;height:32px;padding:0}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin:18px 0}
+.transfer-link,.send{display:block;color:#ffffff;padding:11px;text-align:center;border-radius:6px;text-decoration:none;margin:10px 0;font-size:12px}
+#toast{position:fixed;left:50%;bottom:20px;max-width:calc(100% - 24px);padding:11px 17px;border-radius:8px;background:#000000;color:#ffffff;z-index:1001;font-size:12px}
+@media(max-width:900px){.coffee-card{grid-template-columns:25% 1fr}}
+@media(max-width:700px){.coffee-card{grid-template-columns:27% 1fr}.coffee-options label{font-size:10px}.coffee-options select{font-size:12px;padding:8px 7px;min-height:38px}.granola-builder{grid-template-columns:1fr;gap:14px}.granola-options{padding:17px 14px}.granola-options h2{font-size:21px}.included-base{padding:14px;margin-bottom:16px}.included-base p{font-size:11px}.base-price-row{font-size:10px}.base-price-row strong{font-size:14px}.granola-ingredient{grid-template-columns:minmax(0,1fr) 154px;padding:11px 3px;gap:3px}.grams-control{grid-template-columns:40px 62px 40px}.grams-control button{width:40px;height:40px}.ingredient-name label{font-size:13px}.ingredient-name small{font-size:9px}.ingredient-art{width:25px;height:25px;margin-right:4px}.granola-total{padding:14px}.granola-total strong{font-size:21px}.reviews-heading{display:block}.review-list,.review-fields{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+.playful-preview{position:sticky;top:12px;padding:10px 12px 15px;border-radius:12px;text-align:center}
+.bag-scene{position:relative;height:315px;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.mix-pouch{position:relative;width:205px;height:300px}
+.pouch-photo{position:absolute;inset:0;z-index:0}
+.playful-preview img.pouch-photo{width:100%;height:100%}
+.pouch-contents{position:absolute;inset:17% 9% 8%;overflow:hidden;z-index:1;border-radius:2px 2px 15px 15px;background:linear-gradient(110deg,rgba(255,255,255,0.851),rgba(255,255,255,0.878))}
+.pouch-contents:after{content:'';position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0.2),transparent 35%,transparent 65%,rgba(255,255,255,0.2))}
+.bag-pieces,.base-pieces{position:absolute;inset:0;pointer-events:none}
+.base-pieces{z-index:1}
+.bag-pieces{z-index:2}
+.bag-piece{position:absolute;width:25px;height:25px}
+.base-grain{position:absolute}
+.corn-grain{width:17px;height:11px;background:#c89454;border:1px solid #c89454;border-radius:60% 30% 55% 35%}
+.quinoa-grain{width:7px;height:7px;border-radius:50%;background:#ffffff;border:1px solid #c89454}
+.pouch-label{position:absolute;top:37%;left:30%;width:40%;height:30%;z-index:3;background:#ffffff;border:1px solid #ffffff;border-radius:3px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:7px 5px;gap:2px;overflow:hidden}
+.pouch-heart{color:#000000;font-size:12px;line-height:1;flex:0 0 auto}
+.playful-preview img.pouch-bee{width:80%;max-width:52px;max-height:40%;aspect-ratio:1.5;object-fit:contain;filter:grayscale(1) contrast(1.6)}
+.pouch-label strong{font-size:11px;line-height:1.15;max-width:100%;flex:0 0 auto;color:#000000}
+.pouch-label>span:last-child{font-size:7px;line-height:1.15;letter-spacing:.2px;max-width:100%;flex:0 0 auto;color:#000000}
+.bag-table-shadow{position:absolute;bottom:0;width:180px;height:12px;border-radius:50%;background:rgba(173,114,51,0.125);filter:blur(4px);z-index:-1}
+.preview-weight{font-size:12px;font-weight:700;color:#ad7233;margin:0}
+.ingredient-fly{position:fixed;width:35px;height:35px;z-index:1000;pointer-events:none;will-change:transform}
+.grams-bump .grams-value{animation:gramBump .22s ease-out}
+@keyframes gramBump{50%{transform:scale(1.1)}}
+@media(max-width:700px){.playful-preview{top:0;z-index:4;padding:4px 8px 8px;box-shadow:0 7px 14px rgba(0,0,0,0.078)}.bag-scene{height:218px}.mix-pouch{width:140px;height:210px}.bag-piece{width:18px;height:18px}.corn-grain{width:12px;height:8px}.quinoa-grain{width:5px;height:5px}.pouch-label{padding:5px 4px;gap:1px}.pouch-heart{font-size:9px}.playful-preview img.pouch-bee{max-width:37px;max-height:35%}.pouch-label strong{font-size:9px}.pouch-label>span:last-child{font-size:6px;line-height:1.1;letter-spacing:0}.bag-table-shadow{width:130px}.preview-weight{font-size:11px}}
+/* A single photographic setting and clean captions throughout the catalogue. */
+:root{--paper:#ffffff;--surface:#ffffff;--line:#ffffff}
+.collection-tile{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto auto}
+.collection-tile .product-stage{grid-column:1/-1;grid-row:1;align-self:stretch}
+.alfajor-collection{background-image:url('assets/artesanales-gris-v12-web-s.webp')}
+.ena-collection,.protein-photo{background-image:url('assets/suplemento-gris-v12-s.webp')}
+.yerba-collection{background-image:url('assets/yerba-manzanilla-gris-v12-web-s.webp')}
+.collection-tile h2{grid-column:1/-1;grid-row:2;min-height:2.3em}
+.collection-tile p{grid-column:1/-1;grid-row:3}
+.product-photo{flex-shrink:0}
+.product-info{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto 1fr auto;align-content:start}
+.product h2{grid-column:1/-1}
+.product p{grid-column:1/-1;line-height:1.4}
+.product .price{grid-column:1;grid-row:4;align-self:center}
+.product .tier-info{grid-column:1/-1;grid-row:5;margin:2px 0 0;font-size:10px}
+.category{align-items:stretch}
+.category-photo,.supp-photo{flex-shrink:0}
+.creatine-photo{background-image:url('assets/creatina-gris-v12-s.webp')}
+.coffee-grid{grid-template-columns:repeat(2,minmax(0,350px));gap:15px;justify-content:start}
+.coffee-card{display:flex;flex-direction:column;border:1px solid #ffffff;border-radius:9px;background:#ffffff}
+.coffee-photo{aspect-ratio:1;width:100%;background-size:cover}
+.coffee-options{display:grid;grid-template-columns:1fr 1fr;padding:14px;gap:6px 10px;background:#ffffff}
+.coffee-options h2{font-size:23px}
+.coffee-options .coffee-price{margin:8px 0 0;font-size:18px;align-self:center}
+@media(max-width:700px){.product .tier-info{font-size:9px}.coffee-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.coffee-options{grid-template-columns:1fr;padding:11px;gap:4px}.coffee-options h2{font-size:19px;grid-column:1}.coffee-options label[for^="coffee-form"]{grid-column:1;grid-row:4;margin-top:5px}.coffee-options select[id^="coffee-form"]{grid-column:1;grid-row:5}}
+.playful-preview{background:#ffffff}
+.category-enter:hover,.inner-enter:hover{background:#000000}
+.collection-tile p{min-height:2.8em}
+.search-toggle{min-height:38px;padding:0}
+.search-toggle:hover{background:#ffffff}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+#productSearchForm{margin-top:18px}
+#productSearchInput{font-size:16px;background:#ffffff;min-height:47px}
+.search-status{font-size:12px;color:#000000;margin:14px 0}
+.search-results{display:flex;flex-direction:column;gap:0}
+.search-result{display:flex;justify-content:space-between;align-items:center;gap:14px;text-align:left;width:100%;padding:13px 2px;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--ink)}
+.search-result:hover{background:#ffffff}
+.search-result strong{display:block;font-size:14px;font-weight:600}
+.search-result small{display:block;font-size:11px;color:#000000;margin-top:3px}
+.search-result-price{font-size:12px;white-space:nowrap;color:#000000}
+.product.search-selected{outline:2px solid #ffffff;outline-offset:3px;scroll-margin-top:22px}
+@media(max-width:700px){.nav{grid-template-columns:minmax(0,1fr) auto}.search-toggle{min-height:35px}.search-result{gap:10px}.search-result strong{font-size:13px}.search-result-price{font-size:11px}}
+.delivery-banner{flex-wrap:wrap}
+@media(max-width:700px){.delivery-banner{line-height:1.4}}
+.social-circle{color:white;border:2px solid #ffffff;text-decoration:none;transition:transform .15s}
+.social-circle svg{width:27px;height:27px}
+.social-circle:hover{transform:translateY(-2px)}
+.leaf-trail{position:absolute;width:100%}
+.leaf-trail i.foot-leaf{position:absolute;display:block;width:10px;height:6px;background:#ffffff;border-radius:100% 0;opacity:0;animation:leafFootFade 1.7s linear forwards}
+@keyframes leafFootFade{0%{opacity:0}12%,45%{opacity:.8}100%{opacity:0}}
+@media(max-width:700px){.social-circle svg{width:24px;height:24px}.leaf-trail i.foot-leaf{width:8px;height:5px;animation-duration:2.6s}}
+.mate-walk-sprite{display:block;height:100%;background-image:url('assets/mate-marron-pasos-v13-s.webp');background-repeat:no-repeat;background-size:300% 200%}
+.mate-whistle{position:absolute;left:82%;top:45%;font:11px Georgia,serif;color:#000000;opacity:0;animation:mateWhistle 2.8s ease-out infinite}
+.note-two{animation-delay:1.4s;font-size:9px}
+@keyframes mateTravel{from{left:0}to{left:calc(100% - 53px)}}
+@keyframes mateWhistle{0%{opacity:0;transform:translate(0,0)}18%{opacity:.85}75%,100%{opacity:0;transform:translate(15px,-13px)}}
+.social-circle{position:relative;overflow:hidden}
+@media(max-width:700px){@keyframes mateTravel{from{left:0}to{left:calc(100% - 41px)}}}
+.order-whatsapp{background:#000000;font-weight:600}
+.order-whatsapp:hover{background:#000000}
+.cart-subtotal,.cart-shipping{display:flex;justify-content:space-between;gap:12px;font-size:12px;margin-top:13px;color:#000000}
+.general-title{grid-template-columns:34% 66%;align-items:center}
+@media(max-width:700px){.general-title{grid-template-columns:41% 59%}}
+@font-face{font-family:'PuntoCourgette';src:url('assets/courgette.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.cover-heading .cover-motto{font:400 24px/1.28 'PuntoCourgette',cursive;max-width:285px}
+.ena-collection{background-image:url('assets/suplementos-trio-v17-s.webp')}
+@media(max-width:700px){.cover-heading .cover-motto{line-height:1.25;max-width:150px}}
+.writing-bee{position:absolute;width:35px;height:31px;left:0;top:0;opacity:0;will-change:transform}
+.bee-wing{transform-box:fill-box;transform-origin:center bottom;animation:beeWingFlap .16s ease-in-out infinite alternate}
+.wing-back{animation-delay:-.08s}
+@keyframes beeWingFlap{from{transform:scaleX(1)}to{transform:scaleX(.55) scaleY(.85)}}
+.bee-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:#000000;pointer-events:none;animation:beeTrailFade 1.6s ease-out forwards}
+@keyframes beeTrailFade{0%{opacity:.7}100%{opacity:0}}
+.motto-word{display:inline-block;white-space:nowrap}
+.motto-letter.unwritten{opacity:0}
+.motto-heart{color:#000000}
+@media(max-width:700px){.writing-bee{width:28px;height:25px}.bee-dot{width:2px;height:2px}}
+.brand-letter{font-style:inherit;transition:opacity .15s}
+.brand-letter.unwritten{opacity:0}
+.writing-pen{position:absolute;left:0;top:0;width:20px;height:37px;opacity:0;will-change:transform}
+@media(max-width:700px){.writing-pen{width:16px;height:30px}}
+/* Product photographs share the store’s warm gray surface and compact cards. */
+.supplement-product .product-photo{isolation:isolate;display:flex;align-items:center;justify-content:center}
+/* Clearly readable flavor and package size across every supplement. */
+.supplement-product .supp-variant{grid-column:1/-1;line-height:1.5}
+.supplement-product .supp-flavor{overflow-wrap:anywhere}
+.supplement-product .supp-weight{display:inline-block;white-space:nowrap}
+/* ===== Modelo v4: minimalista y flotante, claro ===== */
+:root{--f-bg:#ffffff;--f-surface:#ffffff;--f-ink:#000000;--f-muted:#000000;--f-line:rgba(0,0,0,0.07);--f-accent:#000000;--f-shadow:0 24px 60px -18px rgba(0,0,0,0.18);--f-shadow-sm:0 10px 30px -14px rgba(0,0,0,0.14)}
+body{color:var(--f-ink)!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+main{max-width:1120px;margin:0 auto;padding:0 24px 20px!important}
+h1,h2,h3{font-family:inherit!important}
+/* cabecera flotante */
+header{position:sticky;top:14px;z-index:60;padding:0 16px}
+header .nav{max-width:1000px;margin:0 auto;display:flex!important;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 20px!important;border:1px solid rgba(255,255,255,0.7);border-radius:999px;box-shadow:0 14px 40px -16px rgba(0,0,0,0.25)}
+.brand{font-weight:700!important;font-size:16px!important;text-decoration:none;display:flex;align-items:center;gap:9px}
+.header-bee{width:26px!important;height:26px!important;display:inline-grid;place-items:center}
+.header-bee img{width:100%;height:100%;object-fit:contain}
+.menu{display:flex;gap:4px;flex-wrap:wrap}
+.menu a{color:var(--f-muted);text-decoration:none;font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:999px;transition:background .2s,color .2s}
+.menu a:hover{color:var(--f-ink);background:rgba(0,0,0,0.05)}
+.header-actions{display:flex;align-items:center;gap:8px}
+.search-toggle{width:38px;height:38px;border-radius:999px!important;background:transparent!important;border:0!important;color:var(--f-ink)!important;display:grid;place-items:center}
+.search-toggle:hover{background:rgba(0,0,0,0.05)!important}
+.bag-button{border-radius:999px!important;padding:9px 16px!important;font-weight:600!important;font-size:13.5px}
+.bag-button span{border-radius:999px;padding:1px 7px;margin-left:4px}
+/* aviso de envío */
+.delivery-banner{font-size:12.5px;color:var(--f-muted)!important}
+/* inicio */
+.hero2 h1{line-height:.95}
+.hero2 .actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn:hover{transform:translateY(-2px)}
+.hero2 .stats{display:flex}
+.hero2 .stats div{display:flex;flex-direction:column;gap:2px}
+.hero2 .stats strong{font-size:14px;font-weight:600}
+.hero2 .stats span{font-size:12.5px;color:var(--f-muted)}
+.hero-media:hover .cover-granola{transform:translate(-6px,-8px)!important}
+.hero-media:hover .cover-yerba{transform:translate(-4px,8px)!important}
+/* categorías del inicio */
+#categorias{display:grid!important}
+.collection-tile{text-decoration:none;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.collection-tile:hover{transform:translateY(-6px);box-shadow:var(--f-shadow)!important}
+.collection-tile h2{font-weight:600!important}
+/* páginas de producto */
+section:not(#home){max-width:1120px;margin:0 auto;padding:56px 0 72px}
+.breadcrumb{color:var(--f-muted)!important;text-decoration:none;font-size:13.5px;display:inline-block;margin-bottom:18px}
+.breadcrumb:hover{color:var(--f-ink)!important}
+.catalog-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:34px;flex-wrap:wrap}
+.catalog-head h1{font-size:clamp(36px,5vw,56px)!important;line-height:1.02;margin:6px 0 10px}
+.catalog-head .intro,.intro{color:var(--f-muted)!important;margin:0;font-size:15.5px}
+.section-kicker{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--f-muted);font-weight:600}
+.grid{display:grid!important}
+.product{flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.product:hover{transform:translateY(-6px);box-shadow:var(--f-shadow)!important}
+.product-info{flex-direction:column;flex:1}
+.price{font-weight:700}
+.price small{font-weight:500}
+.add:hover{transform:translateY(-1px)}
+.add:disabled{cursor:not-allowed}
+.category{text-decoration:none;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.category:hover{transform:translateY(-6px);box-shadow:var(--f-shadow)}
+.supp-grid{display:grid!important}
+.inner-enter{font-weight:600}
+/* diálogos */
+dialog{background:rgba(255,255,255,0.96)!important;color:var(--f-ink)!important;border:0!important;border-radius:28px!important;box-shadow:0 40px 90px -20px rgba(0,0,0,0.35)!important;padding:26px!important}
+dialog::backdrop{background:rgba(0,0,0,0.28);}
+.dialog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.dialog-header h2{font-size:19px!important;margin:0;font-weight:600}
+.close{background:var(--f-bg)!important;border:0!important;color:var(--f-ink)!important;border-radius:999px;width:34px;height:34px}
+/* reseñas y contacto */
+.review-card{border-radius:20px!important}
+/* pie */
+.foot-links a:hover{color:var(--f-ink)}
+/* botones flotantes */
+.floating-social{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:40}
+.social-circle{border-radius:999px;display:grid;place-items:center;box-shadow:var(--f-shadow)}
+.social-circle img{width:24px;height:24px}
+/* móvil */
+@media (max-width:900px){.menu{display:none}}
+@media (max-width:560px){main{padding:0 18px 20px!important}header{padding:0 12px}header .nav{padding:8px 8px 8px 16px!important}}
+.whatsapp-circle{background:#ffffff!important}
+.whatsapp-circle img{filter:brightness(0) invert(1)}
+.hero2 .stats{flex-wrap:nowrap!important}
+.hero2 .stats div{min-width:0}
+@media (max-width:560px){.hero2 .stats{flex-wrap:wrap!important}}
+/* ===== Primera vista: todas las categorías visibles sin scroll ===== */
+.hero2{grid-template-columns:1fr 1fr!important}
+.hero2 h1{font-size:clamp(40px,5vw,62px)!important}
+.hero2 .actions{margin-top:16px!important}
+#categorias{grid-template-columns:repeat(6,1fr)!important}
+.collection-tile p{line-height:1.35}
+header{margin-top:10px!important}
+@media (max-width:1000px){#categorias{grid-template-columns:repeat(3,1fr)!important}}
+@media (max-width:700px){.hero2{grid-template-columns:1fr!important}}
+@media (max-width:700px){.collection-tile p{display:none!important}.hero2 h1{font-size:44px!important}.hero2 .stats{display:none!important}.hero2 .actions{margin-top:12px!important}}
+/* portada con abeja y mate originales */
+.general-title{position:relative!important}
+.cover-heading{position:relative;z-index:1}
+.cover-motto{font-size:15px!important;color:var(--f-muted)!important;margin:0 0 6px!important}
+.cover-flight{position:absolute!important;inset:0;pointer-events:none;z-index:5;overflow:hidden}
+.mascot-lane{position:relative!important;pointer-events:none}
+.hero-copy .mascot-lane{max-width:360px}
+.general-title,.cover-heading{outline:0!important}
+/* ===== Ronda: Instagram, reseñas compactas, título en mayúsculas, portada a página completa ===== */
+.instagram-circle{background:linear-gradient(135deg,#ffffff 0%,#c89454 25%,#000000 55%,#000000 80%,#000000 100%)!important}
+.social-circle{width:50px;height:50px}
+/* reseñas: más compactas */
+.reviews-section{border-radius:22px!important}
+.reviews-heading{gap:12px!important}
+.reviews-heading h2{font-weight:600!important;margin:4px 0 0!important}
+.review-card{padding:14px!important}
+/* portada a página completa, difuminada hacia el resto */
+#home{position:relative;isolation:isolate}
+#home::before{position:absolute;left:50%;top:-120px;width:100vw;height:760px;-webkit-mask-image:linear-gradient(#000000 35%,transparent 100%);z-index:-1;pointer-events:none}
+#home::after{position:absolute;left:50%;top:-120px;width:100vw;height:760px;z-index:-1;pointer-events:none}
+@media (max-width:700px){#home::before,#home::after{height:560px;top:-90px}}
+/* ===== Ronda: legibilidad de botones y aviso de envío, fondo más visible ===== */
+#home::before{opacity:.85!important}
+/* ===== Ronda: botones de agregar legibles, envío gratis destacado, reseñas compactas ===== */
+.add,.product .add,.coffee-options .add,button.add{font-size:13px!important;font-weight:600!important;min-height:36px!important;line-height:1.2!important;padding:9px 16px!important;border-radius:999px!important;border:0!important;box-shadow:none!important;white-space:nowrap;justify-self:end}
+.product .add{grid-column:2;grid-row:4;align-self:center}
+.coffee-options .add{width:100%!important;justify-self:stretch!important;margin-top:8px!important}
+.add:disabled{background:#ffffff!important;color:#000000!important}
+.add:not(:disabled):hover{background:#000000!important}
+.price small{font-size:11px!important}
+.free-shipping{display:inline-block;margin-right:4px}
+/* reseñas compactas */
+.reviews-section p,.review-list p,#reviewLoadStatus{font-size:13px!important;margin:6px 0!important;color:var(--f-muted)!important}
+.reviews-heading .section-kicker{font-size:10.5px!important}
+.reviews-heading h2{font-size:16px!important}
+.review-details summary,.review-details{font-size:13px!important}
+.review-details summary{padding:8px 12px!important}
+.review-form h3{font-size:14px!important}
+.delivery-banner{position:relative!important;z-index:30!important}
+/* aviso de envío: sin fondo, en negro y en mayúsculas */
+.delivery-banner{text-transform:uppercase;letter-spacing:.02em}
+.free-shipping{letter-spacing:.03em}
+/* ===== Abejita: escritura más lenta, rastro de palitos blancos, amigas ===== */
+.bee-dot{background:#ffffff!important;width:2px!important;height:9px!important;border-radius:2px!important;box-shadow:0 0 2px rgba(0,0,0,0.35);animation:beeTrailFade 2.2s ease-out forwards!important}
+@media (prefers-reduced-motion:reduce){.friend-bee{display:none}}
+/* ===== Abejitas en toda la página y en cada pestaña ===== */
+@media (prefers-reduced-motion:reduce){.meadow-bee{display:none}}
+/* reseñas resumidas: título, botón y hasta 3 opiniones */
+.reviews-heading{margin-bottom:6px!important}
+.reviews-section .review-list:not(.reviews-expanded) .review-card:nth-child(n+4){display:none!important}
+.reviews-section .review-list{gap:8px!important;grid-template-columns:repeat(3,1fr)!important}
+.reviews-section .review-card p{font-size:12.5px!important;margin:4px 0!important}
+.reviews-section .review-details{margin-top:8px!important}
+/* ===== Casilleros difuminados en beige (categorías, productos, reseñas) ===== */
+:root{--beige-glass:rgba(255,255,255,0.62);--beige-edge:rgba(255,255,255,0.55)}
+.collection-tile,.product,.category,.reviews-section{border:1px solid var(--beige-edge)!important;box-shadow:0 18px 40px -22px rgba(0,0,0,0.35)!important}
+.collection-tile .product-stage,.product-photo:not(.budin-photo),.category-photo{background:transparent!important}
+.collection-tile:hover,.product:hover,.category:hover{background:rgba(255,255,255,0.8)!important}
+/* mate más chiquito y menos abejas */
+.review-details[open] summary{margin-bottom:10px}
+/* reseña simple: estrellas tocables */
+.star-pick{display:flex;gap:6px;margin:6px 0 2px}
+.star-pick button{font-size:30px;line-height:1;background:none!important;border:0!important;color:#ffffff!important;padding:0 2px;transition:transform .15s,color .15s;min-height:0!important}
+.star-pick button.on{color:#ad7233!important}
+.star-pick button:hover{transform:scale(1.15)}
+.review-form label[for="reviewName"],.review-form label[for="reviewText"]{font-size:13px;color:var(--f-ink)}
+/* títulos y nombres en mayúsculas */
+h1,h2,h3,.brand,.collection-tile h2,.product-info h2,.category-info h2,.dialog-header h2,.catalog-head h1,.reviews-heading h2,.cover-heading h1,.review-card strong,.contact h2{text-transform:uppercase!important;letter-spacing:.01em!important}
+/* aviso de envío: dos renglones + cajita en moto */
+.delivery-banner{display:flex!important;align-items:center!important;gap:12px!important;text-align:left!important;padding:6px 16px!important;margin:10px 0 0!important}
+.ship-text{display:flex;gap:1px}
+.ship-text strong{color:#000000!important;font-weight:800!important;line-height:1.2}
+@media (prefers-reduced-motion:reduce){.ship-moto,.lid-group{animation:none}}
+.delivery-banner .ship-text strong{font-size:13px!important}
+.delivery-banner .ship-text{flex-direction:column!important}
+.delivery-banner .free-shipping{text-decoration:underline!important;text-underline-offset:3px}
+.delivery-banner{justify-content:center!important}
+.delivery-banner .ship-text{align-items:center!important;text-align:center!important}
+.leaf-trail i.foot-leaf{width:16px!important;height:10px!important}
+.leaf-trail i.foot-leaf{width:13px!important;height:8px!important}
+.walking-mate{width:56px!important;height:56px!important}
+.hero-collections .collection-tile h2::after{content:"+";position:absolute;top:50%;border-radius:50%;background:#000000;font:400 18px/26px system-ui,sans-serif;text-align:center;box-shadow:0 4px 10px -4px rgba(0,0,0,0.35)}
+.hero-collections .collection-tile h2::after{right:4px}
+.hero-collections .collection-tile h2{hyphens:none!important}
+.hero-collections .collection-tile h2::after{width:24px!important;height:24px!important;line-height:24px!important;font-size:16px!important}
+@keyframes legSwing{from{transform:rotate(-4deg) scaleY(.94)}to{transform:rotate(4deg) scaleY(.94)}}
+.walking-mate.seated .mate-walk-sprite{animation:legSwing 1.6s ease-in-out infinite alternate!important;background-position:50% 100%!important;transform-origin:50% 92%}
+.general-title h1 span{margin-left:.22em!important}
+.general-title .cover-motto{margin-left:auto!important;margin-right:auto!important;width:100%}
+.writing-pen{display:none!important}
+.general-title .cover-flight,.general-title .bee-dot,.general-title .writing-bee{display:none!important}
+.hero-collections .collection-tile h2::after{display:none!important}
+.hero-collections .collection-tile::after{content:"+";justify-self:end}
+.hero-collections .collection-tile::after{align-items:center;justify-content:center}
+.collection-tile:hover,.product:hover,.category:hover{transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-6px)!important}
+/* botones en blanco */
+.bag-button,.add,.hero-collections .collection-tile::after,.btn.primary,.category-enter,.collection-tile .category-enter{background:#ffffff!important;border:1px solid #ffffff!important;box-shadow:0 8px 18px -12px rgba(0,0,0,0.35)!important}
+.bag-button span,.add span{background:#ffffff!important}
+.bag-button:hover,.add:hover,.btn.primary:hover{background:#ffffff!important;color:#000000!important}
+.add:not(:disabled),.add:not(:disabled):hover{background:#ffffff!important;color:#000000!important;border:1px solid #ffffff!important}
+.grams-control .grams-plus,.grams-control .grams-plus:hover{background:#ffffff!important;color:#000000!important;border:1px solid #ffffff!important}
+/* productos que sobresalen de la tarjeta */
+.collection-tile:hover .collection-image{transform:translateZ(44px) scale(1.05)}
+.inner-enter,.inner-enter:hover,.category-enter:hover{background:#ffffff!important;color:#000000!important;border:1px solid #ffffff!important}
+#home::before{-webkit-mask-image:linear-gradient(#000000 0,#000000 42%,transparent 100%)!important}
+/* paleta verde salvia */
+:root{--f-bg:#ffffff;--f-surface:#ffffff;--f-ink:#000000;--f-muted:#000000;--f-accent:#ad7233}
+.collection-tile,.product,.category,.reviews-section,#reviewsSection,.reviews,.review-card{background-color:#ffffff!important}
+.collection-tile:hover,.product:hover,.category:hover{background:#ffffff!important}
+.bag-button,.add:not(:disabled),.btn.primary,.category-enter,.inner-enter{color:#000000!important}
+#home::before{filter:saturate(1.05) brightness(1.03)!important}
+/* categorías estilo tarjeta con foto completa */
+.hero-collections .collection-tile{position:relative!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important;overflow:hidden!important;background:#000000!important;border:0!important}
+.hero-collections .collection-tile .product-stage{position:absolute!important;width:100%!important;height:100%!important;z-index:0}
+.hero-collections .collection-tile .collection-image{position:absolute!important;width:100%!important;height:100%!important;background-size:cover!important;background-position:center!important}
+.hero-collections .collection-tile::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-collections .collection-tile h2{position:relative;z-index:2;color:#ffffff!important;margin:0 52px 4px 14px!important;line-height:1.2!important}
+.hero-collections .collection-tile p{position:relative;z-index:2;color:rgba(255,255,255,0.82)!important;margin:0 52px 16px 14px!important}
+.hero-collections .collection-tile::after{position:absolute!important;right:12px!important;bottom:12px!important;z-index:3!important;width:34px!important;height:34px!important;border-radius:50%!important;font:400 22px/34px system-ui,sans-serif!important;text-align:center!important;box-shadow:0 6px 16px -6px rgba(0,0,0,0.45)!important}
+.hero-collections .collection-tile{min-height:0!important;aspect-ratio:1/1!important;border-radius:10px!important}
+.hero-collections .collection-tile p{font-size:10.5px!important;margin-bottom:12px!important}
+.hero-collections .collection-tile::before{background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,0.92) 100%)!important}
+.hero-collections .collection-tile::after{display:none!important}
+.general-title{justify-content:center!important}
+body{background:radial-gradient(1000px 600px at 90% -10%,#ffffff 0%,transparent 60%),#ffffff!important}
+.general-title h1{font-family:Georgia,'Times New Roman',serif!important;font-weight:500!important}
+.hero-collections .collection-tile h2{font-family:Georgia,serif!important;font-size:15px!important}
+/* Nitidez: sin giros 3D ni escalados sobre las fotos (causaban borrosidad) */
+.collection-tile,.product,.category{transform:none!important;transform-style:flat!important}
+.collection-tile:hover,.product:hover,.category:hover{transform:translateY(-4px)!important}
+.hero-collections .collection-tile .collection-image,.product .product-stage .product-image,.product-stage img,.collection-tile:hover .collection-image{transform:none!important;filter:none!important;-webkit-mask-image:none!important;mask-image:none!important}
+/* Productos de cada categoría: mismas tarjetas chicas que las categorías del inicio */
+section:not(#home) .grid{gap:12px!important}
+.product:hover{transform:translateY(-4px)!important;box-shadow:0 12px 22px -12px rgba(0,0,0,0.4)!important}
+.product-info{gap:4px!important}
+@media(max-width:700px){.product p{display:none!important}.product .price small{display:none!important}}
+/* Subcategorías (suplementos, comida): mismo tamaño chico que las categorías del inicio */
+section:not(#home) .categories,section:not(#home) .supp-grid{gap:12px!important;justify-content:stretch!important}
+section:not(#home) .category{box-shadow:0 6px 14px -10px rgba(0,0,0,0.35)!important}
+@media(max-width:700px){section:not(#home) .category .category-info p{display:none!important}}
+/* Pre-entreno: mismo fondo gris que el resto de las fotos de suplementos */
+.prewar-photo{background-image:url('assets/prewar-escena-v2-s.webp')!important}
+/* Inicio: abeja dorada arriba y PUNTO SANO centrado debajo */
+.hero2{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+.hero-copy{width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important}
+.hero-copy .general-title{min-height:0!important;width:100%}
+.hero2 .stats,.hero2 .actions{justify-content:center!important}
+@media(max-width:700px){.hero-collections .collection-tile h2{font-size:11px!important;overflow-wrap:break-word!important;letter-spacing:0!important;line-height:1.15!important;margin:0 7px 6px!important}}
+@media(prefers-reduced-motion:reduce){.hero-media{animation:none!important}}
+/* Inicio sin la foto de fondo: solo crema detrás de la abeja y el título */
+#home::before,#home::after{display:none!important}
+/* Sin la abejita chiquita que vuela por la página */
+.friend-bee,.writing-bee,.cover-flight,.bee-dot{display:none!important}
+/* Mate caminando: que vuelva a recorrer la franja completa */
+.mascot-lane{align-self:stretch!important}
+.walking-mate{animation:mateTravel 26s linear infinite!important}
+/* (desactivado) Abeja: el cuerpo queda fijo y solo las alas (recortadas por forma, sin tocar la imagen) se abren y cierran */
+.hero-media::before{position:absolute;inset:0;background:url('assets/abeja-dorada-v3.png') center/contain no-repeat;clip-path:path(evenodd,'M0 0 L300 0 L300 300 L0 300 Z M126.0 103.8 L126.0 151.5 L90.0 159.0 L48.0 156.0 L0.0 120.0 L0.0 57.6 L42.0 60.0 L72.0 70.5 L102.0 83.1 L126.0 96.0 Z M174.0 103.8 L174.0 151.5 L210.0 159.0 L252.0 156.0 L300.0 120.0 L300.0 57.6 L258.0 60.0 L228.0 70.5 L198.0 83.1 L174.0 96.0 Z');pointer-events:none}
+.hero-media .bw{inset:0}
+@media(prefers-reduced-motion:reduce){.hero-media .bw i{animation:none!important}}
+/* Abeja: tamaño y posición del bloque de la abeja */
+.hero-media{order:-1;position:relative!important}
+/* Abeja completa y quieta, sin recortes ni capas */
+.hero-media::before,.hero-media::after,.hero-media .bw{display:none!important}
+/* Orden general: menos aire muerto, bloques alineados y un solo pie de página */
+.hero2{padding:14px 0 16px!important;gap:0!important}
+.hero-media{width:300px!important;height:300px!important;margin:0 auto!important}
+.general-title h1{margin:0!important}
+.hero-copy .cover-motto,.hero-copy .cover-guidance{display:none!important}
+.hero2 .stats{margin-top:14px!important;gap:36px!important}
+.mascot-lane{margin:6px 0 0!important;height:34px!important}
+#categorias{margin-top:18px!important;gap:14px!important}
+.reviews-section{margin-top:18px!important;padding:20px 22px!important}
+@media(max-width:700px){.hero-media{width:240px!important;height:240px!important}.hero2{padding:8px 0 12px!important}.hero2 .stats{gap:18px!important;margin-top:10px!important}}
+/* Huellas justo debajo de los pies del mate */
+.leaf-trail{bottom:-12px!important;height:14px!important}
+/* Productos y subcategorías: el texto va encima de la foto, igual que las categorías del inicio */
+section:not(#home) .product{position:relative!important;aspect-ratio:1/1!important;background:#ffffff!important;overflow:hidden!important;border:0!important;border-radius:10px!important}
+section:not(#home) .product .product-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+section:not(#home) .product .product-photo img{width:100%!important;height:100%!important}
+section:not(#home) .product .product-info{position:absolute!important;left:0;right:0;bottom:0;color:#ffffff!important;z-index:2}
+section:not(#home) .product h2{font:400 13px/1.2 Georgia,serif!important;margin:0 0 3px!important}
+section:not(#home) .product p{color:rgba(255,255,255,0.85)!important;font-size:10px!important;margin:0 0 4px!important}
+section:not(#home) .product .price{font-size:14px!important;margin:2px 0 4px!important}
+section:not(#home) .product .price small{color:rgba(255,255,255,0.8)!important}
+section:not(#home) .product .add{color:#000000!important;height:26px!important;min-height:26px!important;font-size:10px!important;padding:0 10px!important;border-radius:20px!important}
+section:not(#home) .product .add:disabled{background:rgba(255,255,255,0.35)!important;color:#ffffff!important}
+section:not(#home) .product .tier-info{color:rgba(255,255,255,0.8)!important}
+section:not(#home) .product .supp-variant,section:not(#home) .product select{color:#000000!important}
+section:not(#home) .category{position:relative!important;aspect-ratio:1/1!important;overflow:hidden!important;border:0!important;border-radius:10px!important;background:#ffffff!important}
+section:not(#home) .category .category-photo,section:not(#home) .category .supp-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+section:not(#home) .category .category-info{position:absolute!important;left:0;right:0;bottom:0;color:#ffffff!important;z-index:2}
+section:not(#home) .category .category-info h2{font:400 13px/1.2 Georgia,serif!important}
+section:not(#home) .category .category-info p{color:rgba(255,255,255,0.85)!important}
+section:not(#home) .category .inner-enter{color:#000000!important;border-radius:20px!important}
+/* Las fotos de producto se ven completas (sin recortar los envases) */
+section:not(#home) .product .product-photo img{object-fit:contain!important;background:#ffffff!important}
+section:not(#home) .product .product-photo{background-color:#ffffff!important}
+section:not(#home) .category .category-photo,section:not(#home) .category .supp-photo{background-size:contain!important;background-color:#ffffff!important}
+/* Preparaciones: el degradado oscuro ya no tapa la foto; solo una franja chica abajo y texto más compacto */
+section:not(#home) .category .category-info{padding:22px 8px 8px!important;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.72) 100%)!important}
+section:not(#home) .category .category-info h2{font-size:12px!important;line-height:1.15!important;margin:0 0 2px!important}
+section:not(#home) .category .category-info p{font-size:9.5px!important;line-height:1.25!important;margin:0 0 5px!important}
+section:not(#home) .category .inner-enter{font-size:9.5px!important;height:22px!important;min-height:22px!important;padding:0 7px!important;white-space:nowrap!important}
+@media(max-width:700px){section:not(#home) .category .category-info{padding:16px 5px 5px!important}section:not(#home) .category .category-info h2{font-size:10px!important}section:not(#home) .category .inner-enter{font-size:8px!important;height:20px!important;min-height:20px!important;padding:0 5px!important}}
+/* Preparaciones: tarjetas un poco más grandes en escritorio (4 por fila) */
+@media(min-width:1001px){section#food .supp-grid,section#food .categories{justify-content:start!important}}
+/* Velocidad: sin desenfoque de fondo en tarjetas, menú y banner (era muy pesado al tocar o desplazar) */
+header .nav{background:rgba(255,255,255,0.96)!important}
+/* Abeja: alas separadas que se abren y cierran despacio; el cuerpo queda quieto encima */
+.hero-media .bw{display:block!important;position:absolute!important;top:50%;aspect-ratio:1/1;transform:translateY(-50%);pointer-events:none}
+.hero-media .bw i{position:absolute;inset:0;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;will-change:transform}
+.hero-media .bw-l i{background-image:url('assets/abeja3-ala-izq.webp')!important;transform-origin:42.8% 40.8%!important;animation:alaIzq 2.4s ease-in-out infinite alternate!important}
+.hero-media .bw-r i{background-image:url('assets/abeja3-ala-der.webp')!important;transform-origin:57.2% 40.8%!important;animation:alaDer 2.4s ease-in-out infinite alternate!important}
+.hero-media .bw-body{z-index:2}
+.hero-media .bw-body i{background-image:url('assets/abeja3-cuerpo.webp')!important}
+@keyframes alaIzq{from{transform:rotate(0deg)}to{transform:rotate(-12deg)}}
+@keyframes alaDer{from{transform:rotate(0deg)}to{transform:rotate(12deg)}}
+/* Preparaciones: vuelven las fotos de cada cuadro (budín, alfajor, bizcochuelo y chipa) */
+section#food .category .category-photo img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover!important}
+section#food .bizcochuelo-category-photo{background-image:url('assets/bizcochuelo-marmolado-v14-s.webp')!important;background-position:center!important;background-repeat:no-repeat!important}
+section#food .chipa-category-photo{background-image:url('assets/chipa-cuadrada-v16-s.webp')!important;background-position:center!important;background-repeat:no-repeat!important}
+/* Dentro de cada categoría: fotos más grandes (4 por fila en compu, 3 en tablet, 2 en celular) */
+@media(min-width:1001px){section#catalog #products.grid,section:not(#home) div.grid,section:not(#home) div.supp-grid,section:not(#home) div.categories,section#food div.supp-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}}
+@media(min-width:701px) and (max-width:1000px){section#catalog #products.grid,section:not(#home) div.grid,section:not(#home) div.supp-grid,section:not(#home) div.categories,section#food div.supp-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:700px){section#catalog #products.grid,section:not(#home) div.grid,section:not(#home) div.supp-grid,section:not(#home) div.categories,section#food div.supp-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}}
+/* Suplementos: misma estética que el resto (sin recuadro blanco en sabor y peso, texto blanco sobre la foto) */
+section:not(#home) .supplement-product .supp-variant{margin:0 0 4px!important}
+section:not(#home) .supplement-product .supp-variant *{color:rgba(255,255,255,0.88)!important;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important}
+section:not(#home) .supplement-product .supp-variant .supp-flavor{font-weight:600!important;color:#ffffff!important}
+section:not(#home) div.supp-grid{margin-bottom:16px!important}
+/* Productos: degradado más suave para que se vea bien la foto (como en las categorías) */
+section:not(#home) .product .product-info{padding:26px 9px 9px!important;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0.72) 100%)!important}
+section:not(#home) .product .product-info h2,section:not(#home) .product .product-info .price,section:not(#home) .product .product-info p,section:not(#home) .product .supp-variant{text-shadow:0 1px 3px rgba(0,0,0,0.45)}
+section:not(#home) .supplement-product .product-photo img{object-fit:cover!important}
+.mate-walk-sprite{animation:mateWalkFrames 1.2s steps(1,end) infinite}
+@keyframes mateWalkFrames{0%,100%{background-position:0% 0%}16.666%{background-position:50% 0%}33.333%{background-position:100% 0%}50%{background-position:0% 100%}66.666%{background-position:50% 100%}83.333%{background-position:100% 100%}}
+.budin-photo[aria-label^="Budín de Almendras,"]::before{background-image:url('assets/budin-almendras-v1.webp')!important;background-size:cover!important;background-position:center!important}
+/* Fondo de vidrio: foto cálida difuminada detrás de todo y paneles semitransparentes encima.
+   La foto se difumina una sola vez (capa fija), así los paneles no necesitan desenfoque propio y la página sigue liviana. */
+:root{--glass:rgba(255,255,255,0.46);--glass-strong:rgba(255,255,255,0.66);--glass-edge:rgba(255,255,255,0.6);--glass-shadow:0 18px 40px -24px rgba(0,0,0,0.45)}
+body{background:#ffffff!important}
+body::after{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;background:url('assets/punto-sano-portada-editorial-v10-s.webp') center/cover no-repeat;filter:blur(28px) saturate(1.1) brightness(1.04)}
+header .nav{background:rgba(255,255,255,0.6)!important;border:1px solid var(--glass-edge)!important}
+#reviewsSection.reviews-section,.granola-options,.coffee-card,.playful-preview{background:var(--glass)!important;border:1px solid var(--glass-edge)!important;box-shadow:var(--glass-shadow)!important}
+.review-card,.included-base,.granola-total,.granola-progress,.coffee-options{background:var(--glass-strong)!important;border:1px solid var(--glass-edge)!important}
+.ingredient-selected{background:rgba(255,255,255,0.7)!important}
+.hero2 .stats{background:var(--glass);border:1px solid var(--glass-edge);border-radius:22px;padding:12px 26px;box-shadow:var(--glass-shadow)}
+/* Paleta: solo negro, blanco y el dorado de la abeja (brillo #e7c696, dorado #c89454, sombra #ad7233) */
+:root{--gold:#c89454;--gold-deep:#ad7233;--gold-light:#e7c696;--gold-metal:linear-gradient(180deg,#e7c696 0%,#d6ae77 35%,#c89454 60%,#ad7233 100%)}
+body::after{filter:grayscale(1) blur(28px) brightness(1.08) contrast(.95)}
+.whatsapp-circle,.instagram-circle{background:#000000!important;border:1px solid var(--gold)!important}
+.whatsapp-circle img{filter:brightness(0) invert(1)!important}
+.order-whatsapp{background:#000000!important;color:#ffffff!important}
+.order-whatsapp:hover{background:var(--gold-deep)!important}
+.review-stars,.star-pick button.on{color:var(--gold)!important}
+.delivery-banner .free-shipping{text-decoration-color:var(--gold)!important}
+.leaf-trail i.foot-leaf{background:#ffffff!important}
+.general-title h1 span{color:#000000!important}
+/* Solo negro, blanco y dorado: la foto del fondo queda apenas como una sombra suave sobre blanco */
+body::after{opacity:.2}
+.leaf-trail i.foot-leaf{background:var(--gold)!important}
+/* Fondo: campo de margaritas, fijo detrás de toda la página */
+.hero-media{filter:drop-shadow(0 16px 14px rgba(0,0,0,.28))}
+body.on-home .general-title h1,body.on-home .general-title h1 span,body.on-home .delivery-banner strong,body.on-home .delivery-banner .free-shipping,body.on-home .delivery-banner span{color:#ffffff!important;text-shadow:0 2px 10px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.6)!important}
+/* Categorías del inicio sin caja: los productos recortados flotan sobre el fondo */
+.hero-collections .collection-tile,.hero-collections .collection-tile:hover{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+.hero-collections .collection-tile::before{display:none!important}
+.hero-collections .collection-tile .collection-image{background-size:contain!important;background-position:center 35%!important;filter:drop-shadow(0 12px 12px rgba(0,0,0,.35))!important}
+.hero-collections .alfajor-collection{background-image:url('assets/artesanales-gris-v12-web-recorte.webp')!important}
+.hero-collections .ena-collection{background-image:url('assets/suplementos-trio-v17-recorte.webp')!important}
+.hero-collections .yerba-collection{background-image:url('assets/yerba-manzanilla-gris-v12-web-recorte.webp')!important}
+.hero-collections .granola-collection{background-image:url('assets/granola-gris-v12-web-recorte.webp')!important}
+.hero-collections .mix-collection{background-image:url('assets/mix-gris-v12-recorte.webp')!important}
+.hero-collections .coffee-collection{background-image:url('assets/cafe-gris-v12-recorte.webp')!important}
+.hero-collections .collection-tile h2,.hero-collections .collection-tile p{color:#ffffff!important;text-shadow:0 2px 8px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.7)!important}
+.hero-collections .collection-tile{aspect-ratio:4/5!important}
+.hero-collections .collection-tile .product-stage{top:0!important;bottom:auto!important;height:64%!important}
+.hero-collections .collection-tile .collection-image{background-position:center bottom!important}
+/* Cada categoría con su cuadrado: la foto original al 50% y el producto recortado encima al 100% */
+.hero-collections .collection-tile{aspect-ratio:auto!important;min-height:0!important;padding-top:calc(100% + 10px)!important;justify-content:flex-start!important}
+.hero-collections .collection-tile .product-stage{height:auto!important;aspect-ratio:1/1!important;bottom:auto!important;border-radius:14px!important;overflow:hidden!important;background:transparent!important;border:1px solid rgba(255,255,255,.45)!important}
+.hero-collections .collection-tile .product-stage::before{content:"";position:absolute;inset:0;z-index:0;opacity:.5;background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-collections .collection-tile .product-stage:has(.alfajor-collection)::before{background-image:url('assets/artesanales-gris-v12-web-s.webp')}
+.hero-collections .collection-tile .product-stage:has(.ena-collection)::before{background-image:url('assets/suplementos-trio-v17-s.webp')}
+.hero-collections .collection-tile .product-stage:has(.yerba-collection)::before{background-image:url('assets/yerba-manzanilla-gris-v12-web-s.webp')}
+.hero-collections .collection-tile .product-stage:has(.granola-collection)::before{background-image:url('assets/granola-gris-v12-web-s.webp')}
+.hero-collections .collection-tile .product-stage:has(.mix-collection)::before{background-image:url('assets/mix-gris-v12-s.webp')}
+.hero-collections .collection-tile .product-stage:has(.coffee-collection)::before{background-image:url('assets/cafe-gris-v12-s.webp')}
+.hero-collections .collection-tile .collection-image{z-index:1;background-size:cover!important;background-position:center!important;filter:none!important}
+.miel-img{float:right;width:130px;height:auto;margin:-10px -6px 4px 12px;filter:drop-shadow(0 10px 10px rgba(0,0,0,.25))}
+@media(max-width:700px){.miel-img{width:92px;margin:-6px -4px 4px 8px}}
+/* Botón de volver bien visible */
+.breadcrumb,.supp-back{display:inline-flex!important;align-items:center;gap:8px;padding:10px 20px!important;border-radius:999px!important;background:#000000!important;color:#ffffff!important;border:1px solid var(--gold)!important;font-size:15px!important;font-weight:700!important;text-decoration:none!important;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)!important;margin-bottom:22px!important}
+.breadcrumb:hover,.supp-back:hover{background:var(--gold-deep)!important;color:#ffffff!important}
+.breadcrumb,.supp-back,.breadcrumb:hover,.supp-back:hover{background:#ffffff!important;color:#000000!important;border:0!important;text-shadow:none!important}
+/* Fondo del mix de frutos secos (80% visible, 20% transparente) */
+body.on-mix::after{inset:0;background:url('assets/fondo-pistachos.jpg') center/cover no-repeat;filter:none;opacity:.8}
+/* Fondo de suplementos (80% visible, 20% transparente) */
+body.on-supp::after{inset:-20px;background:url('assets/fondo-suplementos-2.jpg') center 45%/cover no-repeat;filter:blur(0.95px);opacity:.8}
+/* Fondo de granola (borroso, 20% transparente) */
+body.on-granola::after{inset:-20px;background:url('assets/fondo-granola.jpg') center 45%/cover no-repeat;filter:blur(0.95px);opacity:.8}
+/* Fondo de Huella Herbal (borroso, 20% transparente) */
+body.on-huella::after{inset:-20px;background:url('assets/fondo-huella-herbal.webp') center 40%/cover no-repeat;filter:blur(0.95px);opacity:.8}
+/* Fondo de preparaciones artesanales (borroso, 20% transparente) */
+body.on-prep::after{inset:-20px;background:url('assets/fondo-preparaciones-2.jpg') center 45%/cover no-repeat;filter:blur(0.95px);opacity:.8}
+#food{position:relative}
+#food .catalog-head{position:relative;z-index:1}
+#food .supp-grid{position:relative;z-index:1}
+.batidor-img{position:absolute;right:14px;top:-4px;width:140px;height:auto;z-index:0;filter:drop-shadow(0 12px 12px rgba(0,0,0,.25));pointer-events:none}
+@media(max-width:700px){.batidor-img{width:105px;right:0;top:0}}
+/* Fondo de café (borroso, 20% transparente) */
+body.on-cafe::after{inset:-20px;background:url('assets/fondo-cafe.jpg') center/cover no-repeat;filter:blur(0.95px);opacity:.8}
+/* Tarjetas internas igual que las del inicio: cuadrado con la foto original al 50%, producto recortado encima y texto abajo */
+section:not(#home) .product,section:not(#home) .category,section:not(#home) .product:hover,section:not(#home) .category:hover{aspect-ratio:auto!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important;}
+section:not(#home) .product::before,section:not(#home) .category::before{display:none!important}
+section:not(#home) .product .product-photo,section:not(#home) .category .category-photo,section:not(#home) .category .supp-photo{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:1/1!important;border-radius:14px!important;overflow:hidden!important;border:1px solid rgba(255,255,255,.45)!important;background-color:transparent!important;flex:none!important}
+section:not(#home) .product .product-photo img,section:not(#home) .category .category-photo img{background:transparent!important}
+section:not(#home) .product .product-info,section:not(#home) .category .category-info{position:static!important;inset:auto!important;background:none!important;padding:10px 2px 0!important;color:#ffffff!important}
+section:not(#home) .product .product-info h2,section:not(#home) .category .category-info h2,section:not(#home) .product .product-info p,section:not(#home) .category .category-info p,section:not(#home) .product .price,section:not(#home) .product .price small,section:not(#home) .product .tier-info,section:not(#home) .product .supp-variant,section:not(#home) .product .supp-variant *{color:#ffffff!important;text-shadow:0 2px 8px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.7)!important}
+/* capas: original al 50% debajo, recorte encima */
+.gp{isolation:isolate}
+.gp.gp::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;background-image:var(--orig)!important;background-size:var(--size,cover)!important;background-position:inherit!important;background-repeat:no-repeat!important;opacity:.5!important;z-index:0!important}
+.gp.gp::after{content:""!important;display:block!important;position:absolute!important;inset:0!important;background-image:var(--cut,none)!important;background-size:var(--size,cover)!important;background-position:inherit!important;background-repeat:no-repeat!important;z-index:1!important;pointer-events:none}
+.gp img{position:relative;z-index:1}
+.category[href="#budines"] .category-photo{background-position:center 72%!important}
+.category[href="#budines"] .category-photo img{object-position:center 72%!important}
+/* Textos sobre las fotos de fondo de cada página: blancos con sombra */
+body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .catalog-head h1,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .catalog-head .section-kicker,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .catalog-head .intro,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .photo-note,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .delivery-banner strong,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .delivery-banner .free-shipping,body:is(.on-mix,.on-supp,.on-granola,.on-cafe,.on-huella,.on-prep) .delivery-banner span{color:#ffffff!important;text-shadow:0 2px 10px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.65)!important}
+/* Menos espacio vacío entre bloques */
+main>section:not(#home){padding-top:14px!important;padding-bottom:24px!important}
+.breadcrumb,.supp-back{margin-bottom:12px!important}
+.catalog-head{margin-bottom:16px!important;gap:8px!important}
+.catalog-head h1{margin:2px 0 4px!important}
+.catalog-head .intro{margin-top:2px!important}
+.section-kicker{margin-bottom:4px!important}
+.photo-note{margin:12px 0 0!important}
+.supp-grid{margin-bottom:8px!important}
+section:not(#home) .grid,section:not(#home) .supp-grid{row-gap:18px!important}
+.delivery-banner{margin-top:6px!important;padding-top:2px!important;padding-bottom:2px!important}
+.hero2{padding-top:6px!important;padding-bottom:8px!important}
+#categorias{margin-top:10px!important}
+#reviewsSection.reviews-section{margin-top:14px!important}
+.granola-builder{gap:16px!important}
+.granola-options h2{margin-top:0!important}
+.included-base{margin-bottom:14px!important}
+.granola-total{margin:12px 0!important}
+/* Fondo propio de Alfajores (reemplaza al de preparaciones) */
+body.on-prep.on-alfajores::after{background-image:url('assets/fondo-alfajores-2.jpg');background-position:center 45%}
+/* Buscador 20% más transparente */
+#productSearch{background:rgba(255,255,255,.58)!important}
+#productSearch #productSearchInput{background:rgba(255,255,255,.56)!important}
+.category[href="#alfajores"] .category-photo{background-position:center 62%!important}
+.category[href="#alfajores"] .category-photo img{object-position:center 62%!important}
+section#catalog article[data-product-id="a-maicena"] .product-photo img{object-fit:cover!important;object-position:center 55%!important}
+section#catalog article[data-product-id="a-maicena"] .product-photo{background-position:center 55%!important}
+body.on-home::after{inset:-20px;background:url('assets/fondo-atardecer.jpg') center 22%/cover no-repeat;filter:blur(0.95px);opacity:1}
+input,textarea,select{background:rgba(255,255,255,0.7)!important}
+dialog{background:rgba(255,255,255,0.72)!important;border:1px solid var(--glass-edge)!important}
+/* ===== Minimalista: mismos contenidos, menos peso visual =====
+   Fondos de cada página muy suaves (difuminados y lavados en blanco), textos oscuros sin franjas ni sombras,
+   tarjetas planas sin bordes ni sombras, botones finos. body:not(#nx) solo sube la prioridad sobre las reglas anteriores. */
+:root{--min-ink:#1a1a1a;--min-muted:#6b6b6b;--min-line:rgba(0,0,0,.09);--min-panel:rgba(255,255,255,.78)}
+body:not(#nx)::after{filter:blur(16px) saturate(.85)!important;z-index:-2!important}
+body:not(#nx)::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:rgba(250,249,246,.82)}
+body:not(#nx).on-home::before{background:rgba(250,249,246,.62)}
+/* textos en tinta oscura, sin sombras */
+body:not(#nx) .delivery-banner strong,body:not(#nx) .delivery-banner .free-shipping,body:not(#nx) .delivery-banner span,body:not(#nx) .general-title h1,body:not(#nx) .general-title h1 span,body:not(#nx) .catalog-head h1,body:not(#nx) .catalog-head .intro,body:not(#nx) .catalog-head .section-kicker,body:not(#nx) .photo-note{color:var(--min-ink)!important;text-shadow:none!important}
+body:not(#nx) .catalog-head .section-kicker,body:not(#nx) .catalog-head .intro,body:not(#nx) .photo-note{color:var(--min-muted)!important}
+body:not(#nx) .delivery-banner .ship-text strong{font-size:10.5px!important;font-weight:600!important;letter-spacing:.1em!important;color:var(--min-muted)!important}
+body:not(#nx) .delivery-banner .free-shipping{color:var(--min-ink)!important;text-decoration:none!important}
+/* cabecera y botones finos */
+body:not(#nx) header .nav{background:rgba(255,255,255,.88)!important;box-shadow:0 6px 20px -14px rgba(0,0,0,.25)!important;border:1px solid var(--min-line)!important}
+body:not(#nx) .bag-button,body:not(#nx) .add:not(:disabled),body:not(#nx) .inner-enter,body:not(#nx) .breadcrumb,body:not(#nx) .supp-back{background:#ffffff!important;color:var(--min-ink)!important;border:1px solid var(--min-line)!important;box-shadow:none!important}
+body:not(#nx) .breadcrumb,body:not(#nx) .supp-back{padding:7px 14px!important;font-size:13px!important;font-weight:600!important}
+/* inicio */
+body:not(#nx) .hero-media{width:220px!important;height:220px!important}
+body:not(#nx) .hero2 .stats{background:none!important;border:0!important;box-shadow:none!important}
+body:not(#nx) .hero2 .stats span{color:var(--min-muted)!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage{border:0!important;border-radius:16px!important}
+body:not(#nx) .hero-collections .collection-tile .collection-image{filter:none!important}
+body:not(#nx) .hero-collections .collection-tile h2{color:var(--min-ink)!important;text-shadow:none!important;background:none!important;padding:0!important;margin:0 2px 2px!important;font:600 12px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;letter-spacing:.03em!important;overflow-wrap:normal!important;word-break:keep-all!important;hyphens:none!important}
+body:not(#nx) .hero-collections .collection-tile p{color:var(--min-muted)!important;text-shadow:none!important;margin:0 2px!important}
+/* tarjetas planas */
+body:not(#nx) .collection-tile,body:not(#nx) .product,body:not(#nx) .category,body:not(#nx) .collection-tile:hover,body:not(#nx) .product:hover,body:not(#nx) .category:hover{box-shadow:none!important}
+body:not(#nx) .collection-tile:hover,body:not(#nx) .product:hover,body:not(#nx) .category:hover{transform:translateY(-2px)!important}
+body:not(#nx) section:not(#home) .product .product-photo,body:not(#nx) section:not(#home) .category .category-photo,body:not(#nx) section:not(#home) .category .supp-photo{border:0!important;border-radius:16px!important}
+body:not(#nx) section:not(#home) .product .product-info,body:not(#nx) section:not(#home) .category .category-info{background:none!important;padding:8px 2px 0!important;margin:0!important}
+body:not(#nx) section:not(#home) .product .product-info h2,body:not(#nx) section:not(#home) .category .category-info h2{color:var(--min-ink)!important;text-shadow:none!important;font:600 12.5px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;letter-spacing:.03em!important}
+body:not(#nx) section:not(#home) .product .product-info p,body:not(#nx) section:not(#home) .category .category-info p,body:not(#nx) section:not(#home) .product .price small,body:not(#nx) section:not(#home) .product .tier-info,body:not(#nx) section:not(#home) .product .supp-variant,body:not(#nx) section:not(#home) .product .supp-variant *{color:var(--min-muted)!important;text-shadow:none!important;font-weight:500!important}
+body:not(#nx) section:not(#home) .product .price{color:var(--min-ink)!important;text-shadow:none!important}
+body:not(#nx) section:not(#home) .product .add:disabled{background:rgba(0,0,0,.05)!important;color:var(--min-muted)!important}
+/* paneles (granola, mix, café, reseñas): blancos y planos */
+body:not(#nx) #reviewsSection.reviews-section,body:not(#nx) .granola-options,body:not(#nx) .coffee-card,body:not(#nx) .playful-preview{background:var(--min-panel)!important;border:1px solid var(--min-line)!important;box-shadow:none!important}
+body:not(#nx) .review-card,body:not(#nx) .included-base,body:not(#nx) .granola-total,body:not(#nx) .granola-progress,body:not(#nx) .coffee-options{background:rgba(255,255,255,.7)!important;border:1px solid var(--min-line)!important}
+body:not(#nx) .catalog-head h1{font-size:clamp(26px,7vw,44px)!important;font-weight:600!important}
+/* Sin fondos marrones: las páginas internas van sobre blanco liso (el inicio conserva su fondo) */
+body:not(#nx):not(.on-home)::after{display:none!important}
+body:not(#nx):not(.on-home)::before{background:#faf9f6!important}
+.photo-note:empty{display:none!important}
+/* Botones que eran negros, ahora blancos con ícono y texto oscuro */
+body:not(#nx) .whatsapp-circle,body:not(#nx) .instagram-circle{background:#ffffff!important;border:1px solid var(--min-line)!important}
+body:not(#nx) .whatsapp-circle img{filter:brightness(0)!important;opacity:.85}
+body:not(#nx) .instagram-circle svg{stroke:#1a1a1a!important}
+body:not(#nx) .instagram-circle svg circle[fill]{fill:#1a1a1a!important}
+body:not(#nx) .order-whatsapp,body:not(#nx) .order-whatsapp:hover{background:#ffffff!important;color:#1a1a1a!important;border:1px solid #1a1a1a!important;font-size:14px!important}
+body:not(#nx) #toast{background:#ffffff!important;color:#1a1a1a!important;border:1px solid var(--min-line);box-shadow:0 8px 20px -12px rgba(0,0,0,.35)}
+/* Fondo liso en toda la página (sin la foto difuminada que se veía con manchas) */
+body:not(#nx)::after{display:none!important}
+body:not(#nx)::before,body:not(#nx).on-home::before{background:#faf9f6!important}
+/* Suplementos: foto del producto sola, sobre blanco */
+body:not(#nx) #supplements .product-photo,body:not(#nx) #supplements .supp-photo{background-color:#ffffff!important}
+body:not(#nx) #supplements .product-photo img{object-fit:contain!important;background:#ffffff!important}
+body:not(#nx) #supplements .supp-photo{background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}
+body:not(#nx) #supplements .protein-photo{background-image:url('assets/supp-whey-1-limpia.webp')!important}
+body:not(#nx) #supplements .creatine-photo{background-image:url('assets/supp-creatine-0-limpia.webp')!important}
+body:not(#nx) #supplements .prewar-photo{background-image:url('assets/prewar-fruit-punch-limpia.webp')!important}
+/* Inicio: tarjeta de Preparaciones artesanales con la ilustración de la cocinera */
+body:not(#nx) .hero-collections .collection-tile .alfajor-collection{background-image:url('assets/cocinera-base-dorada.webp')!important;background-size:100% 100%!important;background-position:0 0!important;overflow:hidden}
+/* Cocinera: los brazos son capas aparte que giran desde el codo; la sal cae del salero */
+.alfajor-collection .ck{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;will-change:transform}
+.alfajor-collection .ck-der{background-image:url('assets/cocinera-brazo-der-dorado.webp');transform-origin:68.1% 51.1%;animation:ckSacude 2.6s ease-in-out infinite}
+.alfajor-collection .ck-izq{background-image:url('assets/cocinera-brazo-izq-dorado.webp');transform-origin:10.6% 62.6%;animation:ckSostiene 3.4s ease-in-out infinite}
+@keyframes ckSacude{0%,52%,100%{transform:rotate(0)}8%{transform:rotate(-9deg)}16%{transform:rotate(2deg)}24%{transform:rotate(-9deg)}32%{transform:rotate(2deg)}40%{transform:rotate(-8deg)}48%{transform:rotate(1deg)}}
+@keyframes ckSostiene{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg) translateY(-1%)}}
+.alfajor-collection .ck-sal{position:absolute;inset:0;-webkit-mask-image:url('assets/cocinera-mascara-sal.png');mask-image:url('assets/cocinera-mascara-sal.png');-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.alfajor-collection .ck-sal b{position:absolute;left:59.5%;top:43%;width:2.5px;height:2.5px;animation-timing-function:ease-in;border-radius:50%;background:#2a2a2a;opacity:0;animation-name:ckSal;animation-duration:2.6s;animation-iteration-count:infinite}
+.alfajor-collection .ck-sal b:nth-child(2){animation-delay:.12s}
+.alfajor-collection .ck-sal b:nth-child(3){animation-delay:.3s;margin-left:3px}
+.alfajor-collection .ck-sal b:nth-child(4){animation-delay:.45s;margin-left:-3px}
+.alfajor-collection .ck-sal b:nth-child(5){animation-delay:.62s}
+.alfajor-collection .ck-sal b:nth-child(6){animation-delay:.8s}
+@keyframes ckSal{0%{opacity:0;top:43%;left:59.5%}4%{opacity:.9;top:43.5%}55%{opacity:.85;top:66%;left:60.5%}60%,100%{opacity:0;top:69%;left:60.7%}}
+@media(prefers-reduced-motion:reduce){.alfajor-collection .ck,.alfajor-collection .ck-sal b{animation:none!important}}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.alfajor-collection)::before{display:none!important}
+/* Inicio: Café premium con la taza al atardecer (verdes pasados a dorado) y vapor animado que sale de la tarjeta */
+body:not(#nx) .hero-collections .collection-tile .coffee-collection{background-image:url('assets/cafe-corazon.webp')!important;background-size:100% 100%!important;background-position:0 0!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.coffee-collection)::before{display:none!important}
+.cafe-vapor{position:absolute;pointer-events:none;z-index:4}
+/* Inicio: Granola con la foto del bowl dorado */
+body:not(#nx) .hero-collections .collection-tile .granola-collection{background-image:url('assets/granola-bowl.webp')!important;background-size:100% 100%!important;background-position:0 0!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.granola-collection)::before{display:none!important}
+/* Mix de frutos secos: vuelve su foto de fondo (pistachos), con un velo claro para que se lean los textos */
+html body:not(#nx).on-mix::after{display:block!important;inset:0!important;background:url('assets/fondo-pistachos.jpg') center/cover no-repeat!important;filter:none!important;opacity:1!important;z-index:-2!important}
+html body:not(#nx).on-mix::before{background:rgba(250,249,246,.35)!important}
+html body:not(#nx).on-mix .catalog-head>div{background:rgba(255,255,255,.72);padding:10px 14px;border-radius:14px}
+/* Inicio: Mix de frutos secos con la foto del bowl de madera */
+body:not(#nx) .hero-collections .collection-tile .mix-collection{background-image:url('assets/mix-bowl.webp')!important;background-size:100% 100%!important;background-position:0 0!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.mix-collection)::before{display:none!important}
+/* Inicio: Suplementos con la foto de los medidores con polvo */
+body:not(#nx) .hero-collections .collection-tile .ena-collection{background-image:url('assets/suplementos-vaso.webp')!important;background-size:100% 100%!important;background-position:0 0!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.ena-collection)::before{display:none!important}
+/* Inicio: Huella Herbal con el mate y el paquete al atardecer */
+body:not(#nx) .hero-collections .collection-tile .yerba-collection{background-image:url('assets/huella-atardecer.webp')!important;background-size:100% 100%!important;background-position:0 0!important}
+body:not(#nx) .hero-collections .collection-tile .product-stage:has(.yerba-collection)::before{display:none!important}
+/* ===== Ronda de prolijidad (1, 2, 3, 5, 6, 8, 11, 12, 16, 17, 18, 19) ===== */
+/* 1: botones de redes más chicos y aire abajo para que no tapen productos */
+body:not(#nx) .floating-social{right:12px;bottom:14px;gap:8px}
+body:not(#nx) .social-circle{width:38px!important;height:38px!important}
+body:not(#nx) .social-circle img,body:not(#nx) .social-circle svg{width:19px!important;height:19px!important}
+main{padding-bottom:110px!important}
+/* 2: aviso de envío en un solo renglón legible */
+body:not(#nx) .delivery-banner{padding:4px 12px!important}
+body:not(#nx) .delivery-banner .ship-text{flex-direction:row!important;flex-wrap:wrap;justify-content:center;gap:0 6px!important}
+body:not(#nx) .delivery-banner .ship-text strong{font-size:11.5px!important;letter-spacing:.06em!important;color:#3a3a3a!important}
+@media(max-width:420px){body:not(#nx) .delivery-banner .ship-text strong{font-size:10px!important;letter-spacing:.02em!important}}
+body:not(#nx) .delivery-banner .ship-line2::before{content:"· ";color:#3a3a3a}
+/* 3: la cabecera no tapa títulos ni la bolsita de Granola/Mix */
+main>section{scroll-margin-top:400px}
+@media(max-width:700px){body:not(#nx) .granola-builder{display:block!important}body:not(#nx) .granola-visual.playful-preview{margin-bottom:14px;background:#ffffff!important;border:1px solid #e6e6e6;border-radius:16px}body:not(#nx) .playful-preview{top:78px!important}}
+body:not(#nx) header .nav{background:rgba(255,255,255,.96)!important}
+/* 5: precio y botón siempre alineados abajo en cada tarjeta */
+body:not(#nx) section:not(#home) .product .product-info{display:flex!important;flex-direction:column!important;flex:1 1 auto!important}
+body:not(#nx) section:not(#home) .product .product-info .price{margin-top:auto!important}
+body:not(#nx) section:not(#home) .product .product-info .add{align-self:flex-start}
+body:not(#nx) section:not(#home) .product .product-info .price,body:not(#nx) section:not(#home) .product .product-info .tier-info{align-self:flex-start!important;text-align:left!important}
+body:not(#nx) #food .catalog-head h1{padding-right:64px}
+/* 6: títulos de sección un poco más chicos */
+body:not(#nx) .catalog-head h1{font-size:clamp(21px,5.6vw,34px)!important;line-height:1.1!important}
+/* Carrito: botones + y − bien visibles (los signos se dibujan con dos barritas, así se ven igual en todos los celulares) */
+html body .qty button{position:relative;width:34px!important;height:34px!important;padding:0!important;border-radius:50%!important;background:#1a1a1a!important;border:0!important;font-size:0!important;color:transparent!important;-webkit-text-fill-color:transparent!important;-webkit-appearance:none;appearance:none;box-shadow:0 3px 8px -4px rgba(0,0,0,.45)}
+html body .qty button::before,html body .qty button::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:2.2px;border-radius:2px;background:#ffffff;transform:translate(-50%,-50%)}
+html body .qty button:first-child::after{display:none}
+html body .qty button:last-child::after{transform:translate(-50%,-50%) rotate(90deg)}
+html body .qty button:disabled{background:#cfcfcf!important;box-shadow:none}
+html body .qty span{min-width:20px;text-align:center;font-weight:700;font-size:16px}
+/* Aviso de arriba: lugar + dos renglones de envío */
+html body .delivery-banner .ship-text.ship-v2{display:flex!important;flex-direction:column!important;align-items:center!important;gap:1px!important;text-align:center}
+html body .delivery-banner .ship-v2 .ship-place{font-size:11px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase;color:#1a1a1a!important}
+html body .delivery-banner .ship-v2 .ship-row{font-size:11.5px!important;font-weight:500;letter-spacing:.01em!important;text-transform:none!important;color:#555!important;text-shadow:none!important}
+html body .delivery-banner .ship-v2 .ship-row b{color:#1a1a1a;font-weight:700}
+/* Alfajores: descripción corta visible también en el celular */
+html body #catalog article[data-product-id^="a-"] .product-info p{display:block!important;font-size:11px!important;font-weight:500!important;line-height:1.35!important;color:#666!important;margin:0 0 4px!important}
+/* ===== Más vida: frase y botón, banner de promo, pie, etiquetas, animación al carrito, dorado en botones ===== */
+:root{--gold-btn:linear-gradient(180deg,#f3e2c4 0%,#e7c696 100%)}
+.hero-cta-row{display:flex!important;flex-direction:column!important;align-items:center!important;gap:10px!important;margin-top:22px!important}
+.hero-tag{margin:0;font:400 17px/1.35 'PuntoCourgette',cursive;color:#5a4330;text-align:center;max-width:320px}
+.hero-btn{border:0;border-radius:999px;padding:11px 26px;font-weight:700;font-size:14px;letter-spacing:.04em;color:#1a1a1a;background:linear-gradient(180deg,#e7c696 0%,#c89454 100%);box-shadow:0 10px 22px -12px rgba(150,100,40,.7);cursor:pointer}
+.hero-btn:active{transform:translateY(1px)}
+.promo-banner{display:flex;align-items:center;gap:14px;margin:26px 0 22px;padding:10px 14px 10px 10px;border-radius:18px;text-decoration:none;color:#1a1a1a;background:#ffffff;border:1px solid #e7c696;box-shadow:0 10px 24px -18px rgba(0,0,0,.35);overflow:hidden;position:relative}
+.promo-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(231,198,150,.22) 45%,transparent 60%);transform:translateX(-100%);animation:promoBrillo 4.5s ease-in-out infinite}
+@keyframes promoBrillo{0%,55%{transform:translateX(-100%)}85%,100%{transform:translateX(100%)}}
+html,body{overflow-x:clip}
+.hero2{padding-bottom:4px!important}
+body:not(#nx) #categorias{margin-top:0!important;row-gap:22px!important}
+.promo-img{flex:none;width:76px;height:76px;border-radius:14px;background:url('assets/alfajor-almendras-v3.webp') center/cover}
+.promo-txt{display:flex;flex-direction:column;gap:1px;min-width:0;color:#1a1a1a}
+.promo-txt small{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#b8873f}
+.promo-txt strong{font-size:15px;line-height:1.2}
+.promo-txt span{font-size:12px;color:#666}
+.promo-txt b{color:#1a1a1a}
+.promo-go{margin-left:auto;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#1a1a1a;color:#ffffff;font-weight:700}
+.site-foot{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:28px 16px 90px;margin-top:10px;border-top:1px solid rgba(200,148,84,.35);color:#555;font-size:12.5px}
+.site-foot .foot-bee{width:40px;height:40px;object-fit:contain;margin-bottom:2px}
+.site-foot strong{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#1a1a1a}
+.site-foot .foot-links{display:flex;gap:16px;margin:8px 0 4px}
+.site-foot .foot-links a{color:#1a1a1a;font-weight:600;text-decoration:none;border-bottom:1px solid #c89454}
+.site-foot small{color:#999}
+main{padding-bottom:0!important}
+article.product{position:relative}
+.badge{position:absolute;top:8px;left:8px;z-index:3;padding:3px 9px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 4px 10px -4px rgba(0,0,0,.35)}
+.badge-nuevo{background:#1a1a1a;color:#f3e2c4}
+.badge-promo{background:linear-gradient(180deg,#e7c696,#c89454);color:#1a1a1a}
+html body .add:not(:disabled),html body .add:not(:disabled):hover,html body section:not(#home) .product .add:not(:disabled){background:var(--gold-btn)!important;border:1px solid #c89454!important;color:#1a1a1a!important}
+html body .add:not(:disabled):active{filter:brightness(.95)}
+.fly-item{position:fixed;z-index:2000;border-radius:12px;background-size:cover;background-position:center;pointer-events:none;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
+@keyframes bagBump{0%,100%{transform:scale(1)}35%{transform:scale(1.18)}65%{transform:scale(.96)}}
+.bag-bump{animation:bagBump .5s ease}
+@media(prefers-reduced-motion:reduce){.promo-banner::after{animation:none}}
+/* Café: mismo fondo translúcido que Mix (foto de café de fondo) */
+html body:not(#nx).on-cafe::after{display:block!important;inset:0!important;background:url('assets/fondo-cafe.jpg') center/cover no-repeat!important;filter:none!important;opacity:1!important;z-index:-2!important}
+html body:not(#nx).on-cafe::before{background:rgba(250,249,246,.4)!important}
+html body:not(#nx).on-cafe .catalog-head>div{background:rgba(255,255,255,.72);padding:10px 16px;border-radius:14px}
+html body:not(#nx).on-cafe .coffee-single{background:rgba(255,255,255,.78)!important;border:1px solid rgba(255,255,255,.7)!important;border-radius:22px!important;box-shadow:0 18px 40px -22px rgba(0,0,0,.35)!important}
+/* Granola: los copos de maíz están adentro de la bolsa */
+.base-flk{position:absolute;height:auto;opacity:.95;filter:drop-shadow(0 2px 2px rgba(120,70,10,.25));pointer-events:none}
+/* Huellas del mate en verde clarito */
+html body .leaf-trail i.foot-leaf{background:#9fd49a!important}
+/* Yerba de coco: su descripción se ve también en el celular */
+body:not(#nx) section:not(#home) article[data-product-id="y-coco"] .product-info p{display:block!important;font-size:11px!important;margin:0 0 4px!important}
+/* 11: sin reseñas todavía, solo el botón para escribir una */
+#reviewsSection.no-reviews .reviews-heading,#reviewsSection.no-reviews #reviewLoadStatus{display:none!important}
+body:not(#nx) #reviewsSection.no-reviews{padding:10px 14px!important;text-align:center}
+#reviewsSection.no-reviews .review-details{border-top:0!important;padding-top:0!important;margin-top:0!important}
+/* 12: batidor más chico */
+body:not(#nx) .batidor-img{width:150px!important;top:-14px!important;right:6px!important}
+@media(max-width:700px){body:not(#nx) .batidor-img{width:112px!important;right:-4px!important;top:-6px!important}body:not(#nx) #food .catalog-head h1{padding-right:104px}}
+/* Batidor y miel animados: la imagen se mueve y un lienzo encima dibuja el chocolate y la miel que caen */
+.fx-canvas{position:absolute;pointer-events:none;z-index:2}
+.included-base{position:relative}
+.batidor-img,.miel-img{will-change:transform}
+/* 16: selector de sabor en suplementos */
+.supp-label{font-size:11px!important;color:var(--min-muted)!important;margin:0 0 3px!important;text-shadow:none!important}
+.supp-select{min-height:32px!important;padding:5px 8px!important;font-size:12.5px!important;border:1px solid var(--min-line)!important;border-radius:10px!important;background:#fff!important;margin-bottom:6px;color:#1a1a1a!important}
+/* 17: los cinco casilleros de 100 g entran completos */
+body:not(#nx) .granola-slots{gap:4px!important}
+body:not(#nx) .granola-slots span{min-width:0;padding:6px 0!important;font-size:9.5px!important;white-space:nowrap}
+/* 18: solo se marca lo que no tiene stock */
+.stock-status:empty{display:none}
+/* 19: café con el mismo estilo liviano que el resto */
+body:not(#nx) .coffee-card{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible}
+body:not(#nx) .coffee-photo{border-radius:16px}
+body:not(#nx) .coffee-options{background:transparent!important;border:0!important;padding:10px 2px 0!important;gap:3px 8px!important}
+body:not(#nx) .coffee-options h2{font:600 13px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;letter-spacing:.03em!important;margin:0 0 4px!important}
+body:not(#nx) .coffee-options label{font-size:11px!important;color:var(--min-muted)!important;margin:2px 0 0!important}
+body:not(#nx) .coffee-options select{min-height:32px!important;padding:5px 8px!important;font-size:12.5px!important;border:1px solid var(--min-line)!important;border-radius:10px!important;background:#fff!important}
+body:not(#nx) .coffee-options .coffee-price{font-size:15px!important;margin:6px 0 0!important}
+body:not(#nx) .coffee-options .add{width:auto!important;justify-self:start!important;font-size:12px!important;min-height:30px!important;padding:6px 14px!important}
+/* Granola y Mix: bolsa de plástico transparente real; los ingredientes se ven a través y los brillos del plástico van encima */
+body:not(#nx) .playful-preview img.pouch-photo{display:none!important}
+body:not(#nx) .mix-pouch{filter:drop-shadow(0 14px 14px rgba(60,40,20,.22))}
+body:not(#nx) .mix-pouch::before{content:"";position:absolute;inset:0;z-index:0;border-radius:6px 6px 10px 10px;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(240,232,220,.55))}
+body:not(#nx) .mix-pouch::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:url('assets/bolsa-real.webp') center/100% 100% no-repeat}
+body:not(#nx) .pouch-contents{inset:12% 6% 4%!important;background:none!important;border-radius:4px 4px 12px 12px!important}
+body:not(#nx) .pouch-contents:after{display:none!important}
+body:not(#nx) .pouch-label{box-shadow:0 1px 3px rgba(0,0,0,.12)}
+/* Alfajores: se aclara que el precio es por unidad */
+html body .product .price small.cu{display:inline!important;font-weight:600!important}
+/* botones de redes más chicos */
+body:not(#nx) .social-circle{width:44px!important;height:44px!important;box-shadow:0 6px 16px -10px rgba(0,0,0,.4)!important}
+/* textos claros que no se veían sobre blanco */
+.ingredient-name small,.grams-value span,.review-author,.note,.review-public-note,.item-name small,.star-hint{color:#555555!important}
+.granola-slots span{border-color:#9a9a9a!important;color:#333333}
+.star-pick button{color:#c8c8c8!important}
+.star-pick button.on{color:var(--gold)!important}
+.preview-weight{color:var(--min-ink)!important}
+.ingredient-cost{color:#1a1a1a!important;font-weight:600}
+.granola-options>p,.granola-total p,.included-base p,.base-price-row{color:#333333!important}
+@media(max-width:700px){body:not(#nx) .hero-media{width:170px!important;height:170px!important}body:not(#nx) .hero-collections .collection-tile h2{font-size:10.5px!important;letter-spacing:.02em!important}body:not(#nx) section:not(#home) .category .category-info h2{font-size:11px!important}}
+</style><header><div class="nav"><a class="brand" href="#inicio" aria-label="Punto Sano, inicio"><span class="header-bee" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/abeja-emblema-v3-web.webp" alt=""></span>Punto Sano</a><nav class="menu" aria-label="Categorías"><a href="#comida">Preparaciones</a><a href="#suplementos">Suplementos</a><a href="#huella-herbal">Huella Herbal</a><a href="#granola">Granola</a><a href="#mix">Mix</a><a href="#cafe">Café</a></nav><div class="header-actions"><button type="button" class="search-toggle" onclick="openSearch()" aria-label="Buscar productos" title="Buscar productos"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg></button><button class="bag-button" onclick="openBag()">Mi carrito <span id="count">0</span></button></div></div></header><aside class="delivery-banner" aria-label="Envíos en Bahía Blanca"><div class="ship-text ship-v2"><strong class="ship-place">Bahía Blanca · Argentina</strong><span class="ship-row">Envíos gratis a todo el país en compras superiores a <b class="free-from">$50.000</b></span></div></aside><main><section id="home"><div class="hero2"><div class="hero-copy"><div class="general-title"><div class="cover-heading"><h1>Punto <span>Sano</span></h1><p class="cover-motto">Una buena alimentación es importante para tener una buena vida... ♥</p></div><div class="cover-flight" aria-hidden="true"><svg class="writing-bee" viewBox="0 0 70 62" xmlns="http://www.w3.org/2000/svg"><g class="bee-wing wing-back"><ellipse cx="24" cy="19" rx="9" ry="15" transform="rotate(-32 24 19)" fill="#ffffff" stroke="#000000" stroke-width="2"/></g><g class="bee-wing wing-front"><ellipse cx="35" cy="16" rx="8" ry="14" transform="rotate(21 35 16)" fill="#ffffff" stroke="#000000" stroke-width="2"/></g><path d="m11 38-6 4 8 1" fill="#000000"/><ellipse cx="31" cy="36" rx="20" ry="13" transform="rotate(-12 31 36)" fill="#c89454" stroke="#000000" stroke-width="2"/><path d="M22 25q6 11 5 23M34 23q6 10 6 22" fill="none" stroke="#000000" stroke-width="5"/><circle cx="51" cy="29" r="11" fill="#c89454" stroke="#000000" stroke-width="2"/><path d="M47 19q-1-9 5-10m2 10q2-8 7-8" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"/><circle cx="51" cy="27" r="1.7" fill="#000000"/><circle cx="57" cy="27" r="1.7" fill="#000000"/><path d="M51 33q3 3 6-1" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/></svg><svg class="writing-pen" viewBox="0 0 26 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 35 17 5q2-4 5-2l1 1q2 1 0 5L12 39Z" fill="#c89454" stroke="#000000" stroke-width="1.5"/><path d="m6 35-2 10 8-6" fill="#ffffff" stroke="#000000" stroke-width="1.5"/><path d="m4 45 3-4" stroke="#000000" stroke-width="2"/><path d="m18 8 4 2M15 12l-7 20" stroke="#ffffff" stroke-width="2"/></svg></div></div><div class="mascot-lane" aria-hidden="true"><div class="leaf-trail"></div><div class="walking-mate"><span class="mate-walk-sprite"></span><span class="mate-whistle note-one">♪</span><span class="mate-whistle note-two">♫</span></div></div><div class="actions"></div><div class="stats"><div><strong>Sin TACC</strong><span>Todo el catálogo</span></div><div><strong>Envío gratis</strong><span>En Bahía Blanca desde <span class="free-from">$30.000</span></span></div><div><strong>Pedidos por WhatsApp</strong><span>Coordinamos entrega y pago</span></div></div></div><div class="hero-media" aria-hidden="true"><div class="bw bw-l"><i></i></div><div class="bw bw-r"><i></i></div><div class="bw bw-body"><i></i></div></div></div><a class="promo-banner" href="#alfajores"><span class="promo-img" aria-hidden="true"></span><span class="promo-txt"><small>Promo</small><strong>Media docena de alfajores</strong><span>Desde <b id="promoDesde">$13.500</b> · todos sin TACC</span></span><span class="promo-go" aria-hidden="true">→</span></a><div class="hero-collections" id="categorias"><a href="#comida" class="collection-tile"><div class="product-stage"><div class="collection-image alfajor-collection"><span class="ck-sal" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b></span><i class="ck ck-izq"></i><i class="ck ck-der"></i></div></div><h2>Preparaciones artesanales</h2><p>Budines, alfajores y bizcochuelos sin TACC</p></a><a href="#suplementos" class="collection-tile"><div class="product-stage"><div class="collection-image ena-collection"></div></div><h2>Suplementos</h2><p>Proteínas y creatinas</p></a><a href="#huella-herbal" class="collection-tile"><div class="product-stage"><div class="collection-image yerba-collection"></div></div><h2>Huella Herbal</h2><p>Yerbas compuestas</p></a><a href="#granola" class="collection-tile"><div class="product-stage"><div class="collection-image granola-collection"></div></div><h2>Granola</h2><p>Con miel y vainilla · Armala a tu gusto</p></a><a href="#mix" class="collection-tile"><div class="product-stage"><div class="collection-image mix-collection"></div></div><h2>Mix de frutos secos</h2><p>Elegí ingredientes y gramos</p></a><a href="#cafe" class="collection-tile"><div class="product-stage"><div class="collection-image coffee-collection"></div></div><h2>Café</h2><p>Brasilero y colombiano</p></a></div></section><section id="coffee" hidden><a class="breadcrumb" href="#inicio">← Volver al inicio</a><div class="coffee-grid"><article class="coffee-card coffee-single"><img class="coffee-hero" src="assets/cafe-coffee-completa.webp" alt="Café premium en grano y molido" loading="lazy" decoding="async"><div class="coffee-options"><label for="coffee-origin">Origen</label><select id="coffee-origin" onchange="updateCoffee()"><option value="brasil">Brasilero</option><option value="colombia">Colombiano</option></select><label for="coffee-weight">Presentación</label><select id="coffee-weight" onchange="updateCoffee()"><option value="500">500 g</option><option value="1000">1 kg</option></select><label for="coffee-form">¿Cómo lo querés?</label><select id="coffee-form" onchange="updateCoffee()"><option value="grano">En grano</option><option value="molido">Molido</option></select><p class="price coffee-price" id="coffee-price">$32.000</p><button type="button" class="add" onclick="addCoffee()">Agregar al carrito</button></div></article></div>
+</section><section id="mix" hidden><a class="breadcrumb" href="#inicio">← Volver al inicio</a><div class="catalog-head"><div><span class="section-kicker">A TU GUSTO</span><h1>Armá tu mix de frutos secos</h1><p class="intro">De 100 a 500 g por pedido.</p></div></div><div class="granola-builder"><div class="granola-visual playful-preview"><div class="bag-scene" id="mixScene" aria-label="Vista ilustrativa de tu mezcla"><div class="mix-pouch" id="mixPouch"><img loading="lazy" decoding="async" class="pouch-photo" src="assets/bolsa-centro-claro-v8-web-s.webp" alt=""><div class="pouch-contents"><div class="base-pieces" id="mixBasePieces"></div><div class="bag-pieces" id="mixBagPieces"></div></div><div class="pouch-label"><span class="pouch-heart" aria-hidden="true">♥</span><img loading="lazy" decoding="async" class="pouch-bee" src="assets/abeja-emblema-v3-web.webp" alt=""><strong>Punto Sano</strong><span>Mix de frutos secos</span></div></div><span class="bag-table-shadow"></span></div><p class="preview-weight" id="mixPreviewWeight">Tu bolsa está vacía</p></div><div class="granola-options"><h2>Elegí tus ingredientes</h2><p>Usá + y −: 100 g por toque.</p><div id="mixIngredients"></div><div class="granola-total" aria-live="polite"><p id="mixWeight" hidden>Elegí los ingredientes de tu mix.</p><div><span>Total</span><strong id="mixTotal">$0</strong></div><p id="mixNotice"></p></div><button class="add" id="mixAdd" onclick="addMix()" disabled>Agregar mi mix al carrito</button></div></div></section><section id="granola" hidden><a class="breadcrumb" href="#inicio">← Volver al inicio</a><div class="catalog-head"><div><span class="section-kicker">A TU GUSTO</span><h1>Armá tu granola</h1><p class="intro">Elegí tus agregados para una bolsa de 1 kg.</p></div></div><div class="granola-builder"><div class="granola-visual playful-preview"><div class="bag-scene" id="granolaScene" aria-label="Vista ilustrativa de tu mezcla"><div class="mix-pouch" id="granolaPouch"><img loading="lazy" decoding="async" class="pouch-photo" src="assets/bolsa-centro-claro-v8-web-s.webp" alt=""><div class="pouch-contents"><div class="base-pieces" id="granolaBasePieces"><img class="base-flk" src="assets/flakes-1.webp" alt="" aria-hidden="true" style="left:6%;top:8%;width:20.2%;transform:rotate(0deg)"><img class="base-flk" src="assets/flakes-2.webp" alt="" aria-hidden="true" style="left:40%;top:4%;width:18.9%;transform:rotate(-20deg)"><img class="base-flk" src="assets/flakes-3.webp" alt="" aria-hidden="true" style="left:70%;top:10%;width:21.6%;transform:rotate(25deg)"><img class="base-flk" src="assets/flakes-4.webp" alt="" aria-hidden="true" style="left:18%;top:30%;width:18.9%;transform:rotate(40deg)"><img class="base-flk" src="assets/flakes-5.webp" alt="" aria-hidden="true" style="left:52%;top:32%;width:23.0%;transform:rotate(-35deg)"><img class="base-flk" src="assets/flakes-6.webp" alt="" aria-hidden="true" style="left:78%;top:38%;width:17.6%;transform:rotate(10deg)"><img class="base-flk" src="assets/flakes-7.webp" alt="" aria-hidden="true" style="left:8%;top:56%;width:21.6%;transform:rotate(-15deg)"><img class="base-flk" src="assets/flakes-8.webp" alt="" aria-hidden="true" style="left:36%;top:60%;width:20.2%;transform:rotate(30deg)"><img class="base-flk" src="assets/flakes-9.webp" alt="" aria-hidden="true" style="left:64%;top:62%;width:23.0%;transform:rotate(-25deg)"><img class="base-flk" src="assets/flakes-10.webp" alt="" aria-hidden="true" style="left:24%;top:84%;width:18.9%;transform:rotate(20deg)"><img class="base-flk" src="assets/flakes-11.webp" alt="" aria-hidden="true" style="left:56%;top:86%;width:20.2%;transform:rotate(-10deg)"><img class="base-flk" src="assets/flakes-12.webp" alt="" aria-hidden="true" style="left:80%;top:80%;width:17.6%;transform:rotate(35deg)"><img class="base-flk" src="assets/flakes-13.webp" alt="" aria-hidden="true" style="left:44%;top:20%;width:16.2%;transform:rotate(-40deg)"><img class="base-flk" src="assets/flakes-14.webp" alt="" aria-hidden="true" style="left:14%;top:72%;width:16.2%;transform:rotate(15deg)"><img class="base-flk" src="assets/flakes-1.webp" alt="" aria-hidden="true" style="left:72%;top:58%;width:16.2%;transform:rotate(-30deg)"></div><div class="bag-pieces" id="granolaBagPieces"></div></div><div class="pouch-label"><span class="pouch-heart" aria-hidden="true">♥</span><img loading="lazy" decoding="async" class="pouch-bee" src="assets/abeja-emblema-v3-web.webp" alt=""><strong>Punto Sano</strong><span>Granola</span></div></div><span class="bag-table-shadow"></span></div><p class="preview-weight" id="granolaPreviewWeight">500 g de base incluidos</p></div><div class="granola-options"><div class="included-base"><img class="miel-img" src="assets/miel-recorte.webp" alt="Miel cayendo de un cucharón de madera" decoding="async"><span class="section-kicker">BASE INCLUIDA</span><h2>Quinoa pop + copos de maíz</h2><p>500 g de base horneada con miel y vainilla + 500 g de agregados a tu elección.</p><div class="base-price-row"><span>Base preparada · 500 g</span><strong id="granolaBasePrice">$8.000</strong></div></div><h2>Agregados opcionales</h2><p>Usá + y −: 100 g por toque. Elegí los ingredientes que quieras.</p><div class="granola-progress" aria-live="polite"><strong id="granolaRemaining">Te faltan elegir 500 g</strong><div class="granola-slots" id="granolaSlots"><span>100 g</span><span>100 g</span><span>100 g</span><span>100 g</span><span>100 g</span></div></div><div id="granolaIngredients"></div><div class="granola-total" aria-live="polite"><p id="granolaMix" hidden></p><div><span>Total</span><strong id="granolaTotal">$8.000</strong></div><p id="granolaNotice"></p></div><button class="add" id="granolaAdd" onclick="addGranola()" disabled>Agregar mi granola al carrito</button></div></div></section><section id="catalog" hidden><a href="#inicio" class="breadcrumb">← Volver al inicio</a><div class="catalog-head"><div><h1 id="catalogTitle"></h1><p class="intro" id="catalogIntro"></p></div></div><div class="grid" id="products"></div><p class="photo-note" id="photoNote"></p></section><section id="food" hidden><a class="breadcrumb" href="#inicio">← Volver al inicio</a><div class="catalog-head"><div><h1>Preparaciones artesanales</h1><p class="intro">Todo sin TACC.</p></div><img class="batidor-img" src="assets/batidor-recorte.webp" alt="Batidor con chocolate" decoding="async"></div><div class="supp-grid"><a class="category" href="#budines"><div class="category-photo"><img loading="lazy" decoding="async" src="assets/fondo-preparaciones.jpg" alt="Budín glaseado con almendras"></div><div class="category-info"><div><h2>Budines artesanales</h2><p>Ver sabores y precios</p><span class="inner-enter">Ver budines →</span></div></div></a><a class="category" href="#alfajores"><div class="category-photo"><img loading="lazy" decoding="async" src="assets/alfajor-tarjeta-c.webp" alt="Alfajor cortado al medio con dulce de leche"></div><div class="category-info"><div><h2>Alfajores</h2><p>Maicena, almendras, coco y glaseados</p><span class="inner-enter">Ver alfajores →</span></div></div></a><a class="category" href="#bizcochuelos"><div class="category-photo bizcochuelo-category-photo" role="img" aria-label="Bizcochuelo marmolado artesanal"></div><div class="category-info"><div><h2>Bizcochuelos</h2><p>Vainilla, marmolado y chocolate</p><span class="inner-enter">Ver bizcochuelos →</span></div></div></a><a class="category" href="#pan"><div class="category-photo"><img loading="lazy" decoding="async" src="assets/pan-sin-tacc-foto.webp" alt="Pan sin TACC"></div><div class="category-info"><div><h2>Pan sin TACC</h2><p>Almendras y coco</p><span class="inner-enter">Ver panes →</span></div></div></a><a class="category" href="#pizza"><div class="category-photo"><img loading="lazy" decoding="async" src="assets/pizza-tarjeta.webp" alt="Pizza con muzzarella"></div><div class="category-info"><div><h2>Pizza</h2><p>Prepizza y jamón y queso</p><span class="inner-enter">Ver pizzas →</span></div></div></a><a class="category" href="#chipa"><div class="category-photo chipa-category-photo" role="img" aria-label="Chipa clásica"></div><div class="category-info"><div><h2>Chipa</h2><p id="chipaCategoryPrice">200 g · $6.000</p><span class="inner-enter">Ver chipa →</span></div></div></a></div></section><section id="supplements" hidden><a class="breadcrumb" href="#inicio">← Volver al inicio</a><div class="catalog-head"><div><h1 id="suppTitle">Suplementos</h1><p class="intro" id="suppIntro">Elegí una categoría.</p></div></div><div id="suppCategories" class="supp-grid"><a class="category" href="#proteinas"><div class="supp-photo protein-photo" role="img" aria-label="Proteína Whey ENA, imagen de referencia"></div><div class="category-info"><div><h2>Proteínas</h2><p>Whey ENA</p><span class="inner-enter">Ver proteínas →</span></div></div></a><a class="category" href="#creatina"><div class="supp-photo creatine-photo" role="img" aria-label="Creatina ENA, imagen de referencia"></div><div class="category-info"><div><h2>Creatinas</h2><p>ENA y Natier</p><span class="inner-enter">Ver creatinas →</span></div></div></a><a class="category" href="#preentrenos"><div class="supp-photo prewar-photo" role="img" aria-label="Preentreno ENA Pre War de 400 gramos"></div><div class="category-info"><div><h2>Preentrenos</h2><p>ENA Pre War</p><span class="inner-enter">Ver preentrenos →</span></div></div></a></div><div id="suppProducts" class="grid" hidden></div><a id="suppBack" href="#suplementos" class="supp-back" hidden>← Volver a suplementos</a></section><section id="reviewsSection" class="reviews-section"><div class="reviews-heading"><div><span class="section-kicker">OPINIONES DE CLIENTES</span><h2>Reseñas de productos</h2></div></div><div id="reviewList" class="review-list" aria-live="polite"></div><p id="reviewLoadStatus" role="status"></p><button id="reviewMore" class="review-more" hidden onclick="expandReviews()">Ver más reseñas</button><details id="reviewDetails" class="review-details"><summary>Escribir una reseña</summary><form id="reviewForm" class="review-form"><h3>Tu opinión</h3><div class="review-fields"><div><label for="reviewName">Nombre que se mostrará</label><input id="reviewName" required minlength="2" maxlength="60" autocomplete="given-name"></div><div><label for="reviewCategory">Producto o categoría</label><select id="reviewCategory" required><option value="">Elegí una opción</option><option>Preparaciones artesanales</option><option>Suplementos</option><option>Huella Herbal</option><option>Granola</option><option>Mix de frutos secos</option><option>Café</option></select></div><div><label for="reviewRating">Valoración</label><select id="reviewRating" required><option value="">Elegí una puntuación</option><option value="5">★★★★★ · 5</option><option value="4">★★★★☆ · 4</option><option value="3">★★★☆☆ · 3</option><option value="2">★★☆☆☆ · 2</option><option value="1">★☆☆☆☆ · 1</option></select></div></div><label for="reviewText">¿Qué te pareció?</label><textarea id="reviewText" rows="4" required minlength="10" maxlength="800" placeholder="Contanos qué producto probaste y cómo fue tu experiencia."></textarea><p id="reviewFeedback" role="status"></p><button id="reviewSubmit" class="add">Publicar reseña</button></form></details></section></main><footer class="site-foot"><img src="assets/abeja-emblema-v3-web.webp" alt="" class="foot-bee" decoding="async" loading="lazy"><strong>Punto Sano</strong><span>Bahía Blanca · Argentina</span><span>Todo sin TACC · Pedidos por WhatsApp</span><div class="foot-links"><a href="https://wa.me/5492931420208" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://www.instagram.com/punto_sano__/" target="_blank" rel="noopener noreferrer">Instagram</a></div><small>© Punto Sano</small></footer><nav class="floating-social" aria-label="Contactanos por redes"><a class="social-circle whatsapp-circle" href="https://wa.me/5492931420208" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title="WhatsApp"><img loading="lazy" decoding="async" src="assets/whatsapp-official-2026.svg" alt=""></a><a class="social-circle instagram-circle" href="https://www.instagram.com/punto_sano__/" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram de Punto Sano" title="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="#ffffff" stroke="none"/></svg></a></nav><dialog id="productSearch" aria-labelledby="searchTitle"><div class="dialog-header"><h2 id="searchTitle">Buscar productos</h2><button type="button" class="close" onclick="document.getElementById('productSearch').close()" aria-label="Cerrar buscador">✕</button></div><form role="search" id="productSearchForm"><label for="productSearchInput" class="sr-only">Nombre del producto</label><input id="productSearchInput" type="search" maxlength="120" autocomplete="off" placeholder="Ej.: creatina, café, budín…" oninput="renderSearch()"></form><p id="searchStatus" class="search-status" role="status" aria-live="polite">Escribí el producto que buscás.</p><div id="searchResults" class="search-results"></div></dialog><dialog id="bag"><div class="dialog-header"><h2>Mi carrito</h2><button class="close" onclick="bag.close()" aria-label="Cerrar pedido">✕</button></div><div id="items"></div><div id="form"><div class="cart-subtotal"><span>Productos</span><span id="cartSubtotal"></span></div><div class="cart-shipping"><span>Envío por Uber en Bahía Blanca</span><span id="cartShipping"></span></div><div class="total"><span>Total con envío</span><span id="total"></span></div><a id="cartWhatsapp" class="send order-whatsapp" href="https://wa.me/5492931420208" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a><p class="note">Tocá Enviar en WhatsApp. Coordinamos la entrega y el pago por ese medio.</p></div></dialog><div id="toast" hidden role="status"></div><script>
+/* ===== DATOS DE LA TIENDA: precios, stock, envío y reseñas =====
+   Para cambiar un precio, editá "price". Para dejar un producto sin stock, poné available:false. */
+const SHOP={whatsapp:'5492931420208',freeShippingFrom:50000,shippingCost:3000};
+// Reseñas publicadas (las que llegan por WhatsApp y se aprueban). createdAt: AAAA-MM-DD.
+const REVIEWS=[];
+// Stock de ingredientes para granola y mix, en gramos (0 = sin stock).
+const STOCK_GRAMS={"almendras": 1000, "caju": 1000, "nueces": 0, "girasol": 1000, "mani": 1000, "coco": 1000, "pistachos": 1000, "arandanos-rojos": 1000, "banana-chips": 1000};
+const GRANOLA_CONFIG={"ingredients": [{"id": "almendras", "name": "Almendras", "pricePerKg": 31500}, {"id": "caju", "name": "Castañas de cajú", "pricePerKg": 22500}, {"id": "nueces", "name": "Nuez mariposa", "pricePerKg": 18000}, {"id": "girasol", "name": "Semillas de girasol", "pricePerKg": 4500}, {"id": "mani", "name": "Maní", "pricePerKg": 3300}, {"id": "coco", "name": "Coco rallado", "pricePerKg": 10500}, {"id": "pistachos", "name": "Pistachos", "pricePerKg": 90000}, {"id": "arandanos-rojos", "name": "Arándanos rojos deshidratados", "pricePerKg": 24000}], "mixIngredients": [{"id": "almendras", "name": "Almendras", "pricePerKg": 31500}, {"id": "caju", "name": "Castañas de cajú", "pricePerKg": 22500}, {"id": "nueces", "name": "Nuez mariposa", "pricePerKg": 18000}, {"id": "mani", "name": "Maní", "pricePerKg": 3300}, {"id": "pistachos", "name": "Pistachos", "pricePerKg": 90000}, {"id": "arandanos-rojos", "name": "Arándanos rojos deshidratados", "pricePerKg": 24000}, {"id": "banana-chips", "name": "Banana chips deshidratada", "pricePerKg": 20000}], "fixedBaseGrams": 500, "fixedBasePrice": 8000};
+const budines=[
+{id:'b-vainilla',name:'Vainilla',price:6000,tile:0},
+{id:'b-banana',name:'Banana',price:7000,tile:1},
+{id:'b-limon',name:'Limón',price:7000,tile:2},
+{id:'b-vainilla-chips',name:'Vainilla con chips',price:7500,tile:3},
+{id:'b-vainilla-ddl',name:'Vainilla y dulce de leche',price:7500,tile:4},
+{id:'b-banana-chips',name:'Banana con chips',price:8000,tile:5},
+{id:'b-cacao',name:'Chocolate con cacao puro',price:8000,tile:6},
+{id:'b-coco-ddl',name:'Coco y dulce de leche',price:8000,tile:7},
+{id:'b-chocolate-chips',name:'Chocolate con chips de chocolate',price:9000,tile:8},
+{id:'b-banana-chocolate',name:'Banana con chocolate',price:9000,tile:9},
+{id:'b-nesquik',name:'Chocolate Nesquik',price:9000,tile:10},
+{id:'b-almendras',name:'Almendras',price:10000,tile:11},
+{id:'b-chocolate-cubierto',name:'Chocolate bañado en chocolate',price:10000,tile:12},
+{id:'b-arandanos',name:'Arándanos',price:10000,tile:13},
+{id:'b-oreo',name:'Oreo sin TACC',price:12000,tile:14},
+{id:'b-harina-almendras',name:'Harina de almendras con almendras arriba',price:15000,tile:15}
+].map(p=>({...p,category:'budines',desc:p.id==='b-harina-almendras'?'Con harina de almendras y almendras por encima.':'Budín artesanal sin TACC.'}));
+const alfajores=[{id:'a-maicena',category:'alfajores',name:'Maicena',price:2500,pack6:13500,desc:'Relleno de dulce de leche, borde de coco rallado.',image:'assets/alfajor-maicena.jpg'},{id:'a-almendras',category:'alfajores',name:'Chocolate y almendras',price:4000,pack6:21500,desc:'Masa de chocolate con harina de almendras, relleno de dulce de leche, bañado en chocolate.',image:'assets/alfajor-almendras-v3.webp'},{id:'a-coco-vainilla',category:'alfajores',name:'Vainilla y coco',price:4000,pack6:21500,desc:'Masa de vainilla con harina de coco, relleno de dulce de leche, bañado en chocolate.',image:'assets/alfajor-coco-vainilla.webp'},{id:'a-glaseado-ddl',category:'alfajores',badge:'Nuevo',name:'Glaseado',price:3000,pack6:16000,desc:'Harina de coco, relleno de dulce de leche, bañado en glaseado.',image:'assets/alfajor-glaseado-ddl.webp'},{id:'a-glaseado-frutilla',category:'alfajores',badge:'Nuevo',name:'Glaseado de frutilla',price:3500,pack6:19000,desc:'Harina de coco, relleno de reducción de frutilla, bañado en glaseado de frutilla.',image:'assets/alfajor-glaseado-frutilla-v2.webp'},{id:'a-choco-frutilla',category:'alfajores',badge:'Nuevo',name:'Chocolate y frutilla',price:4000,pack6:21500,desc:'Masa de chocolate, relleno de frutilla, bañado en chocolate.',image:'assets/alfajor-choco-frutilla.webp'}];
+// tiers: precio por unidad según cantidad (2 unidades → 9000 c/u, 3 o más → 8000 c/u).
+const yerbas=[{id:'y-manzanilla-coco',category:'huella-herbal',name:'Manzanilla y coco',price:10000,tiers:{2:9000,3:8000},available:true,desc:'Yerba compuesta · 500 g',image:'assets/yerba-manzanilla-gris-v12-web-s.webp'},{id:'y-coco',category:'huella-herbal',badge:'Nuevo',name:'Coco',price:8000,available:true,stock:20,desc:'Con coco en escamas y coco rallado.',image:'assets/yerba-coco-v2.webp'},{id:'y-hierbas',category:'huella-herbal',name:'Manzanilla, cedrón, burrito y coco rallado',price:null,available:false,desc:'Manzanilla, cedrón y burrito con coco rallado. Sin stock por ahora.',image:'assets/yerba-hierbas-gris-v12-s.webp'},{id:'y-cacao-coco',category:'huella-herbal',name:'Cascarilla de cacao y coco',price:null,available:false,desc:'Yerba compuesta con cascarilla de cacao y coco. Sin stock por ahora.',image:'assets/yerba-coco-gris-v12-s.webp'}];
+const coffees=[{"id":"c-brasil-500-grano","category":"cafe","name":"Café premium brasilero · 500 g · En grano","price":32000,"available":true,"desc":"Café premium · En grano","image":"assets/cafe-product-hero-web.webp"},{"id":"c-brasil-500-molido","category":"cafe","name":"Café premium brasilero · 500 g · Molido","price":32000,"available":true,"desc":"Café premium · Molido","image":"assets/cafe-product-hero-web.webp"},{"id":"c-brasil-1000-grano","category":"cafe","name":"Café premium brasilero · 1 kg · En grano","price":51000,"available":true,"desc":"Café premium · En grano","image":"assets/cafe-product-hero-web.webp"},{"id":"c-brasil-1000-molido","category":"cafe","name":"Café premium brasilero · 1 kg · Molido","price":51000,"available":true,"desc":"Café premium · Molido","image":"assets/cafe-product-hero-web.webp"},{"id":"c-colombia-500-grano","category":"cafe","name":"Café premium colombiano · 500 g · En grano","price":36000,"available":true,"desc":"Café premium · En grano","image":"assets/cafe-product-hero-web.webp"},{"id":"c-colombia-500-molido","category":"cafe","name":"Café premium colombiano · 500 g · Molido","price":36000,"available":true,"desc":"Café premium · Molido","image":"assets/cafe-product-hero-web.webp"},{"id":"c-colombia-1000-grano","category":"cafe","name":"Café premium colombiano · 1 kg · En grano","price":63000,"available":true,"desc":"Café premium · En grano","image":"assets/cafe-product-hero-web.webp"},{"id":"c-colombia-1000-molido","category":"cafe","name":"Café premium colombiano · 1 kg · Molido","price":63000,"available":true,"desc":"Café premium · Molido","image":"assets/cafe-product-hero-web.webp"}];
+const bizcochuelos=[{"id": "bc-vainilla", "category": "bizcochuelos", "name": "Bizcochuelo de vainilla", "price": 10000, "desc": "Sin lactosa.", "image": "assets/bizcochuelo-vainilla-v14-s.webp"}, {"id": "bc-marmolado", "category": "bizcochuelos", "name": "Bizcochuelo marmolado", "price": 12000, "desc": "Sin lactosa.", "image": "assets/bizcochuelo-marmolado-v14-s.webp"}, {"id": "bc-chocolate", "category": "bizcochuelos", "name": "Bizcochuelo de chocolate", "price": 15000, "desc": "Sin lactosa.", "image": "assets/bizcochuelo-chocolate-v14-s.webp"}];
+const chipas=[{"id": "ch-clasica-200", "category": "chipa", "name": "Chipa · 200 g", "price": 6000, "desc": "Presentación de 200 gramos.", "image": "assets/chipa-cuadrada-v16-s.webp"}];
+const prepizzas=[{id:'pp-24',category:'pizza',badge:'Promo',name:'Prepizza · 24 cm',price:6000,tiers:{2:5000},desc:'Lista para que le pongas lo que quieras.',image:'assets/prepizza-foto.webp'},{id:'pz-jyq',category:'pizza',badge:'Promo',name:'Pizza de jamón y queso',price:12000,tiers:{2:10000},desc:'Jamón y muzzarella.',image:'assets/pizza-jyq-foto.webp'}];
+const panes=[{id:'p-almendras',category:'pan',badge:'Nuevo',name:'Pan de almendras',price:15000,desc:'Con almendras enteras.',image:'assets/pan-almendras-real.webp'},{id:'p-coco',category:'pan',badge:'Nuevo',name:'Pan de coco',price:16000,desc:'Con coco en escamas.',image:'assets/pan-coco-real.webp'}];
+const supplements=[{"id": "s-ena-100whey-900-vainilla", "group": "ena-100whey-900", "category": "proteinas", "name": "Proteína ENA 100% Whey · 900 g · Vainilla", "price": 80000, "available": true, "desc": "100% Whey Protein · 900 g", "image": "assets/ena-100whey-vainilla-900-limpia.webp", "flavor": "Vainilla", "weight": "900 g", "brand": "ENA"}, {"id": "s-ena-whey-930-vainilla", "group": "ena-whey-930", "category": "proteinas", "name": "Proteína ENA Truemade · 930 g · Vainilla", "price": 95000, "available": true, "desc": "Whey Protein · 930 g", "image": "assets/supp-whey-1-limpia.webp", "flavor": "Vainilla", "weight": "930 g", "brand": "ENA"}, {"id": "s-ena-whey-930-chocolate", "group": "ena-whey-930", "category": "proteinas", "name": "Proteína ENA Truemade · 930 g · Chocolate", "price": 95000, "available": true, "desc": "Whey Protein · 930 g", "image": "assets/supp-whey-4-limpia.webp", "flavor": "Chocolate", "weight": "930 g", "brand": "ENA"}, {"id": "s-ena-whey-930-frutilla", "group": "ena-whey-930", "category": "proteinas", "name": "Proteína ENA Truemade · 930 g · Frutilla", "price": 95000, "available": true, "desc": "Whey Protein · 930 g", "image": "assets/supp-whey-7-limpia.webp", "flavor": "Frutilla", "weight": "930 g", "brand": "ENA"}, {"id": "s-ena-whey-930-cookies-cream", "group": "ena-whey-930", "category": "proteinas", "name": "Proteína ENA Truemade · 930 g · Cookies & Cream", "price": 95000, "available": true, "desc": "Whey Protein · 930 g", "image": "assets/supp-whey-9-limpia.webp", "flavor": "Cookies & Cream", "weight": "930 g", "brand": "ENA"}, {"id": "s-ena-whey-930-banana", "group": "ena-whey-930", "category": "proteinas", "name": "Proteína ENA Truemade · 930 g · Banana", "price": 95000, "available": true, "desc": "Whey Protein · 930 g", "image": "assets/supp-whey-11-limpia.webp", "flavor": "Banana", "weight": "930 g", "brand": "ENA"}, {"id": "s-ena-creatina-300-sin-sabor", "group": "ena-creatina-300", "category": "creatina", "name": "Creatina ENA · 300 g · Sin sabor", "price": 30000, "available": true, "desc": "Creatina monohidrato · 300 g", "image": "assets/supp-creatine-0-limpia.webp", "flavor": "Sin sabor", "weight": "300 g", "brand": "ENA"}, {"id": "s-ena-creatina-300-fruit-punch", "group": "ena-creatina-300", "category": "creatina", "name": "Creatina ENA · 300 g · Fruit Punch", "price": 30000, "available": true, "desc": "Creatina monohidrato · 300 g", "image": "assets/supp-creatine-1-limpia.webp", "flavor": "Fruit Punch", "weight": "300 g", "brand": "ENA"}, {"id": "s-ena-creatina-1000-sin-sabor", "group": "ena-creatina-1000", "category": "creatina", "name": "Creatina ENA · 1 kg · Sin sabor", "price": 80000, "available": true, "desc": "Creatina monohidrato · 1 kg", "image": "assets/supp-creatine-4-limpia.webp", "flavor": "Sin sabor", "weight": "1 kg", "brand": "ENA"}, {"id": "s-natier-creatina-300-sin-sabor", "group": "natier-creatina-300", "category": "creatina", "name": "Creatina Natier · 300 g · Sin sabor", "price": 30000, "available": true, "desc": "Creatina monohidratada micronizada · 300 g", "image": "assets/supp-natier-300-limpia.webp", "flavor": "Sin sabor", "weight": "300 g", "brand": "Natier"}, {"id": "s-ena-prewar-400-fruit-punch", "group": "ena-prewar-400", "category": "preentrenos", "name": "Preentreno ENA Pre War · 400 g · Fruit Punch", "price": 35000, "available": true, "desc": "Pre War · Preentreno · 400 g", "image": "assets/prewar-fruit-punch-limpia.webp", "flavor": "Fruit Punch", "weight": "400 g", "brand": "ENA"}, {"id": "s-ena-creatina-electrolitos-302-pink", "group": "ena-creatina-electrolitos-302", "category": "creatina", "name": "Creatina ENA + Electrolitos · 302 g · Pink Lemonade", "price": 30000, "available": true, "desc": "Creatina con electrolitos · 302 g", "image": "assets/creatina-electrolitos-pink-limpia.webp", "flavor": "Pink Lemonade", "weight": "302 g", "brand": "ENA"}];
+const all=[...supplements,...budines,...alfajores,...bizcochuelos,...chipas,...prepizzas,...panes,...yerbas,...coffees];try{const mixes=JSON.parse(localStorage.getItem('punto-sano-granola-mixes')||'[]');for(const p of mixes)if(/^[gm]-(\d+-)*\d+$/.test(p.id)&&typeof p.price==='number'&&p.price>0){if(p.category==='mix'&&p.id.slice(2).split('-').length===6){p.previousId=p.id;p.id+='-0'}all.push(p)}}catch{}
+function unitPrice(p,n=1){if(!p.tiers)return p.price;let price=p.price;for(const [min,tierPrice] of Object.entries(p.tiers))if(n>=Number(min))price=tierPrice;return price}
+function tierText(p){return Object.entries(p.tiers).map(([min,tierPrice])=>(min==6?'Promo media docena: ':min+' por ')+money(tierPrice*min)).join(' · ')}
+function lineTotal(p){const n=cart[p.id]||0;if(p.pack6)return Math.floor(n/6)*p.pack6+(n%6)*p.price;return unitPrice(p,n||1)*n}
+function productLabel(p){return (p.category==='budines'?'Budín · ':p.category==='alfajores'?'Alfajor · ':p.category==='huella-herbal'?'Huella Herbal · ':'')+p.name+(p.category==='huella-herbal'?' · 500 g':'')}
+const money=n=>new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0}).format(n);let cart={};try{const c=JSON.parse(localStorage.getItem('punto-sano-cart-v2')||'{}');for(const p of all){const quantity=c[p.id]??c[p.previousId];if(p.available!==false&&Number.isInteger(quantity)&&quantity>0)cart[p.id]=quantity}}catch{}const granolaCartIds=Object.keys(cart).filter(id=>id.startsWith('g-'));granolaCartIds.forEach((id,n)=>{if(n)delete cart[id];else cart[id]=1});const bag=document.getElementById('bag');let toastTimer;function save(){try{localStorage.setItem('punto-sano-cart-v2',JSON.stringify(cart))}catch{}document.getElementById('count').textContent=Object.values(cart).reduce((a,b)=>a+b,0)}function add(id){checkoutKey=null;const item=all.find(p=>p.id===id&&p.available!==false);if(!item)return;if(item.stock&&(cart[id]||0)>=item.stock){const t=document.getElementById('toast');t.textContent='No hay más unidades disponibles por ahora';t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.hidden=true,1800);return}cart[id]=(cart[id]||0)+1;save();const t=document.getElementById('toast');t.textContent='Agregado a tu pedido';t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.hidden=true,1800)}
+function photo(p){if(p.available===false&&!p.image)return `<div class="product-photo unavailable-photo"><span>HUELLA HERBAL</span><strong>${p.name}</strong><small>Sin stock</small></div>`;if(p.tile!==undefined){const x=(p.tile%4)*100/3,y=Math.floor(p.tile/4)*100/3;return `<div class="product-photo budin-photo" role="img" aria-label="Budín de ${p.name}, imagen ilustrativa" style="background-position:${x}% ${y}%"></div>`}if(p.alfTile!==undefined)return `<div class="product-photo alfajor-photo" role="img" aria-label="${p.name}, imagen ilustrativa" style="background-position:${p.alfTile*100}% 50%"></div>`;return `<div class="product-photo"><img src="${p.image}" alt="${p.name}, imagen ilustrativa" loading="lazy"></div>`}
+function productCard(p){return `<article data-product-id="${p.id}" class="product ${p.available===false?'unavailable':''}">${p.badge&&p.available!==false?'<span class="badge badge-'+p.badge.toLowerCase()+'">'+p.badge+'</span>':''}${photo(p)}<div class="product-info"><h2>${p.name}</h2><p>${p.desc}</p>${p.available===false?'<div class="price stock-label">Sin stock</div><button class="add" disabled>No disponible</button>':`<div class="price">${money(p.price)} <small${p.category==='alfajores'?' class="cu"':''}>${p.category==='huella-herbal'?'/ 500 g':p.category==='alfajores'?'c/u':'/ unidad'}</small></div>${p.tiers?'<div class="tier-info">'+tierText(p)+'</div>':''}${p.pack6?'<div class="tier-info">Promo media docena: '+money(p.pack6)+'</div>':''}<button class="add" onclick="add('${p.id}')" aria-label="Agregar ${p.name} al pedido">Agregar +</button>`}</div></article>`}
+
+function renderSupplements(category){const list=supplements.filter(p=>p.category===category),groups=[];for(const p of list){let g=groups.find(g=>g[0].group===p.group);if(!g)groups.push(g=[]);g.push(p)}
+ document.getElementById('suppProducts').innerHTML=groups.map(items=>{const p=items[0],title=p.group==='ena-100whey-900'?'Proteína ENA 100% Whey':p.group==='ena-whey-930'?'Proteína ENA Truemade':p.group==='ena-prewar-400'?'Preentreno ENA Pre War':p.group==='ena-creatina-electrolitos-302'?'Creatina ENA + Electrolitos':p.brand==='Natier'?'Creatina Natier':'Creatina ENA',flavor=x=>x.flavor==='Sin sabor'?'Sin sabor':'Sabor '+x.flavor;
+  const variant=items.length>1?`<label class="supp-label" for="sel-${p.group}">Sabor · ${p.weight}</label><select class="supp-select" id="sel-${p.group}" onchange="pickFlavor(this)">${items.map(x=>`<option value="${x.id}">${x.flavor}</option>`).join('')}</select>`:`<div class="supp-variant"><strong class="supp-flavor">${flavor(p)}</strong><span class="supp-weight"> · ${p.weight}</span></div>`;
+  return `<article class="product supplement-product" data-product-id="${p.id}" data-ids="${items.map(x=>x.id).join(',')}"><div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="product-info"><h2>${title}</h2>${variant}${p.available===false?'<div class="price stock-label">Sin stock</div><button class="add" type="button" disabled>No disponible</button>':`<div class="price">${money(p.price)} <small>/ unidad</small></div><button class="add" type="button" onclick="add(this.closest('article').dataset.productId)" aria-label="Agregar ${title} al pedido">Agregar +</button>`}</div></article>`}).join('')}
+function pickFlavor(sel){const card=sel.closest('article'),p=supplements.find(x=>x.id===sel.value);if(!p)return;card.dataset.productId=p.id;const img=card.querySelector('img');img.src=p.image;img.alt=p.name;card.querySelector('.price').firstChild.textContent=money(p.price)+' '}
+function route(){const path=location.hash.slice(1)||'inicio';document.getElementById('coffee').hidden=path!=='cafe';document.getElementById('granola').hidden=path!=='granola';document.getElementById('mix').hidden=path!=='mix';if(path==='granola'||path==='mix')loadGranola();const isFood=path==='comida';document.getElementById('food').hidden=!isFood;const isCatalog=['budines','alfajores','bizcochuelos','chipa','pan','pizza','huella-herbal'].includes(path);const isSupplement=['suplementos','proteinas','creatina','preentrenos'].includes(path);document.getElementById('supplements').hidden=!isSupplement;if(isSupplement){const root=path==='suplementos';document.getElementById('suppTitle').textContent=root?'Suplementos':path==='proteinas'?'Proteínas':path==='preentrenos'?'Preentrenos':'Creatinas';document.getElementById('suppIntro').textContent=root?'Elegí una categoría.':'Cada sabor, una opción. Elegí el tuyo.';document.getElementById('suppCategories').hidden=!root;document.getElementById('suppProducts').hidden=root;document.getElementById('suppBack').hidden=root;if(!root)renderSupplements(path)}document.getElementById('home').hidden=isCatalog||isSupplement||isFood||path==='granola'||path==='mix'||path==='cafe';document.getElementById('catalog').hidden=!isCatalog;document.querySelector('#catalog .breadcrumb').href=['budines','alfajores','bizcochuelos','chipa','pan','pizza'].includes(path)?'#comida':'#inicio';document.querySelector('#catalog .breadcrumb').textContent=['budines','alfajores','bizcochuelos','chipa','pan','pizza'].includes(path)?'← Volver a preparaciones':'← Volver al inicio';if(isCatalog){const products=path==='huella-herbal'?yerbas:(path==='budines'?budines:path==='bizcochuelos'?bizcochuelos:path==='chipa'?chipas:path==='pan'?panes:path==='pizza'?prepizzas:alfajores).slice().sort((a,b)=>(a.available===false)-(b.available===false)||(a.price||0)-(b.price||0));document.getElementById('catalogTitle').textContent=path==='budines'?'Budines artesanales':path==='alfajores'?'Alfajores':path==='bizcochuelos'?'Bizcochuelos':path==='chipa'?'Chipa':path==='pan'?'Pan sin TACC':path==='pizza'?'Pizza':'Huella Herbal';document.getElementById('catalogIntro').textContent=path==='budines'?'Elegí tu sabor.':path==='alfajores'?'Todos sin TACC.':path==='bizcochuelos'?'22 cm. Sin lactosa.':path==='chipa'?'Chipa en presentaciones de 200 g.':path==='pan'?'23 cm de largo × 6 cm de alto.':path==='pizza'?'Con harina de coco y almendras.':'Yerbas compuestas para tu momento de mate.';document.getElementById('products').innerHTML=products.map(productCard).join('');document.getElementById('photoNote').textContent=path==='chipa'?'':path==='huella-herbal'?'':''}document.title='Punto Sano | '+(isSupplement?document.getElementById('suppTitle').textContent:isCatalog?(path==='budines'?'Budines artesanales':path==='alfajores'?'Alfajores':path==='bizcochuelos'?'Bizcochuelos':path==='chipa'?'Chipa':path==='pan'?'Pan sin TACC':path==='pizza'?'Pizza':'Huella Herbal'):'Tienda');if(path==='reviewForm')document.getElementById('reviewDetails').open=true;if(['categorias','reviewsSection','reviewForm'].includes(path)){document.getElementById(path).scrollIntoView({behavior:'smooth'})}else window.scrollTo(0,0)}window.addEventListener('hashchange',route);
+function renderBag(){const entries=all.filter(p=>cart[p.id]);document.getElementById('items').innerHTML=entries.length?entries.map(p=>`<div class="item"><div class="item-name">${productLabel(p)}<small>${money(unitPrice(p,cart[p.id]))} por unidad${(p.tiers&&unitPrice(p,cart[p.id])<p.price)||(p.pack6&&cart[p.id]>=6)?' · Promoción aplicada':''}</small></div><div class="qty"><button type="button" aria-label="Quitar uno de ${p.name}" onclick="change('${p.id}',-1)">−</button><span>${cart[p.id]}</span><button type="button" ${p.category==='granola'||(p.category==='mix'&&mixCartGrams()+p.id.slice(2).split('-').map(Number).reduce((a,b)=>a+b,0)>500)?'disabled title="Cantidad máxima por pedido"':''} aria-label="Agregar uno de ${p.name}" onclick="change('${p.id}',1)">+</button></div></div>`).join(''):'<p>Tu pedido está vacío.</p>';const totals=cartDeliveryTotals();document.getElementById('cartSubtotal').textContent=money(totals.subtotal);document.getElementById('cartShipping').textContent=totals.shipping?money(totals.shipping):'Gratis';document.getElementById('total').textContent=money(totals.total);document.getElementById('form').hidden=!entries.length;document.getElementById('cartWhatsapp').href=cartWhatsappUrl()}function openBag(){renderBag();bag.showModal()}function change(id,n){if(id.startsWith('g-')&&n>0)return;if(id.startsWith('m-')&&n>0&&mixCartGrams()+id.slice(2).split('-').map(Number).reduce((a,b)=>a+b,0)>500)return;checkoutKey=null;const item=all.find(p=>p.id===id);if(n>0&&item&&item.stock&&cart[id]>=item.stock)return;cart[id]+=n;if(cart[id]<=0)delete cart[id];save();renderBag()}
+let checkoutKey=null;
+const escapeReview=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function reviewCard(r){return '<article class="review-card"><div class="review-stars" aria-label="'+r.rating+' de 5 estrellas">'+'★'.repeat(r.rating)+'☆'.repeat(5-r.rating)+'</div><p class="review-category">'+escapeReview(r.category)+'</p><p class="review-text">'+escapeReview(r.text)+'</p><div class="review-author"><strong>'+escapeReview(r.name)+'</strong><time>'+new Date(String(r.createdAt).slice(0,10)+'T12:00:00').toLocaleDateString('es-AR')+'</time></div></article>'}
+function expandReviews(){document.getElementById('reviewList').classList.add('reviews-expanded');document.getElementById('reviewMore').hidden=true}
+function loadReviews(){const reviews=REVIEWS.slice().sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));document.getElementById('reviewList').innerHTML=reviews.map(reviewCard).join('');document.getElementById('reviewMore').hidden=reviews.length<=3;document.getElementById('reviewLoadStatus').textContent='';document.getElementById('reviewsSection').classList.toggle('no-reviews',!reviews.length)}
+loadReviews();
+
+
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion&&window.matchMedia('(hover: hover) and (pointer: fine)').matches){document.querySelectorAll('.collection-tile').forEach(card=>{let frame;card.addEventListener('pointermove',e=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{if(document.body.classList.contains('motion-paused'))return;const rect=card.getBoundingClientRect(),x=(e.clientX-rect.left)/rect.width-.5,y=(e.clientY-rect.top)/rect.height-.5;card.style.setProperty('--tilt-x',(-y*10).toFixed(2)+'deg');card.style.setProperty('--tilt-y',(x*12).toFixed(2)+'deg')})});card.addEventListener('pointerleave',()=>{cancelAnimationFrame(frame);card.style.setProperty('--tilt-x','0deg');card.style.setProperty('--tilt-y','0deg')})})}
+
+
+const ingredientTiles={almendras:0,caju:1,nueces:2,girasol:3,mani:4,coco:5,pistachos:6,'arandanos-rojos':7,'banana-chips':8};
+function ingredientArt(id){const tile=ingredientTiles[id]??0,x=(tile%3)*50,y=Math.floor(tile/3)*50;return '<span class="real-ingredient" style="background-position:'+x+'% '+y+'%"></span>'}
+function renderBagPreview(prefix){const ingredients=prefix==='mix'?granolaConfig.mixIngredients:granolaConfig.ingredients,pieces=document.getElementById(prefix+'BagPieces'),base=document.getElementById(prefix+'BasePieces');if(!pieces)return;const selected=[];let sum=0;ingredients.forEach((ingredient,n)=>{const value=Number(document.getElementById(prefix+'-'+n)?.value)||0;sum+=value;for(let j=0;j<Math.round(value/100)*3;j++)selected.push({id:ingredient.id,n,j})});
+ pieces.innerHTML=selected.map((item,k)=>{const row=Math.floor(k/2),x=k%2===0?2:77,y=7+row*10;return '<span class="bag-piece" style="left:'+x+'%;top:'+y+'%;transform:rotate('+((item.j*31+item.n*17)%70-35)+'deg)">'+ingredientArt(item.id)+'</span>'}).join('');
+ if(prefix==='granola'&&!base.innerHTML){base.innerHTML=Array.from({length:36},(_,j)=>'<i class="base-grain '+(j%4===0?'quinoa-grain':'corn-grain')+'" style="left:'+(4+j*29%85)+'%;top:'+(62+j*19%27)+'%;transform:rotate('+(j*47%180)+'deg)"></i>').join('')}
+ document.getElementById(prefix+'PreviewWeight').textContent=prefix==='granola'?(500+sum)+' g / 1 kg':sum?sum+' g de mix':'Tu bolsa está vacía';
+}
+function animateIngredient(prefix,id,n){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const source=document.querySelector('#'+prefix+'-'+n)?.closest('.grams-control')?.querySelector('.grams-plus'),target=document.getElementById(prefix+'Pouch');if(!source||!target)return;const a=source.getBoundingClientRect(),b=target.getBoundingClientRect();if(b.bottom<0||b.top>innerHeight){const h=b.height;b={left:b.left,right:b.right,width:b.width,height:h,top:Math.min(Math.max(b.top,90),innerHeight-h-20),bottom:0}}for(let k=0;k<3;k++){const el=document.createElement('span');el.className='ingredient-fly';el.setAttribute('aria-hidden','true');el.innerHTML=ingredientArt(id);const x=a.left+a.width/2-16,y=a.top+a.height/2-16,dx=b.left+b.width/2-x+(k-1)*17,dy=b.top+b.height*.35-y;el.style.left=x+'px';el.style.top=y+'px';document.body.appendChild(el);const frames=id==='arandanos-rojos'?[{transform:'translate(0,0) rotate(-8deg)',opacity:1},{offset:.18,transform:'translate('+dx*.2+'px,-8px) rotate(8deg)'},{offset:.35,transform:'translate('+dx*.4+'px,0) rotate(-8deg)'},{offset:.52,transform:'translate('+dx*.6+'px,-10px) rotate(8deg)'},{offset:.72,transform:'translate('+dx+'px,'+(dy-45)+'px) rotate(-8deg)'},{transform:'translate('+dx+'px,'+(dy+90)+'px) scale(.6)',opacity:0}]:[{transform:'translate(0,0) rotate(0)',opacity:1},{offset:.5,transform:'translate('+dx*.45+'px,'+(Math.min(dy,0)-100)+'px) rotate(110deg)'},{offset:.8,transform:'translate('+dx+'px,'+dy+'px) rotate(170deg)',opacity:1},{transform:'translate('+dx+'px,'+(dy+100)+'px) rotate(200deg) scale(.5)',opacity:0}];const animation=el.animate(frames,{duration:id==='arandanos-rojos'?2800:2200,delay:k*1200,easing:'ease-in-out',fill:'both'});animation.onfinish=()=>el.remove()}}
+
+let granolaConfig=null,granolaCurrent=null,mixCurrent=null,ingredientStock={};
+save();route();
+document.querySelectorAll('.free-from').forEach(el=>el.textContent=money(SHOP.freeShippingFrom));document.querySelectorAll('.ship-cost').forEach(el=>el.textContent=money(SHOP.shippingCost));
+document.getElementById('chipaCategoryPrice').textContent=chipas[0].name.replace(/^Chipa · /,'')+' · '+money(chipas[0].price);
+updateCoffee();
+{const chipaCard=document.querySelector('#food a.category[href="#chipa"]');if(chipaCard)chipaCard.outerHTML=productCard(chipas[0])}
+
+
+
+function ingredientInputs(ingredients,prefix,max){return ingredients.map((i,n)=>'<div class="granola-ingredient"><div class="ingredient-name"><span class="ingredient-art" aria-hidden="true">'+ingredientArt(i.id)+'</span><label for="'+prefix+'-'+n+'">'+i.name+'</label><small>'+((typeof i.pricePerKg==='number')?money(i.pricePerKg)+' / kg':'Precio a confirmar')+'</small><small class="stock-status">'+(Number.isInteger(ingredientStock[i.id])?(ingredientStock[i.id]>0?'':'Sin stock'):'Disponibilidad a confirmar')+'</small></div><div class="grams-control"><button type="button" class="grams-minus" onclick="stepGrams(\''+prefix+'\','+n+',-100)" aria-label="Quitar 100 gramos de '+i.name+'" disabled>−</button><div class="grams-value"><input type="number" id="'+prefix+'-'+n+'" min="0" max="'+max+'" step="100" value="0" readonly aria-label="Gramos de '+i.name+'"><span>g</span></div><button type="button" class="grams-plus" onclick="stepGrams(\''+prefix+'\','+n+',100)" aria-label="Agregar 100 gramos de '+i.name+'">+</button></div><small class="ingredient-cost" id="'+prefix+'-cost-'+n+'"></small></div>').join('')}
+function stepGrams(prefix,n,delta){const ingredients=prefix==='mix'?granolaConfig.mixIngredients:granolaConfig.ingredients,input=document.getElementById(prefix+'-'+n),current=Number(input.value)||0,other=ingredients.reduce((sum,_,i)=>sum+(i===n?0:Number(document.getElementById(prefix+'-'+i).value)||0),0),max=Math.min(stockRemaining(ingredients[n].id,prefix),500,Math.floor((500-other)/100)*100);input.value=String(Math.max(0,Math.min(max,current+delta)));const actualChange=Number(input.value)-current;if(actualChange>0)animateIngredient(prefix,ingredients[n].id,n);if(prefix==='mix')updateMix();else updateGranola();const row=input.closest('.granola-ingredient');row.classList.remove('grams-bump');void row.offsetWidth;row.classList.add('grams-bump');setTimeout(()=>row.classList.remove('grams-bump'),220)}
+function mixCartGrams(){return all.filter(p=>p.category==='mix'&&cart[p.id]).reduce((sum,p)=>sum+p.id.slice(2).split('-').map(Number).reduce((a,b)=>a+b,0)*cart[p.id],0)}
+function stockRemaining(id,prefix){const value=ingredientStock[id];if(!Number.isInteger(value))return 0;let used=0;for(const p of all){if(!cart[p.id]||!['granola','mix'].includes(p.category)||(prefix==='granola'&&p.category==='granola'))continue;const ingredients=p.category==='mix'?granolaConfig.mixIngredients:granolaConfig.ingredients,n=ingredients.findIndex(i=>i.id===id);if(n>=0)used+=Number(p.id.slice(2).split('-')[n])*cart[p.id]}return Math.max(0,value-used)}
+function syncGramButtons(ingredients,prefix){const sum=ingredients.reduce((a,_,n)=>a+Number(document.getElementById(prefix+'-'+n).value),0);ingredients.forEach((ingredient,n)=>{const input=document.getElementById(prefix+'-'+n),row=input.closest('.granola-ingredient'),g=Number(input.value);row.querySelector('.grams-minus').disabled=g<=0;row.querySelector('.grams-plus').disabled=g+100>stockRemaining(ingredient.id,prefix)||g+100>(500)||sum+100>500;row.classList.toggle('ingredient-selected',g>0)})}
+function loadGranola(){ingredientStock={...STOCK_GRAMS};if(!granolaConfig){granolaConfig=GRANOLA_CONFIG;document.getElementById('granolaIngredients').innerHTML=ingredientInputs(granolaConfig.ingredients,'granola',500);document.getElementById('mixIngredients').innerHTML=ingredientInputs(granolaConfig.mixIngredients,'mix',500)}document.getElementById('granolaBasePrice').textContent=money(granolaConfig.fixedBasePrice);updateGranola();updateMix()}
+function chosenGrams(ingredients,prefix){return ingredients.map((i,n)=>{const input=document.getElementById(prefix+'-'+n),g=Number(input.value);document.getElementById(prefix+'-cost-'+n).textContent=Number.isFinite(g)&&g>=0?(g?(typeof i.pricePerKg==='number'?money(g*i.pricePerKg/1000):'Precio a confirmar'):''):'Revisá los gramos';return g})}
+function storeCustom(p,quantity){if(p.category==='mix'&&mixCartGrams()+p.id.slice(2).split('-').map(Number).reduce((a,b)=>a+b,0)*quantity>500){alert('Podés pedir hasta 500 g de mix en total. Revisá tu carrito.');return}if(p.category==='granola'){for(const id of Object.keys(cart))if(id.startsWith('g-'))delete cart[id];quantity=1}const idx=all.findIndex(x=>x.id===p.id);if(idx>=0)all[idx]=p;else all.push(p);localStorage.setItem('punto-sano-granola-mixes',JSON.stringify(all.filter(x=>x.category==='granola'||x.category==='mix')));checkoutKey=null;cart[p.id]=p.category==='granola'?1:(cart[p.id]||0)+quantity;save();openBag()}
+function updateGranola(){if(!granolaConfig)return;renderBagPreview('granola');syncGramButtons(granolaConfig.ingredients,'granola');const grams=chosenGrams(granolaConfig.ingredients,'granola'),sum=grams.reduce((a,b)=>a+b,0),notice=document.getElementById('granolaNotice'),button=document.getElementById('granolaAdd');button.disabled=true;granolaCurrent=null;
+ if(grams.some(g=>!Number.isInteger(g)||g<0||g>500||g%100!==0)||sum>500){notice.textContent='Elegí hasta 500 g de agregados, de a 100 g.';document.getElementById('granolaTotal').textContent='Revisá la mezcla';return}
+ document.getElementById('granolaRemaining').textContent=sum===500?'¡Tu kilo está completo!':'Te faltan elegir '+(500-sum)+' g';document.querySelectorAll('#granolaSlots span').forEach((slot,i)=>slot.classList.toggle('filled',i<sum/100));
+ document.getElementById('granolaMix').textContent='Base preparada incluida: 500 g. Agregados: '+sum+' g. Peso actual: '+(500+sum)+' g.';
+ const extrasCost=grams.reduce((a,g,n)=>a+g*Number(granolaConfig.ingredients[n].pricePerKg)/1000,0),price=Math.round(granolaConfig.fixedBasePrice+extrasCost);document.getElementById('granolaTotal').textContent=money(price);notice.textContent='Base: '+money(granolaConfig.fixedBasePrice)+' + agregados: '+money(extrasCost)+'.';
+ if(sum!==500)return;const extras=grams.map((g,n)=>g?granolaConfig.ingredients[n].name+' '+g+' g':'').filter(Boolean);granolaCurrent={id:'g-'+grams.join('-'),name:'Granola a tu gusto · 1 kg · Base preparada 500 g · '+extras.join(', '),category:'granola',price,available:true,kg:1};button.disabled=false;
+}
+function addGranola(){if(!granolaCurrent)return;const {kg,...p}=granolaCurrent;storeCustom(p,kg)}
+function updateMix(){if(!granolaConfig)return;renderBagPreview('mix');syncGramButtons(granolaConfig.mixIngredients,'mix');mixCurrent=null;const ingredients=granolaConfig.mixIngredients,grams=chosenGrams(ingredients,'mix'),sum=grams.reduce((a,b)=>a+b,0),button=document.getElementById('mixAdd'),notice=document.getElementById('mixNotice');button.disabled=true;document.getElementById('mixWeight').textContent='Peso de tu mezcla: '+sum+' g';
+ if(grams.some(g=>!Number.isInteger(g)||g<0||g>500)||sum>500){document.getElementById('mixTotal').textContent='Revisá los gramos';notice.textContent='El máximo es 500 g de mix por pedido.';return}
+ const price=Math.round(grams.reduce((a,g,n)=>a+g*ingredients[n].pricePerKg/1000,0));document.getElementById('mixTotal').textContent=money(price);notice.textContent='';if(sum<100||price<1)return;if(mixCartGrams()+sum>500){notice.textContent='El máximo es 500 g de mix entre todas las mezclas de tu carrito.';return}
+ const details=grams.map((g,n)=>g?ingredients[n].name+' '+g+' g':'').filter(Boolean).join(', ');mixCurrent={id:'m-'+grams.join('-'),name:'Mix a tu gusto · '+sum+' g · '+details,category:'mix',price,available:true};button.disabled=false;
+}
+function addMix(){if(mixCurrent)storeCustom(mixCurrent,1)}
+
+function updateCoffee(){const origin=document.getElementById('coffee-origin').value,weight=document.getElementById('coffee-weight').value,form=document.getElementById('coffee-form').value,p=coffees.find(p=>p.id==='c-'+origin+'-'+weight+'-'+form);document.getElementById('coffee-price').textContent=money(p.price)}
+function addCoffee(){const origin=document.getElementById('coffee-origin').value,weight=document.getElementById('coffee-weight').value,form=document.getElementById('coffee-form').value;add('c-'+origin+'-'+weight+'-'+form)}
+
+
+function normalizeSearch(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
+function searchCatalogue(query){
+ const terms=normalizeSearch(query).split(/\s+/).filter(Boolean);if(!terms.length)return [];
+ const catalogue=[...budines,...alfajores,...bizcochuelos,...chipas,...prepizzas,...panes,...yerbas,...supplements].map(p=>({name:productLabel(p),detail:p.desc,price:p.available===false?'Sin stock':money(p.price),route:p.category==='chipa'?'comida':p.category,id:p.id,keywords:[p.category,p.name,p.desc,p.group?'suplementos suplemento':'',p.category==='huella-herbal'?'yerba mate':''].join(' ')}));
+ catalogue.push(
+ {name:'Café premium brasilero',detail:'500 g o 1 kg · Molido o en grano',price:'Desde '+money(coffees.find(p=>p.id==='c-brasil-500-grano').price),route:'cafe',keywords:'cafe brasilero brasil brasileno premium 500 g 1 kg kilo molido en grano'},
+ {name:'Café premium colombiano',detail:'500 g o 1 kg · Molido o en grano',price:'Desde '+money(coffees.find(p=>p.id==='c-colombia-500-grano').price),route:'cafe',keywords:'cafe colombiano colombia premium 500 g 1 kg kilo molido en grano'},
+ {name:'Granola a tu gusto',detail:'Base incluida · Elegí los ingredientes',price:'Armar →',route:'granola',keywords:'granola quinoa copos de maiz miel vainilla almendras caju nueces mani coco girasol pistachos arandanos'},
+ {name:'Mix de frutos secos',detail:'Elegí ingredientes y gramos',price:'Armar →',route:'mix',keywords:'mix frutos secos almendras caju nueces mani pistachos arandanos banana chips'}
+ );
+ return catalogue.filter(p=>terms.every(term=>normalizeSearch(p.name+' '+p.detail+' '+p.keywords).includes(term)));
+}
+function openSearch(){const dialog=document.getElementById('productSearch');document.getElementById('productSearchInput').value='';renderSearch();dialog.showModal();document.getElementById('productSearchInput').focus()}
+function renderSearch(){
+ const query=document.getElementById('productSearchInput').value.trim(),results=searchCatalogue(query),list=document.getElementById('searchResults');list.replaceChildren();
+ document.getElementById('searchStatus').textContent=!query?'Escribí el producto que buscás.':results.length?results.length+' resultado'+(results.length===1?'':'s'):'No encontramos ese producto. Probá con otro nombre.';
+ for(const p of results){const button=document.createElement('button');button.type='button';button.className='search-result';const text=document.createElement('span'),name=document.createElement('strong'),detail=document.createElement('small'),price=document.createElement('span');name.textContent=p.name;detail.textContent=p.detail;price.textContent=p.price;price.className='search-result-price';text.append(name,detail);button.append(text,price);button.addEventListener('click',()=>openSearchResult(p));list.append(button)}
+}
+function openSearchResult(product){
+ document.getElementById('productSearch').close();
+ const show=()=>{route();requestAnimationFrame(()=>{document.querySelectorAll('.search-selected').forEach(el=>el.classList.remove('search-selected'));if(product.id){const card=[...document.querySelectorAll('[data-product-id]')].find(el=>el.dataset.productId===product.id||(el.dataset.ids||'').split(',').includes(product.id));if(card){const sel=card.querySelector('.supp-select');if(sel){sel.value=product.id;pickFlavor(sel)}card.classList.add('search-selected');card.scrollIntoView({block:'center'});const button=card.querySelector('button:not(:disabled)');if(button)button.focus({preventScroll:true})}}})};
+ if(location.hash==='#'+product.route)show();else{window.addEventListener('hashchange',show,{once:true});location.hash=product.route}
+}
+document.getElementById('productSearchForm').addEventListener('submit',event=>{event.preventDefault();renderSearch()});
+
+
+(function followMateSteps(){
+ const lane=document.querySelector('.mascot-lane'),mate=lane.querySelector('.walking-mate'),trail=lane.querySelector('.leaf-trail'),reduced=window.matchMedia('(prefers-reduced-motion: reduce)');let lastX=null,side=0;
+ setInterval(()=>{
+  if(reduced.matches||document.hidden||document.getElementById('home').hidden){trail.replaceChildren();lastX=null;return}
+  const ground=lane.getBoundingClientRect();if(ground.bottom<0||ground.top>innerHeight){trail.replaceChildren();lastX=null;return}
+  const body=mate.getBoundingClientRect(),x=body.left-ground.left+body.width*.34,step=body.width*.42;
+  if(lastX!==null&&x<lastX){trail.replaceChildren();lastX=null}
+  if(lastX===null){lastX=x;return}
+  if(x-lastX<step)return;
+  const leaf=document.createElement('i');leaf.className='foot-leaf';leaf.style.left=(x-5)+'px';leaf.style.top=(Math.min(ground.height-7,body.bottom-ground.top-5)-(side%2)*5)+'px';leaf.style.transform='rotate('+(side++%2?145:25)+'deg)';trail.append(leaf);leaf.addEventListener('animationend',()=>leaf.remove(),{once:true});lastX=x;
+ },120);
+})();
+
+
+function cartDeliveryTotals(){
+ const subtotal=all.reduce((sum,product)=>sum+lineTotal(product),0);
+ const shipping=subtotal>0&&subtotal<SHOP.freeShippingFrom?SHOP.shippingCost:0;
+ return {subtotal,shipping,total:subtotal+shipping};
+}
+function cartWhatsappMessage(){
+ const entries=all.filter(product=>cart[product.id]),totals=cartDeliveryTotals();
+ return ['Hola Punto Sano, quiero pedir:','',...entries.map(product=>cart[product.id]+' × '+productLabel(product)+' — '+money(lineTotal(product))),'','Productos: '+money(totals.subtotal),'Envío por Uber en Bahía Blanca: '+(totals.shipping?money(totals.shipping):'Gratis'),'TOTAL CON ENVÍO: '+money(totals.total),'Quisiera coordinar la entrega y el pago por WhatsApp.'].join('\n');
+}
+function cartWhatsappUrl(){return 'https://wa.me/'+SHOP.whatsapp+'?text='+encodeURIComponent(cartWhatsappMessage())}
+
+(function coverWriters(){
+ const cover=document.querySelector('.general-title'),motto=cover.querySelector('.cover-motto'),layer=cover.querySelector('.cover-flight'),bee=layer.querySelector('.writing-bee'),pen=layer.querySelector('.writing-pen'),heading=cover.querySelector('h1'),reduced=window.matchMedia('(prefers-reduced-motion: reduce)'),text=motto.textContent,letters=[],brand=[];
+ heading.setAttribute('aria-label','Punto Sano');heading.replaceChildren();
+ ['Punto','Sano'].forEach((word,index)=>{const group=document.createElement(index?'span':'b');group.style.fontWeight='inherit';group.setAttribute('aria-hidden','true');for(const char of word){const letter=document.createElement('i');letter.className='brand-letter';letter.textContent=char;group.append(letter);brand.push(letter)}heading.append(group)});
+ motto.setAttribute('aria-label',text);motto.replaceChildren();
+ text.split(' ').forEach((word,index)=>{if(index)motto.append(document.createTextNode(' '));const group=document.createElement('span');group.className='motto-word';group.setAttribute('aria-hidden','true');for(const char of word){const letter=document.createElement('span');letter.className='motto-letter'+(char==='♥'?' motto-heart':'');letter.textContent=char;group.append(letter);letters.push(letter)}motto.append(group)});
+ const all=[...brand,...letters],revealAll=()=>all.forEach(letter=>letter.classList.remove('unwritten'));
+ 
+ const titleTime=brand.length*200,phraseStart=titleTime+400,letterTime=150;
+ let start=null,lastDot=null,lastBrand=-1,lastPhrase=-1;
+ function frame(now){
+  if(start===null)start=now;
+  const bounds=cover.getBoundingClientRect(),title=heading.getBoundingClientRect(),elapsed=now-start;let x,y;
+  if(reduced.matches){revealAll();bee.style.opacity='1';bee.style.transform='translate('+(title.right-bounds.left-28)+'px,'+Math.max(0,title.top-bounds.top-26)+'px)';pen.style.opacity='0';return}
+  if(document.getElementById('home').hidden||document.hidden){requestAnimationFrame(frame);return}
+  if(elapsed<titleTime){
+   const index=Math.min(brand.length-1,Math.floor(elapsed/200));
+   for(let i=lastBrand+1;i<=index;i++)brand[i].classList.remove('unwritten');lastBrand=index;
+   const rect=brand[index].getBoundingClientRect();x=rect.right-bounds.left+2;y=rect.top-bounds.top-12;
+  }else{
+   brand.forEach(letter=>letter.classList.remove('unwritten'));
+   x=title.right-bounds.left-30+Math.sin(elapsed/700)*7;y=title.top-bounds.top-27+Math.cos(elapsed/600)*3;
+  }
+  x=Math.max(3,Math.min(bounds.width-35,x));y=Math.max(0,Math.min(bounds.height-31,y));
+  bee.style.opacity='1';bee.style.transform='translate('+x+'px,'+y+'px) rotate('+(Math.sin(elapsed/260)*6)+'deg)';
+  if(elapsed<titleTime&&(!lastDot||Math.hypot(x-lastDot.x,y-lastDot.y)>7)){const dot=document.createElement('i');dot.className='bee-dot';dot.style.left=(x+2)+'px';dot.style.top=(y+18)+'px';layer.append(dot);dot.addEventListener('animationend',()=>dot.remove(),{once:true});lastDot={x,y}}
+  if(elapsed>=phraseStart){
+   const index=Math.min(letters.length-1,Math.floor((elapsed-phraseStart)/letterTime));
+   for(let i=lastPhrase+1;i<=index;i++)letters[i].classList.remove('unwritten');lastPhrase=index;
+   const rect=letters[index].getBoundingClientRect(),height=pen.getBoundingClientRect().height;
+   pen.style.opacity=elapsed<phraseStart+letters.length*letterTime+500?'1':'0';
+   pen.style.transform='translate('+(rect.right-bounds.left-3)+'px,'+(rect.bottom-bounds.top-height+2)+'px) rotate('+Math.sin(elapsed/100)*3+'deg)';
+  }
+  requestAnimationFrame(frame);
+ }
+ const ready=document.fonts?document.fonts.ready:Promise.resolve();ready.then(()=>requestAnimationFrame(frame)).catch(()=>revealAll());
+})();
+
+</script><script>
+(function(){
+ var lane=document.querySelector('.hero-copy .mascot-lane'), mate=document.querySelector('.walking-mate');
+ var tile=null; document.querySelectorAll('.hero-collections .collection-tile').forEach(function(t){ if(/Huella Herbal/.test(t.textContent)) tile=t; });
+ if(!lane||!mate||!tile) return;
+ var st=document.createElement('style'); st.id='mateHopStyle'; document.head.appendChild(st);
+ lane.style.overflow='visible';
+ function build(){
+  var lb=lane.getBoundingClientRect(), mh=mate.offsetHeight||56, mw=mate.offsetWidth||56;
+  var bottom=parseFloat(getComputedStyle(mate).bottom)||0;
+  var endLeft=lb.left+scrollX+(lb.width-mw);
+  var homeTop=lb.bottom+scrollY-bottom-mh;
+  var tb=tile.querySelector('.product-stage')||tile; var tr=tb.getBoundingClientRect();
+  var targetLeft=tr.left+scrollX+(tr.width-mw)/2, targetTop=tr.top+scrollY-mh+8;
+  var dx=targetLeft-endLeft, dy=targetTop-homeTop;
+  var total=26*(lb.width-mw)/360/0.85;
+  st.textContent='@keyframes mateHop{0%{left:0;transform:none}84%{left:'+(lb.width-mw)+'px;transform:none}88%{left:'+(lb.width-mw)+'px;transform:translate('+(dx*0.5)+'px,'+(dy*0.5-70)+'px)}92%{left:'+(lb.width-mw)+'px;transform:translate('+dx+'px,'+dy+'px)}100%{left:'+(lb.width-mw)+'px;transform:translate('+dx+'px,'+dy+'px)}}';
+  mate.style.animation='mateHop '+total.toFixed(2)+'s linear 1 forwards';
+ }
+ mate.addEventListener('animationend',function(){ mate.classList.add('seated'); });
+ build(); window.addEventListener('load',build); window.addEventListener('resize',build);
+})();
+</script><style>
+.collection-tile,.product,.category{transition:transform .25s ease,box-shadow .25s ease!important;box-shadow:0 26px 30px -22px rgba(0,0,0,0.5),0 2px 0 rgba(255,255,255,0.7) inset!important}
+.collection-tile:hover,.product:hover,.category:hover{box-shadow:0 34px 40px -24px rgba(0,0,0,0.55),0 2px 0 rgba(255,255,255,0.7) inset!important}
+.product-stage,.collection-image{transform-style:preserve-3d}
+</style><script>
+(function(){
+ document.querySelectorAll('.collection-tile,.product,.category').forEach(function(card){
+  var raf=null;
+  card.addEventListener('pointermove',function(e){ if(raf)cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){ var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5; card.style.setProperty('--tilt-x',(-y*14).toFixed(2)+'deg'); card.style.setProperty('--tilt-y',(x*16).toFixed(2)+'deg'); }); });
+  card.addEventListener('pointerleave',function(){ card.style.setProperty('--tilt-x','0deg'); card.style.setProperty('--tilt-y','0deg'); });
+ });
+})();
+</script><script>(function(){
+  var box=document.getElementById('reviewsSection');if(!box)return;
+  function sync(){var h=location.hash;box.hidden=!(!h||h==='#inicio'||h==='#home')}
+  window.addEventListener('hashchange',sync);sync();
+  var det=document.getElementById('reviewDetails'),form=document.getElementById('reviewForm');
+  var nameIn=document.getElementById('reviewName'),catSel=document.getElementById('reviewCategory'),rateSel=document.getElementById('reviewRating'),txt=document.getElementById('reviewText');
+  if(nameIn){nameIn.placeholder='Nombre y apellido';nameIn.setAttribute('minlength','3');nameIn.setAttribute('autocomplete','name');var nl=nameIn.parentElement.querySelector('label');if(nl)nl.textContent='Nombre y apellido';}
+  if(catSel){var g=document.createElement('option');g.value='General';g.textContent='General';catSel.appendChild(g);catSel.value='General';catSel.required=false;catSel.parentElement.hidden=true;}
+  if(txt){txt.setAttribute('minlength','3');txt.placeholder='Contanos qué te pareció.';}
+  if(rateSel){var wrap=rateSel.parentElement;rateSel.required=false;rateSel.hidden=true;wrap.hidden=false;
+    var pick=document.createElement('div');pick.className='star-pick';pick.setAttribute('role','radiogroup');pick.setAttribute('aria-label','Tu puntaje');
+    var btns=[];var cur=0;
+    function paint(n){btns.forEach(function(b,i){b.classList.toggle('on',i<n)})}
+    for(var i=1;i<=5;i++){(function(n){var b=document.createElement('button');b.type='button';b.textContent='★';b.setAttribute('aria-label',n+' de 5 estrellas');b.addEventListener('mouseenter',function(){paint(n)});b.addEventListener('click',function(){cur=n;rateSel.value=String(n);paint(n)});btns.push(b);pick.appendChild(b)})(i)}
+    pick.addEventListener('mouseleave',function(){paint(cur)});
+    wrap.insertBefore(pick,rateSel);
+    var hint=document.createElement('p');hint.className='star-hint';hint.textContent='Tocá las estrellas para puntuar';wrap.appendChild(hint);
+    rateSel.value='';
+  }
+  if(form)form.onsubmit=function(ev){ev.preventDefault();
+    var n=document.getElementById('reviewName').value.trim(),c=document.getElementById('reviewCategory').value,
+        r=document.getElementById('reviewRating').value,t=document.getElementById('reviewText').value.trim();
+    var msg='Reseña para Punto Sano\n\nNombre: '+n+'\nProducto: '+c+'\nValoración: '+r+'/5\nOpinión: '+t;
+    window.open('https://wa.me/'+SHOP.whatsapp+'?text='+encodeURIComponent(msg),'_blank','noopener');
+    var f=document.getElementById('reviewFeedback');if(f)f.textContent='Abrimos WhatsApp con tu reseña. Enviala desde ahí y la publicamos en la página.';
+    return false;};
+})();</script>
+<script>(function(){function sync(){document.body.classList.toggle('on-home',!document.getElementById('home').hidden);document.body.classList.toggle('on-mix',!document.getElementById('mix').hidden);document.body.classList.toggle('on-supp',!document.getElementById('supplements').hidden);document.body.classList.toggle('on-granola',!document.getElementById('granola').hidden);document.body.classList.toggle('on-cafe',!document.getElementById('coffee').hidden);document.body.classList.toggle('on-huella',(location.hash.slice(1))==='huella-herbal');document.body.classList.toggle('on-alfajores',location.hash.slice(1)==='alfajores');document.body.classList.toggle('on-prep',['comida','budines','alfajores','bizcochuelos','chipa','pan','pizza'].indexOf(location.hash.slice(1))>=0)}window.addEventListener('hashchange',sync);sync()})();</script>
+<script>
+/* Deslizar hacia la derecha dentro de la página vuelve a la sección anterior de la tienda */
+(function(){
+ var parent={budines:'comida',alfajores:'comida',bizcochuelos:'comida',chipa:'comida',pan:'comida',pizza:'comida',proteinas:'suplementos',creatina:'suplementos',preentrenos:'suplementos'};
+ var sx=0,sy=0,st=0,on=false;
+ function current(){return location.hash.slice(1)||'inicio'}
+ document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;var t=e.touches[0];sx=t.clientX;sy=t.clientY;st=Date.now();on=!e.target.closest('input,textarea,select,dialog,.grams-control')},{passive:true});
+ document.addEventListener('touchend',function(e){
+  if(!on)return;on=false;var page=current();if(page==='inicio'||page==='home')return;
+  var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
+  if(dx>70&&Math.abs(dy)<60&&dx>Math.abs(dy)*1.6&&Date.now()-st<700){location.hash=parent[page]||'inicio'}
+ },{passive:true});
+})();
+</script><script>
+/* Fotos de productos y categorías internas: la original queda al 50% de fondo y encima va el recorte (archivo "-recorte.webp") */
+(function(){
+ function cutOf(url){if(/\.svg(\?.*)?$/i.test(url))return url;return url.replace(/\.(webp|jpg|jpeg|png)(\?.*)?$/i,'').replace(/-s$/,'')+'-recorte.webp'}
+ function urlIn(css){var m=/url\(["']?([^"')]+)["']?\)/.exec(css||'');return m?m[1]:null}
+ function apply(el){
+  return; // las fotos se muestran limpias, tal cual el original (sin la capa al 50% + recorte)
+  if(el.dataset.gp)return;el.dataset.gp='1';
+  var img=el.querySelector('img'),cs,src;
+  if(img){src=img.getAttribute('src');el.style.setProperty('--orig','url("'+src+'")');el.style.setProperty('--size',getComputedStyle(img).objectFit==='cover'?'cover':'contain');img.setAttribute('src',cutOf(src))}
+  else if(el.classList.contains('budin-photo')||el.classList.contains('alfajor-photo')){cs=getComputedStyle(el,'::before');src=urlIn(cs.backgroundImage);if(!src)return;el.style.setProperty('--orig','url("'+src+'")');el.style.setProperty('--cut','url("'+cutOf(src)+'")');el.style.setProperty('--size',cs.backgroundSize)}
+  else{cs=getComputedStyle(el);src=urlIn(cs.backgroundImage);if(!src)return;el.style.setProperty('--orig','url("'+src+'")');el.style.setProperty('--cut','url("'+cutOf(src)+'")');el.style.setProperty('--size',cs.backgroundSize==='auto'?'cover':cs.backgroundSize);el.style.setProperty('background-image','none','important')}
+  el.classList.add('gp');
+ }
+ function scan(){document.querySelectorAll('section:not(#home):not(#supplements) .product-photo,section:not(#home):not(#supplements) .category-photo,section:not(#home):not(#supplements) .supp-photo').forEach(apply)}
+ new MutationObserver(scan).observe(document.querySelector('main'),{childList:true,subtree:true});
+ scan();
+})();
+</script>
+<script>
+/* Vapor del café: hilos de vapor que suben desde la taza enroscándose (giran alrededor de un eje, con profundidad) y salen por arriba de la tarjeta */
+(function(){
+ var img=document.querySelector('.hero-collections .coffee-collection');if(!img)return;
+ var tile=img.closest('.collection-tile'),stage=img.closest('.product-stage');
+ var cv=document.createElement('canvas');cv.className='cafe-vapor';cv.setAttribute('aria-hidden','true');tile.appendChild(cv);
+ var ctx=cv.getContext('2d'),off=document.createElement('canvas'),oc=off.getContext('2d'),dpr=Math.min(2,window.devicePixelRatio||1),W=0,H=0,sw=0;
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+ var UP=.18; // cuánto sube por encima de la foto (en anchos de foto)
+ function size(){var t=tile.getBoundingClientRect(),s=stage.getBoundingClientRect();sw=s.width;if(!sw)return;W=sw*1.4;H=sw*(UP+.62);
+  cv.style.left=(s.left-t.left-sw*.2)+'px';cv.style.top=(s.top-t.top-sw*UP)+'px';cv.style.width=W+'px';cv.style.height=H+'px';
+  cv.width=off.width=Math.round(W*dpr);cv.height=off.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);oc.setTransform(dpr,0,0,dpr,0,0)}
+ var strands=[];for(var k=0;k<5;k++)strands.push({th:k/5*Math.PI*2,rad:.04+Math.random()*.05,f:1+Math.random()*1,f2:2.4+Math.random()*1.8,sp:1+Math.random()*.7,ph:Math.random()*6.3,w:.7+Math.random()*.6,len:.75+Math.random()*.3});
+ function frame(t){
+  requestAnimationFrame(frame);
+  if(document.hidden||document.getElementById('home').hidden)return;
+  if(!sw){size();if(!sw)return}
+  var T=reduce.matches?0:t/1000,cx=sw*.2+sw*.51,cupY=sw*UP+sw*.53,rise=sw*(UP+.48),top=sw*UP;
+  // 1) forma del vapor, opaca, con bordes suaves
+  oc.globalCompositeOperation='source-over';oc.clearRect(0,0,W,H);oc.lineCap='round';oc.lineJoin='round';
+  oc.strokeStyle='#fff';oc.shadowColor='#fff';oc.shadowBlur=sw*.035;
+  for(var j=0;j<strands.length;j++){var q=strands[j],ang=q.th+T*.5,depth=Math.sin(ang),N=40;
+   oc.globalAlpha=.55+.35*depth;
+   for(var i=1;i<=N;i++){
+    var p0=pt(q,ang,(i-1)/N*q.len),p1=pt(q,ang,i/N*q.len);
+    oc.lineWidth=sw*(.008+.04*(i/N))*q.w*(1+.3*depth);oc.beginPath();oc.moveTo(p0[0],p0[1]);oc.lineTo(p1[0],p1[1]);oc.stroke()}
+  }
+  oc.globalAlpha=1;oc.shadowBlur=0;
+  // 2) se desvanece al salir de la taza y al subir
+  var g=oc.createLinearGradient(0,cupY,0,cupY-rise);
+  g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.12,'rgba(0,0,0,.9)');g.addColorStop(.55,'rgba(0,0,0,.75)');g.addColorStop(1,'rgba(0,0,0,0)');
+  oc.globalCompositeOperation='destination-in';oc.fillStyle=g;oc.fillRect(0,0,W,H);
+  // 3) color: claro dentro de la foto, tostado suave afuera (sobre el fondo crema)
+  var c=oc.createLinearGradient(0,top+sw*.06,0,top-sw*.06);c.addColorStop(0,'rgb(255,250,240)');c.addColorStop(1,'rgb(168,140,108)');
+  oc.globalCompositeOperation='source-in';oc.fillStyle=c;oc.fillRect(0,0,W,H);
+  ctx.clearRect(0,0,W,H);ctx.globalAlpha=.3;ctx.drawImage(off,0,0,W,H);ctx.globalAlpha=1;
+  function pt(q,ang,h){var amp=sw*(.012+.12*Math.pow(h,1.25));
+   return [cx+Math.cos(ang)*sw*q.rad*(1+h*2)+amp*Math.sin(h*q.f*6.28-T*q.sp+q.ph)+amp*.4*Math.sin(h*q.f2*6.28-T*q.sp*1.6+q.ph*2),cupY-h*rise+Math.sin(T*.8+q.ph+h*3)*sw*.008]}
+ }
+ size();window.addEventListener('resize',size);window.addEventListener('load',size);window.addEventListener('hashchange',function(){setTimeout(size,60)});
+ requestAnimationFrame(frame);
+})();
+</script>
+<script>
+/* Batidor que bate y salpica chocolate; cuchara de miel que gira y chorrea */
+(function(){
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+ function setup(img,o){
+  if(!img)return;var cv=document.createElement('canvas');cv.className='fx-canvas';cv.setAttribute('aria-hidden','true');img.insertAdjacentElement('afterend',cv);
+  var ctx=cv.getContext('2d'),dpr=Math.min(2,devicePixelRatio||1),W=0,H=0,iw=0,ih=0,ox=0,oy=0,P=[],last=0;
+  function size(){iw=img.offsetWidth;ih=img.offsetHeight;if(!iw)return;W=iw*(1+o.padL+o.padR);H=ih*(1+o.padT+o.padB);ox=iw*o.padL;oy=ih*o.padT;
+   cv.style.left=(img.offsetLeft-ox)+'px';cv.style.top=(img.offsetTop-oy)+'px';cv.style.width=W+'px';cv.style.height=H+'px';cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+  // punto de la imagen (fracciones) -> canvas, aplicando el mismo giro que la imagen
+  function map(fx,fy,ang){var px=o.origin[0]*iw,py=o.origin[1]*ih,x=fx*iw-px,y=fy*ih-py,c=Math.cos(ang),s=Math.sin(ang);return [ox+px+x*c-y*s,oy+py+x*s+y*c]}
+  function frame(t){requestAnimationFrame(frame);
+   if(!img.offsetParent||document.hidden){return}
+   if(!iw||img.offsetWidth!==iw)size();if(!iw)return;
+   var T=t/1000,dt=Math.min(.05,(t-(last||t))/1000);last=t;
+   if(reduce.matches){img.style.transform='';ctx.clearRect(0,0,W,H);return}
+   var ang=o.angle(T);img.style.transformOrigin=(o.origin[0]*100)+'% '+(o.origin[1]*100)+'%';img.style.transform=o.css(T,ang);
+   o.emit(P,T,dt,function(fx,fy){return map(fx,fy,ang*Math.PI/180)},iw,ih);
+   ctx.clearRect(0,0,W,H);
+   for(var i=P.length-1;i>=0;i--){var p=P[i];if(o.step(p,dt,iw,ih,function(fx,fy){return map(fx,fy,ang*Math.PI/180)})===false||p.y>H+20){P.splice(i,1);continue}o.draw(ctx,p,iw)}
+  }
+  size();addEventListener('resize',size);addEventListener('hashchange',function(){setTimeout(size,80)});img.complete?size():img.addEventListener('load',size);
+  requestAnimationFrame(frame);
+ }
+ // ---- Batidor: bate en vaivén (con giro 3D); la mezcla de chocolate se desprende del propio batidor en hilos y salpicaduras chicas ----
+ var CH=[[.43,.672],[.291,.529],[.428,.724],[.253,.538],[.558,.646],[.581,.613],[.341,.672],[.523,.622],[.499,.595],[.297,.738],[.263,.602],[.353,.711],[.398,.699],[.329,.737],[.372,.71],[.29,.732],[.281,.725],[.318,.75],[.257,.722],[.356,.677],[.383,.679],[.309,.751]];
+ var prevW=0;
+ setup(document.querySelector('.batidor-img'),{padL:.6,padR:.15,padT:.15,padB:.7,origin:[.93,.04],
+  angle:function(T){return 9*Math.sin(T*5.2)+3*Math.sin(T*2.1)},
+  css:function(T,a){return 'perspective(500px) rotateY('+(18*Math.sin(T*2.6)).toFixed(2)+'deg) rotate('+a.toFixed(2)+'deg)'},
+  emit:function(P,T,dt,m,iw){
+   var w=Math.cos(T*5.2),flip=(prevW>0)!==(w>0);prevW=w;
+   var n=flip?2+Math.floor(Math.random()*3):(Math.random()<dt*1.5?1:0);
+   for(var k=0;k<n;k++){var e=CH[Math.floor(Math.random()*CH.length)],q=m(e[0],e[1]),c=m(.39,.63);
+    var dx=q[0]-c[0],dy=q[1]-c[1],d=Math.hypot(dx,dy)||1,sp=iw*(.35+Math.random()*.45);
+    P.push({x:q[0],y:q[1],ox:q[0],oy:q[1],vx:dx/d*sp-(w>0?1:-1)*iw*.25,vy:dy/d*sp-iw*.15,r:iw*(.008+Math.random()*.012),age:0,life:1.1+Math.random()*.5})}},
+  step:function(p,dt,iw){p.age+=dt;if(p.age>p.life)return false;p.vy+=iw*2.4*dt;p.vx*=.99;p.x+=p.vx*dt;p.y+=p.vy*dt},
+  draw:function(c,p){var al=Math.min(1,(p.life-p.age)*3),a=Math.atan2(p.vy,p.vx),sp=Math.hypot(p.vx,p.vy),st=1.4+Math.min(2.2,sp/(p.r*45));
+   c.save();c.globalAlpha=al;
+   // hilo de mezcla que todavía une la gota con el batidor
+   if(p.age<.16){var t=1-p.age/.16;c.strokeStyle='rgba(74,36,22,'+(.9*t)+')';c.lineCap='round';c.lineWidth=p.r*1.1*t+.4;c.beginPath();c.moveTo(p.ox,p.oy);c.quadraticCurveTo((p.ox+p.x)/2,(p.oy+p.y)/2+p.r*2,p.x,p.y);c.stroke()}
+   c.translate(p.x,p.y);c.rotate(a);var g=c.createRadialGradient(-p.r*.3,-p.r*.4,p.r*.1,0,0,p.r*st);g.addColorStop(0,'#8c5238');g.addColorStop(.5,'#5a2c1a');g.addColorStop(1,'#3a1a0e');
+   c.fillStyle=g;c.beginPath();c.moveTo(p.r,0);c.bezierCurveTo(p.r,p.r*.95,-p.r*st*.6,p.r*.55,-p.r*st,0);c.bezierCurveTo(-p.r*st*.6,-p.r*.55,p.r,-p.r*.95,p.r,0);c.fill();
+   c.fillStyle='rgba(255,225,200,.45)';c.beginPath();c.ellipse(p.r*.1,-p.r*.35,p.r*.3,p.r*.14,0,0,6.283);c.fill();c.restore()}
+ });
+ // ---- Miel: la cuchara gira despacio y de las puntas se forman gotas que se estiran y caen ----
+ var tips=[[.445,.495],[.512,.48],[.65,.545]];
+ setup(document.querySelector('.miel-img'),{padL:.1,padR:.1,padT:.05,padB:.25,origin:[.98,.08],
+  angle:function(T){return 2.5*Math.sin(T*1.1)},
+  css:function(T,a){return 'perspective(500px) rotateY('+(10*Math.sin(T*.9)).toFixed(2)+'deg) rotate('+a.toFixed(2)+'deg)'},
+  emit:function(P,T,dt,m,iw){if(!P.tips){P.tips=window.__mielTips=tips.map(function(_,i){return {next:T+i*.7,grow:-1}})}
+   P.tips.forEach(function(tp,i){if(tp.grow<0&&T>tp.next){tp.grow=0;P.push({tip:i,stage:0,g:0,age:0,x:0,y:0,vy:0,r:iw*(.04+Math.random()*.012)})}})},
+  step:function(p,dt,iw,ih,m){p.age+=dt;var tp=P_tips(p);
+   if(p.stage===0){p.g=Math.min(1,p.g+dt/1.3);var q=m(tips[p.tip][0],tips[p.tip][1]);p.x=q[0];p.y=q[1];if(p.g>=1){p.stage=1;p.vy=iw*.05;if(tp){tp.grow=-1;tp.next=performance.now()/1000+.6+Math.random()*1.4}}}
+   else{p.vy+=iw*3*dt;p.y+=p.vy*dt;if(p.y>p.floor)return false}
+   if(!p.floor)p.floor=m(.5,.88)[1]},
+  draw:function(c,p){var r=p.r,len=p.stage===0?r*(.6+2.2*p.g):r*(1.2+Math.min(2,p.vy/(r*25)));
+   var g=c.createLinearGradient(p.x-r,0,p.x+r,0);g.addColorStop(0,'rgba(214,128,20,.95)');g.addColorStop(.45,'rgba(255,196,60,.95)');g.addColorStop(1,'rgba(196,108,14,.95)');
+   c.fillStyle=g;c.beginPath();
+   if(p.stage===0){c.moveTo(p.x-r*.35,p.y-r*.2);c.bezierCurveTo(p.x-r*.4,p.y+len*.5,p.x-r,p.y+len-r,p.x,p.y+len+r*.2);c.bezierCurveTo(p.x+r,p.y+len-r,p.x+r*.4,p.y+len*.5,p.x+r*.35,p.y-r*.2);}
+   else{c.moveTo(p.x,p.y-len);c.bezierCurveTo(p.x+r*.3,p.y-len*.4,p.x+r,p.y-r*.2,p.x,p.y+r);c.bezierCurveTo(p.x-r,p.y-r*.2,p.x-r*.3,p.y-len*.4,p.x,p.y-len);}
+   c.fill();c.fillStyle='rgba(255,250,220,.75)';c.beginPath();c.ellipse(p.x-r*.3,p.y+(p.stage===0?len*.75:0)-r*.2,r*.18,r*.32,0,0,6.283);c.fill()}
+ });
+ function P_tips(p){return window.__mielTips&&window.__mielTips[p.tip]}
+})();
+</script>
+<script>
+/* Botón/gesto "atrás" del celular: vuelve a la sección anterior de la tienda en vez de salir de la web.
+   Cada entrada del historial lleva un número; si el número baja, fue un "atrás" y se muestra la sección anterior. */
+(function(){
+ var parent={budines:'comida',alfajores:'comida',bizcochuelos:'comida',chipa:'comida',pan:'comida',pizza:'comida',proteinas:'suplementos',creatina:'suplementos',preentrenos:'suplementos'};
+ function cur(){var h=location.hash.slice(1);return !h||h==='home'?'inicio':h}
+ var n=1,stack=[],busy=false;
+ function tag(st){try{history.replaceState(st,'',location.href)}catch(e){}}
+ function fresh(){var h=cur();if(stack[stack.length-1]!==h)stack.push(h);if(stack.length>40)stack.shift();n++;tag({ps:h,n:n})}
+ function onNav(e){
+  if(busy)return;var st=history.state;
+  if(!st||st.ps===undefined){fresh();return}
+  if(st.n<n){ // atrás
+   stack.pop();var prev=stack.length?stack[stack.length-1]:null;
+   if(!prev){var h0=st.ps==='__base'?null:st.ps;prev=h0&&h0!==cur()?h0:(parent[cur()]||'inicio')}
+   if(st.n===0&&cur()==='inicio'&&!stack.length&&prev==='inicio'){busy=true;history.back();setTimeout(function(){busy=false},300);return}
+   if(!stack.length)stack.push(prev);
+   n=st.n;busy=true;try{history.replaceState({ps:prev,n:n},'','#'+prev)}catch(_){}
+   window.dispatchEvent(new HashChangeEvent('hashchange'));busy=false;
+   if(n===0&&!(prev==='inicio'&&stack.length<=1)){n=1;try{history.pushState({ps:prev,n:1},'','#'+prev)}catch(_){}} // reserva para el próximo "atrás"
+  }else{n=st.n;if(stack[stack.length-1]!==st.ps)stack.push(st.ps)}
+ }
+ addEventListener('popstate',onNav);
+ addEventListener('hashchange',function(){if(!busy&&!(history.state&&history.state.ps!==undefined))fresh()});
+ var start=cur();stack=start==='inicio'?['inicio']:parent[start]?['inicio',parent[start],start]:['inicio',start];
+ tag({ps:'inicio',n:0});try{history.pushState({ps:start,n:1},'','#'+start)}catch(e){}
+})();
+</script>
+<script>
+/* Animación: la foto del producto vuela hasta "Mi carrito" y el carrito da un saltito */
+(function(){
+ var base=window.add;if(typeof base!=='function')return;
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ var lastTap={id:null,t:0};
+ window.add=function(id){var now=Date.now();if(lastTap.id===id&&now-lastTap.t<400)return;lastTap={id:id,t:now};var before=cart[id]||0;base(id);if((cart[id]||0)>before){fly(id);showToast()}};
+ function showToast(){var t=document.getElementById('toast');if(!t)return;t.textContent='✓ Agregado al carrito';t.hidden=false;t.classList.remove('toast-in');void t.offsetWidth;t.classList.add('toast-in');clearTimeout(window.__toastT);window.__toastT=setTimeout(function(){t.hidden=true},2000)}
+ function fly(id){
+  var bagBtn=document.querySelector('.bag-button');if(!bagBtn)return;
+  bagBtn.classList.remove('bag-bump');void bagBtn.offsetWidth;
+  var card=[...document.querySelectorAll('[data-product-id]')].find(function(el){return el.dataset.productId===id}),ph=card&&card.querySelector('.product-photo')||document.querySelector('#coffee .coffee-hero');
+  if(!ph||reduce.matches){bagBtn.classList.add('bag-bump');return}
+  var img=ph.querySelector('img'),src=img?img.currentSrc||img.src:'',a=ph.getBoundingClientRect(),b=bagBtn.getBoundingClientRect();
+  if(!src){var m=/url\(["']?([^"')]+)/.exec(getComputedStyle(ph,'::before').backgroundImage||'');src=m?m[1]:''}
+  var el=document.createElement('div');el.className='fly-item';el.style.left=a.left+'px';el.style.top=a.top+'px';el.style.width=a.width+'px';el.style.height=a.height+'px';
+  if(src)el.style.backgroundImage='url("'+src+'")';else el.style.background='#e7c696';document.body.appendChild(el);
+  var dx=b.left+b.width/2-(a.left+a.width/2),dy=b.top+b.height/2-(a.top+a.height/2);
+  el.animate([{transform:'translate(0,0) scale(1)',opacity:1},{offset:.6,transform:'translate('+dx*.6+'px,'+(dy*.6-60)+'px) scale(.45)',opacity:.95},{transform:'translate('+dx+'px,'+dy+'px) scale(.08)',opacity:.4}],{duration:750,easing:'cubic-bezier(.5,0,.3,1)'}).onfinish=function(){el.remove();bagBtn.classList.add('bag-bump')};
+ }
+ // banner de promo: precio más bajo de la media docena
+ try{var min=Math.min.apply(null,alfajores.filter(function(p){return p.pack6}).map(function(p){return p.pack6}));if(isFinite(min))document.getElementById('promoDesde').textContent=money(min)}catch(e){}
+})();
+</script>
+<style>
+/* ===== Sin dorado en la interfaz: botones, etiquetas y detalles en blanco y negro (la abeja y las fotos no cambian) ===== */
+:root{--gold:#1a1a1a!important;--gold-deep:#000000!important;--gold-light:#e6e6e6!important;--gold-btn:#ffffff!important;--f-accent:#1a1a1a!important}
+html body .add:not(:disabled),html body .add:not(:disabled):hover,html body section:not(#home) .product .add:not(:disabled),html body .coffee-options .add:not(:disabled){background:#ffffff!important;border:1.5px solid #1a1a1a!important;color:#1a1a1a!important;box-shadow:none!important}
+html body .add:not(:disabled):active{background:#1a1a1a!important;color:#ffffff!important}
+.badge-nuevo{background:#1a1a1a!important;color:#ffffff!important}
+.badge-promo{background:#ffffff!important;color:#1a1a1a!important;border:1px solid #1a1a1a}
+.promo-banner{border:1px solid #1a1a1a!important}
+.promo-banner::after{background:linear-gradient(100deg,transparent 30%,rgba(0,0,0,.05) 45%,transparent 60%)!important}
+.promo-txt small{color:#1a1a1a!important}
+.site-foot{border-top-color:#e2e2e2!important}
+.site-foot .foot-links a{border-bottom-color:#1a1a1a!important}
+.review-stars,.star-pick button.on{color:#1a1a1a!important}
+.base-price-row{border-top-color:#dcdcdc!important}
+.granola-slots .filled{background:#1a1a1a!important;border-color:#1a1a1a!important;color:#ffffff!important}
+.preview-weight,.ingredient-cost{color:#1a1a1a!important}
+.whatsapp-circle,.instagram-circle{border-color:#e2e2e2!important}
+.order-whatsapp:hover,.breadcrumb:hover,.supp-back:hover{background:#ffffff!important;color:#1a1a1a!important}
+.delivery-banner .free-shipping{text-decoration-color:#1a1a1a!important}
+html body .qty button{background:#1a1a1a!important}
+html body .grams-value input{font-size:17px!important;padding:9px 12px 9px 0!important;min-width:0}
+html body .grams-control button{border:1.5px solid #1a1a1a!important;background:#ffffff!important;color:#1a1a1a!important}
+.cafe-vapor{display:none!important}
+.cafe-splash{display:block;width:118px;height:auto;margin:0 0 6px auto;transform-origin:78% 92%;animation:cafeVuelca 5.5s ease-in-out infinite;filter:drop-shadow(0 12px 10px rgba(60,35,15,.22))}
+@keyframes cafeVuelca{0%,22%{transform:rotate(0) translateY(0)}40%{transform:rotate(-24deg) translateY(3px)}55%,70%{transform:rotate(-24deg) translateY(3px)}88%,100%{transform:rotate(0) translateY(0)}}
+@media(max-width:700px){.cafe-splash{width:92px}}
+@media(prefers-reduced-motion:reduce){.cafe-splash{animation:none}}
+#coffee .catalog-head{align-items:center}
+#coffee .catalog-head>div:first-child{flex:1 1 0;min-width:0}
+.coffee-grid{grid-template-columns:minmax(0,420px)!important;justify-content:center!important;margin:0 auto!important}
+.coffee-single{display:flex;flex-direction:column;overflow:hidden}
+.coffee-hero{display:block;width:100%;height:auto;aspect-ratio:1092/1440;object-fit:contain;background:#f4efe7}
+.coffee-single .coffee-options{display:flex!important;flex-direction:column!important;gap:0!important;padding:16px 16px 18px!important}
+.coffee-single .coffee-options>*{grid-column:auto!important;grid-row:auto!important}
+.coffee-single .coffee-options h2{font:600 19px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif!important;letter-spacing:.03em;margin:0 0 6px!important}
+.coffee-single .coffee-options label{margin:10px 0 4px!important}
+.coffee-single .coffee-options .coffee-price{font-size:20px!important;margin:12px 0 4px!important}
+/* Aviso de "agregado" bien visible */
+#toast{left:50%;bottom:auto;top:92px;transform:translateX(-50%);background:#1a1a1a!important;color:#ffffff!important;font-size:15px!important;font-weight:700;padding:12px 20px!important;border-radius:999px!important;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)!important;z-index:3000!important;white-space:nowrap}
+#toast.toast-in{animation:toastIn .35s ease both}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,-14px)}to{opacity:1;transform:translate(-50%,0)}}
+.bag-button{transition:transform .2s}
+.bag-bump{animation:bagBump .5s ease!important}
+/* Legibilidad sobre fotos de fondo (Mix, Café, Granola, etc.) */
+html body:not(#nx).on-cafe::before,html body:not(#nx).on-mix::before{background:rgba(250,249,246,.6)!important}
+html body:not(#nx).on-cafe .catalog-head>div,html body:not(#nx).on-mix .catalog-head>div,html body:not(#nx).on-granola .catalog-head>div{background:rgba(255,255,255,.95)!important;padding:12px 18px!important;border-radius:16px!important;box-shadow:0 8px 20px -14px rgba(0,0,0,.3)}
+html body:not(#nx).on-cafe .catalog-head h1,html body:not(#nx).on-mix .catalog-head h1,html body:not(#nx).on-granola .catalog-head h1{color:#000!important;text-shadow:none!important}
+html body:not(#nx).on-cafe .intro,html body:not(#nx).on-mix .intro,html body:not(#nx).on-granola .intro,html body:not(#nx).on-cafe .section-kicker,html body:not(#nx).on-mix .section-kicker,html body:not(#nx).on-granola .section-kicker{color:#1a1a1a!important;font-weight:600!important;font-size:15px!important;text-shadow:none!important}
+html body:not(#nx).on-mix .granola-options,html body:not(#nx).on-mix .playful-preview,html body:not(#nx).on-granola .granola-options,html body:not(#nx).on-granola .playful-preview{background:rgba(255,255,255,.96)!important}
+html body:not(#nx).on-mix .granola-options>p,html body:not(#nx).on-granola .granola-options>p,html body:not(#nx).on-mix .granola-options h2,html body:not(#nx).on-granola .granola-options h2{color:#000!important;font-weight:600!important;text-shadow:none!important}
+html body:not(#nx).on-mix .preview-weight,html body:not(#nx).on-granola .preview-weight{color:#000!important;font-size:14px!important}
+html body:not(#nx) #coffee .coffee-single .coffee-options label{color:#000!important;font-size:14px!important;font-weight:600!important;text-shadow:none!important}
+html body:not(#nx) #coffee .coffee-single .coffee-options select{color:#000!important;font-size:15px!important;border-color:#1a1a1a!important;background:#fff!important}
+html body:not(#nx) #coffee .coffee-single .coffee-options .coffee-price{color:#000!important}
+html body:not(#nx) .site-foot{background:rgba(255,255,255,.92);border-radius:18px;margin:14px 12px 96px;border-top:0;color:#1a1a1a}
+</style>
+</body></html>
