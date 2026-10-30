@@ -1439,4 +1439,5 @@ function updateBar(){var n=Object.values(cart).reduce(function(a,b){return a+b},
 /* Confirmar: abre WhatsApp con el pedido y vacía el carrito */
 function confirmOrder(e){e.preventDefault();var n=Object.values(cart).reduce(function(a,b){return a+b},0);if(!n)return;window.open(cartWhatsappUrl(),'_blank','noopener');cart={};save();window.__confirmed=true;renderBag();updateBar()}
 </script>
+<style>.floating-social{bottom:84px!important}</style>
 </body></html>
