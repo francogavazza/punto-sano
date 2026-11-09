@@ -1258,7 +1258,7 @@ function cartWhatsappUrl(){return 'https://wa.me/'+SHOP.whatsapp+'?text='+encode
  var prevW=0;
  setup(document.querySelector('.batidor-img'),{padL:.6,padR:.15,padT:.15,padB:.7,origin:[.93,.04],
   angle:function(T){return 9*Math.sin(T*5.2)+3*Math.sin(T*2.1)},
-  css:function(T,a){return 'translateY('+(Math.sin(T*6)*7).toFixed(1)+'px) perspective(600px) rotateY('+((T*330)%360).toFixed(1)+'deg) rotateX(8deg) rotate('+(a*.4).toFixed(2)+'deg)'},
+  css:function(T,a){return 'translateY('+(Math.sin(T*4.8)*4).toFixed(1)+'px) perspective(600px) rotateY('+(24*Math.sin(T*2.4)).toFixed(1)+'deg) rotateX(6deg) rotate('+(a*.3).toFixed(2)+'deg)'},
   emit:function(P,T,dt,m,iw){
    var w=Math.cos(T*5.2),flip=(prevW>0)!==(w>0);prevW=w;
    var n=flip?2+Math.floor(Math.random()*3):(Math.random()<dt*1.5?1:0);
