@@ -437,7 +437,7 @@ body{background:radial-gradient(1000px 600px at 90% -10%,#ffffff 0%,transparent 
 section:not(#home) .grid{gap:12px!important}
 .product:hover{transform:translateY(-4px)!important;box-shadow:0 12px 22px -12px rgba(0,0,0,0.4)!important}
 .product-info{gap:4px!important}
-@media(max-width:700px){.product p{display:none!important}.product .price small{display:none!important}}
+@media(max-width:700px){.product p{display:none!important}.product .price small{display:inline!important}}
 /* Subcategorías (suplementos, comida): mismo tamaño chico que las categorías del inicio */
 section:not(#home) .categories,section:not(#home) .supp-grid{gap:12px!important;justify-content:stretch!important}
 section:not(#home) .category{box-shadow:0 6px 14px -10px rgba(0,0,0,0.35)!important}
@@ -1433,6 +1433,7 @@ html body #bag .note{font-size:13px!important;color:#555!important}
 .confirmed-box{padding:18px 4px}
 .confirmed-box strong{font-size:22px;display:block;margin-bottom:8px}
 .confirmed-box p{font-size:16px;line-height:1.5;margin:0}
+html body .product .price small,html body .product .price small.cu{display:inline!important;font-size:13px!important;font-weight:600!important;color:#1a1a1a!important;text-shadow:none!important;margin-left:3px}
 </style>
 <script>
 /* Barra de confirmación: aparece abajo cuando hay algo en el carrito */
