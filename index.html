@@ -1256,7 +1256,7 @@ function cartWhatsappUrl(){return 'https://wa.me/'+SHOP.whatsapp+'?text='+encode
  // ---- Batidor: bate en vaivén (con giro 3D); la mezcla de chocolate se desprende del propio batidor en hilos y salpicaduras chicas ----
  var CH=[[.43,.672],[.291,.529],[.428,.724],[.253,.538],[.558,.646],[.581,.613],[.341,.672],[.523,.622],[.499,.595],[.297,.738],[.263,.602],[.353,.711],[.398,.699],[.329,.737],[.372,.71],[.29,.732],[.281,.725],[.318,.75],[.257,.722],[.356,.677],[.383,.679],[.309,.751]];
  var prevW=0;
- setup(document.querySelector('.batidor-img'),{padL:.6,padR:.15,padT:.15,padB:.7,origin:[.93,.04],
+ /* batidor: quieto (sin animación ni salpicaduras) */ (function(){return null})({padL:.6,padR:.15,padT:.15,padB:.7,origin:[.93,.04],
   angle:function(T){return 9*Math.sin(T*5.2)+3*Math.sin(T*2.1)},
   css:function(T,a){return 'translateY('+(Math.sin(T*4.8)*4).toFixed(1)+'px) perspective(600px) rotateY('+(24*Math.sin(T*2.4)).toFixed(1)+'deg) rotateX(6deg) rotate('+(a*.3).toFixed(2)+'deg)'},
   emit:function(P,T,dt,m,iw){
