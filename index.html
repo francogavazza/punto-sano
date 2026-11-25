@@ -907,16 +907,16 @@ const REVIEWS=[];
 const STOCK_GRAMS={"almendras": 1000, "caju": 1000, "nueces": 0, "girasol": 1000, "mani": 1000, "coco": 1000, "pistachos": 1000, "arandanos-rojos": 1000, "banana-chips": 1000};
 const GRANOLA_CONFIG={"ingredients": [{"id": "almendras", "name": "Almendras", "pricePerKg": 31500}, {"id": "caju", "name": "Castañas de cajú", "pricePerKg": 22500}, {"id": "nueces", "name": "Nuez mariposa", "pricePerKg": 18000}, {"id": "girasol", "name": "Semillas de girasol", "pricePerKg": 4500}, {"id": "mani", "name": "Maní", "pricePerKg": 3300}, {"id": "coco", "name": "Coco rallado", "pricePerKg": 10500}, {"id": "pistachos", "name": "Pistachos", "pricePerKg": 90000}, {"id": "arandanos-rojos", "name": "Arándanos rojos deshidratados", "pricePerKg": 24000}], "mixIngredients": [{"id": "almendras", "name": "Almendras", "pricePerKg": 31500}, {"id": "caju", "name": "Castañas de cajú", "pricePerKg": 22500}, {"id": "nueces", "name": "Nuez mariposa", "pricePerKg": 18000}, {"id": "mani", "name": "Maní", "pricePerKg": 3300}, {"id": "pistachos", "name": "Pistachos", "pricePerKg": 90000}, {"id": "arandanos-rojos", "name": "Arándanos rojos deshidratados", "pricePerKg": 24000}, {"id": "banana-chips", "name": "Banana chips deshidratada", "pricePerKg": 20000}], "fixedBaseGrams": 500, "fixedBasePrice": 8000};
 const budines=[
-{id:'b-vainilla',name:'Budín de vainilla · 350 g',price:6000,tile:0},
-{id:'b-limon',name:'Budín de limón · 350 g',price:7000,tile:2},
-{id:'b-vainilla-chips',name:'Budín de vainilla con chips · 350 g',price:8000,tile:3},
-{id:'b-banana-chips',name:'Budín de banana con chips · 350 g',price:8000,tile:5},
-{id:'b-chocolate-cubierto',name:'Budín de chocolate · 350 g',price:10000,tile:12},
-{id:'b-almendras',name:'Budín de almendras · 350 g',price:15000,tile:11},
-{id:'bg-vainilla',name:'Budín grande de vainilla · 1 kg',price:25000,tile:0,big:true},
-{id:'bg-vainilla-chips',name:'Budín grande de vainilla con chips · 1 kg',price:30000,tile:3,big:true},
-{id:'bg-banana-chips',name:'Budín grande de banana con chips · 1 kg',price:30000,tile:5,big:true},
-{id:'bg-chocolate',name:'Budín grande de chocolate · 1 kg',price:30000,tile:12,big:true}
+{id:'b-vainilla',name:'Budín de vainilla · 350 g',price:6000,tiers:{2:5500},tile:0},
+{id:'b-limon',name:'Budín de limón · 350 g',price:7000,tiers:{2:6500},tile:2},
+{id:'b-vainilla-chips',name:'Budín de vainilla con chips · 350 g',price:9000,tiers:{2:8500},tile:3},
+{id:'b-banana-chips',name:'Budín de banana con chips · 350 g',price:10000,tiers:{2:9500},tile:5},
+{id:'b-chocolate-cubierto',name:'Budín de chocolate · 350 g',price:10000,tiers:{2:9500},tile:12},
+{id:'b-almendras',name:'Budín de almendras · 350 g',price:15000,tiers:{2:14500},tile:11},
+{id:'bg-vainilla',name:'Budín grande de vainilla · 1 kg',price:25000,tiers:{2:24000},tile:0,big:true},
+{id:'bg-vainilla-chips',name:'Budín grande de vainilla con chips · 1 kg',price:30000,tiers:{2:29000},tile:3,big:true},
+{id:'bg-banana-chips',name:'Budín grande de banana con chips · 1 kg',price:30000,tiers:{2:29000},tile:5,big:true},
+{id:'bg-chocolate',name:'Budín grande de chocolate · 1 kg',price:30000,tiers:{2:29000},tile:12,big:true}
 ].map(p=>({...p,category:'budines',desc:p.big?'Budín grande de 24 cm de largo × 6 cm de alto, 1 kg aprox. Con harina de almendras o harina de coco (avisanos cuál por WhatsApp). Sin TACC.':p.id==='b-almendras'?'350 g aprox. Con harina de almendras y almendras por encima.':'Budín artesanal sin TACC, 350 g aprox.'}));
 const alfajores=[{id:'a-maicena',category:'alfajores',name:'Maicena',price:2500,pack6:13500,desc:'Relleno de dulce de leche, borde de coco rallado.',image:'assets/alfajor-maicena.jpg'},{id:'a-almendras',category:'alfajores',name:'Chocolate y almendras',price:4000,pack6:21500,desc:'Masa de chocolate con harina de almendras, relleno de dulce de leche, bañado en chocolate.',image:'assets/alfajor-almendras-v3.webp'},{id:'a-coco-vainilla',category:'alfajores',name:'Vainilla y coco',price:4000,pack6:21500,desc:'Masa de vainilla con harina de coco, relleno de dulce de leche, bañado en chocolate.',image:'assets/alfajor-coco-vainilla.webp'},{id:'a-glaseado-ddl',category:'alfajores',badge:'Nuevo',name:'Glaseado',price:3000,pack6:16000,desc:'Harina de coco, relleno de dulce de leche, bañado en glaseado.',image:'assets/alfajor-glaseado-ddl.webp'},{id:'a-choco-frutilla',category:'alfajores',badge:'Nuevo',name:'Chocolate y frutilla',price:4000,pack6:21500,desc:'Masa de chocolate, relleno de frutilla, bañado en chocolate.',image:'assets/alfajor-choco-frutilla.webp'}];
 // tiers: precio por unidad según cantidad (2 unidades → 9000 c/u, 3 o más → 8000 c/u).
